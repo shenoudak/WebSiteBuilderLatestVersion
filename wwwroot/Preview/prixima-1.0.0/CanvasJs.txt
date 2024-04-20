@@ -1,0 +1,1 @@
+/External/prixima-1.0.0/js/jquery.min.js$@/External/prixima-1.0.0/js/bootstrap.bundle.min.js$@/External/prixima-1.0.0/js/owl.carousel.min.js$@/External/prixima-1.0.0/js/app.js

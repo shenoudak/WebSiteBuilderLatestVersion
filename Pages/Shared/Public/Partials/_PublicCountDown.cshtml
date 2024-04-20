@@ -1,0 +1,111 @@
+﻿@model iTech.ViewModel.CountDownVM
+
+@{
+	var locale = Context.Features.Get<IRequestCultureFeature>();
+	var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+	
+	var endDateTime = Model.CountDown;
+
+	// Calculate the countdown.
+	var now = DateTime.Now;
+	var difference = endDateTime - now;
+	var days = difference.Days;
+	var hours = difference.Hours;
+	var minutes = difference.Minutes;
+	var seconds = difference.Seconds;
+}
+
+<style>
+	.countsdown{
+		display:flex;
+		text-align: center;
+		justify-content: center;
+		gap: 50px;
+		margin-bottom:20px;
+	}
+
+		.countsdown.countdown-primary > p  {
+			
+			flex-direction: row;
+			gap:70px;
+		}
+	.countsdown.countdown-primary > p > span {
+		color: #d24143;
+		font-size: 80px;
+		padding:30px;
+	}
+
+	 @@media (max-width: 1111px) {
+		.countsdown {
+			display: block;
+			text-align: center;
+			justify-content: center;
+			padding: 40px;
+		}
+        .countdown-container {
+            font-size: 18px; 
+        }
+
+		.countsdown.countdown-primary > p > span {
+			padding: 50px;
+			margin-top: 40px;
+			margin-bottom: 80px;
+		}
+	}
+</style>
+<div id="examples" class="container py-2" style="background-color:darkred; color:white;border-radius:5px;">
+
+	
+	<div class="row">
+						<div class="col">
+			@{
+				if (@BrowserCulture == "en-US")
+				{
+					<h1 style="text-align:center;font-weight:bolder;color:white">@Model.TextEN</h1>
+				}
+				else
+				{
+					<h1 style="text-align:center;color:white">@Model.TextAR</h1>
+				}
+			}
+					<br/>
+			<br />
+
+			<div id="countdown" class="countsdown countdown-primary"></div>
+
+						</div>
+					</div>
+				</div>
+				<br/>
+<br />
+
+
+<script>
+	var endDateTime = new Date('@Model.CountDown.ToString("s")'); 
+
+	var countdownInterval = setInterval(updateCountdown, 1000);
+
+	function updateCountdown() {
+		var now = new Date();
+		var timeLeft = endDateTime - now;
+
+		if (timeLeft <= 0) {
+			clearInterval(countdownInterval);
+			document.getElementById('countdown').innerHTML = 'Countdown expired';
+		} else {
+			var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+			// var countdownText = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+			var countdownText = `<p class="custom-days"> <span class="custom-count" > ${days}</span> Days</p >
+						<br/><p class="custom-hours" > <span class="custom-count" >${hours}</span> HRS</p >
+							<br/>	<p class="custom-minutes" > <span class="custom-count" > ${minutes}</span> MIN</p >
+							<br/>		<p class="custom-seconds" > <span class="custom-count" > ${seconds}</span> SEC</p >`;
+			document.getElementById('countdown').innerHTML = countdownText;
+		}
+	}
+
+	updateCountdown();
+</script>

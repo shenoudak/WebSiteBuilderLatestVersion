@@ -1,0 +1,71 @@
+﻿@model iTech.ViewModel.PublicCountVM
+
+
+@{
+    var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+<section class="parallax section section-height-3 section-parallax m-0" data-plugin-parallax="" data-plugin-options="{'speed': 1.5}" data-image-src="public/img/parallax-corporate-9-1.jpg" style="position: relative; overflow: hidden;">
+    <div class="parallax-background" style="background-image: url(&quot;img/parallax/parallax-corporate-9-1.jpg&quot;); background-size: cover; position: absolute; top: 0px; left: 0px; width: 100%; height: 180%; transform: translate3d(0px, -84.1964px, 0px); background-position-x: 50%;"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            @{
+                if (BrowserCulture == "en-US")
+                {
+                    <div class="col-lg-7 mb-5 mb-lg-0 appear-animation animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" style="animation-delay: 100ms;">
+                        @*                <p class="text-color-primary text-2 line-height-1 mb-2">LOREM IPSUM DOLOR SIT</p>
+                *@                <h4 class="text-color-dark font-weight-normal line-height-3 text-6"><strong class="font-weight-extra-bold">@Model.TitleEN</strong></h4>
+                        <p class="lead pb-2 mb-4">@Model.DescEN</p>
+                        <a href="/Template" class="btn btn-outline btn-primary font-weight-bold text-1 px-4 btn-py-2">@sharedResource["GET STARTED NOWN"]</a>
+                    </div>
+
+
+                }
+                else
+                {
+                    <div class="col-lg-7 mb-5 mb-lg-0 appear-animation animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" style="animation-delay: 100ms;">
+                        @*                <p class="text-color-primary text-2 line-height-1 mb-2">LOREM IPSUM DOLOR SIT</p>
+                *@                <h4 class="text-color-dark font-weight-normal line-height-3 text-6"><strong class="font-weight-extra-bold">@Model.TitleAR</strong></h4>
+                        <p class="lead pb-2 mb-4">@Model.DescAR</p>
+                        <a href="/Template" class="btn btn-outline btn-primary font-weight-bold text-1 px-4 btn-py-2">@sharedResource["GET STARTED NOWN"]</a>
+                    </div>
+
+                }
+            }
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="col appear-animation animated fadeInRightShorter appear-animation-visible" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+                        <div class="row counters counters-lg counters-text-dark">
+                          @{
+                              foreach (var item in Model.counts)
+                                {
+                                    <div class="col-md-6 mb-5">
+                                        <div class="counter">
+                                            <strong class="font-weight-extra-bold text-12" data-to="@item.count" data-append="+">@item.count+</strong>
+                                            @{
+                                                if (BrowserCulture == "en-US")
+                                                {
+
+                                                    <label class="opacity-8 font-weight-normal text-4">@item.TitleEN</label>
+
+                                                }
+                                                else
+                                                {
+                                                    <label class="opacity-8 font-weight-normal text-4">@item.TitleAR</label>
+
+                                                }
+                                            }
+
+                                        </div>
+                                    </div>
+                                }
+                          }
+                           
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

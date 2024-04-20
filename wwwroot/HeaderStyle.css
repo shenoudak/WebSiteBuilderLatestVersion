@@ -1,0 +1,13 @@
+﻿/*@media (min-width: 1200px) {
+
+    .secondContainer:not(.secondContainer-bs):not(.secondContainer-xl-custom):not(.secondContainer-xxl-custom) {
+        max-width: fit-content!important;
+    }
+}
+*/
+
+@media (min-width: 1200px) {
+    .secondContainer {
+        max-width: fit-content !important;
+    }
+}

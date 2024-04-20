@@ -1,0 +1,724 @@
+﻿@page
+@model iTech.Areas.iTech.Pages.IndexModel
+@using Microsoft.AspNetCore.Identity
+@using iTech.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Localization;
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResource> sharedResource
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@using Microsoft.EntityFrameworkCore
+@inject iTech.Data.CRMDBContext _context
+@{
+    Layout = "~/Pages/shared/_Layout.cshtml";
+    ViewBag.Title = @sharedResource["Dashboard"];
+    ViewBag.pTitle = @sharedResource["Dashboard"];
+    ViewBag.pageTitle = @sharedResource["Dashboard"];
+    ViewData["Title"] = @sharedResource["Dashboard"];
+    var user = await UserManager.GetUserAsync(User);
+
+}
+
+
+@section styles{
+<!-- jsvectormap css -->
+<link href="~/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+
+<!--Swiper slider css-->
+<link href="~/assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+}
+<style>
+
+    th {
+        text-align: center !important;
+    }
+
+    td {
+        text-align: center !important;
+        padding-right: 1rem !important;
+    }
+
+</style>
+
+
+<div class="row">
+    <div class="col">
+
+        <div class="h-100">
+            <div class="row mb-3 pb-1">
+                <div class="col-12">
+                    <div class="d-flex align-items-lg-center flex-lg-row flex-column">
+                        <div class="flex-grow-1">
+                            <h4 class="fs-16 mb-1">@sharedResource["Welcome"], @user!</h4>
+                            <p class="text-muted mb-0">
+                                @sharedResource["Statistics"]
+
+                            </p>
+                        </div>
+
+                    </div><!-- end card header -->
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Total number of sites"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.SitesCount">0</span>
+                                    </h4>
+
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-success rounded fs-3">
+                                         <i class="bx bx-wallet text-primary"></i>
+                                        
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+
+                <div class="col-xl-4 col-md-6">
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Sites Total Amount"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.SitesAmount">0</span>
+                                    </h4>
+
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-info rounded fs-3">
+                                        <i class="bx bx-dollar-circle text-success"></i>
+                                       
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+                <div class="col-xl-4 col-md-6">
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Affiliate Users Count"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.AffiliateCount">0</span>
+                                    </h4>
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-primary rounded fs-3">
+                                       <i class="bx bx-user-circle text-warning"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-6">
+
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Total Points Paid Amount"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.TotalPointAmountPaid">0</span>
+                                    </h4>
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-warning rounded fs-3">
+                                       
+                                           <i class="bx bx-dollar-circle text-success"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+                <div class="col-xl-4 col-md-6">
+
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Total Points Not Paid Count"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.TotalPointsCountNotPaid">0</span>
+                                    </h4>
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-warning rounded fs-3">
+                                         <i class="bx bx-shopping-bag text-info"></i>
+                                     
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+
+                <div class="col-xl-4 col-md-6">
+
+                    <!-- card -->
+                    <div class="card card-animate">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div class="flex-grow-1 overflow-hidden">
+                                    <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                        @sharedResource["Total Points Not Paid Amount"]
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div class="d-flex align-items-end justify-content-between mt-4">
+                                <div>
+                                    <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                        <span class="counter-value" data-target="@Model.TotalPointsCountNotPaid">0</span>
+                                    </h4>
+                                </div>
+                                <div class="avatar-sm flex-shrink-0">
+                                    <span class="avatar-title bg-soft-warning rounded fs-3">
+                                        <i class="bx bx-dollar-circle text-success"></i>
+
+                                    </span>
+                                </div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+            </div> <!-- end row-->
+             <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                       
+
+                        <div class="card-body p-0 pb-2">
+                            <div class="w-100">
+                                <div id="customer_impression_charts"
+                                     data-colors='["--vz-primary", "--vz-success", "--vz-danger"]'
+                                     class="apex-charts" dir="ltr"></div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+                <!-- end col -->
+            </div>
+             <div class="row">
+                    <div class="col-xl-8">
+                    <div class="card">
+                        <div class="card-header border-0 align-items-center d-flex">
+                            <h4 class="card-title mb-0 flex-grow-1">@sharedResource["Expenses Affiliate Per Mounth"]</h4>
+                           
+                        </div><!-- end card header -->
+
+                        <div class="card-body p-0 pb-2">
+                            <div class="w-100">
+                                <div id="Newcustomer_impression_charts"
+                                     data-colors='["--vz-primary", "--vz-success", "--vz-danger"]'
+                                     class="apex-charts" dir="ltr"></div>
+                            </div>
+                        </div><!-- end card body -->
+                    </div><!-- end card -->
+                </div><!-- end col -->
+                <div class="col-xl-4">
+                    <div class="card card-height-100">
+                        <div class="card-header align-items-center d-flex">
+                            <h4 class="card-title mb-0 flex-grow-1"> @sharedResource["Sites Revenue Percentage Per Catagory"]</h4>
+                           
+                        </div><!-- end card header -->
+
+                        <div class="card-body">
+                            <div id="store-visits-source"
+                                 data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'
+                                 class="apex-charts" dir="ltr"></div>
+                        </div>
+                    </div> <!-- .card-->
+                </div> <!-- .col-->
+
+              
+            </div> <!-- end row-->
+
+
+
+
+        </div> <!-- end row-->
+        
+    </div>
+</div>
+
+
+<!-- apexcharts -->
+<script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+<!-- Vector map-->
+<!--Swiper slider js-->
+<script src="~/assets/libs/swiper/swiper-bundle.min.js"></script>
+<!-- Dashboard init -->
+<!-- App js -->
+<script src="~/assets/js/app.js"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+<script src="https://codesandbox.io/s/js-playground-forked-19t4vw?file=/src/index.js"></script>
+
+<script>
+       // get colors array from the string
+      jQuery(document).ready(function () {
+          var data = getData();
+          AutoFollow(data);
+          var Newdata = NewgetData();
+          NewAutoFollow(Newdata);
+          getSeries();
+      }
+      )
+
+     function getChartColorsArray(chartId) {
+          if (document.getElementById(chartId) !== null) {
+              var colors = document.getElementById(chartId).getAttribute("data-colors");
+              if (colors) {
+                  colors = JSON.parse(colors);
+                  return colors.map(function (value) {
+                      var newValue = value.replace(" ", "");
+                      if (newValue.indexOf(",") === -1) {
+                          var color = getComputedStyle(document.documentElement).getPropertyValue(
+                              newValue
+                          );
+                          if (color) return color;
+                          else return newValue;
+                      } else {
+                          var val = value.split(",");
+                          if (val.length == 2) {
+                              var rgbaColor = getComputedStyle(
+                                  document.documentElement
+                              ).getPropertyValue(val[0]);
+                              rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
+                              return rgbaColor;
+                          } else {
+                              return newValue;
+                          }
+                      }
+                  });
+              } else {
+                  console.warn('data-colors atributes not found on', chartId);
+              }
+          }
+      }
+       function getData() {
+          var dateValue = [];
+          var countValue = [];
+           var sumValue = [];
+          $.ajax({
+              type: "GET",
+              url: "/api/Statistics/GetSitesRevienuePerMounth/",
+              beforeSend: function (xhr) {
+                  xhr.setRequestHeader("XSRF-TOKEN",
+                      $('input:hidden[name="__RequestVerificationToken"]').val());
+              }
+              ,
+              dataType: 'json',
+              contentType: "application/json",
+
+              async: false
+          }).done(function (data) {
+              data.forEach(function (obj) {
+                  dateValue.push(obj.Lable);
+                  countValue.push(obj.Count);
+                  sumValue.push(obj.Sum);
+              });
+          });
+          return {
+              dateValue: dateValue,
+              countValue: countValue,
+              sumValue: sumValue
+          };
+      }
+     
+    
+     var linechartcustomerColors = getChartColorsArray("customer_impression_charts");
+      function AutoFollow(data) {
+          if (linechartcustomerColors) {
+              var options = {
+                series: [{
+                name: "QTY",
+                type: "area",
+                data: data.countValue,
+            },
+            {
+                name: "Amount",
+                type: "bar",
+                data:data.sumValue,
+            }
+            
+        ],
+                  chart: {
+                      height: 370,
+                      type: "area",
+                      zoom: {
+              autoScaleYaxis: true
+            },
+                      toolbar: {
+                          show: true,
+                      },
+                  },
+                  dataLabels:{
+                      enabled: true,
+                  },
+                  stroke: {
+                      curve: "straight",
+                      dashArray: [0, 0, 8, 8],
+                      width: [2, 0, 2.2],
+                  },
+                  fill: {
+                      opacity: [0.1, 0.9, 1],
+                  },
+                  markers: {
+
+                      size: [0, 0, 0],
+                      strokeWidth: 2,
+                      hover: {
+                          size: 4,
+                      },
+                  },
+                  xaxis: {
+                 
+
+                  categories: data.dateValue,
+                                     },
+
+
+                  grid: {
+                      show: true,
+                      xaxis: {
+                          lines: {
+                              show: true,
+                          },
+                      },
+                      yaxis: {
+                          lines: {
+                              show: true,
+                          },
+                      },
+                      padding: {
+                          top: 0,
+                          right: -2,
+                          bottom: 15,
+                          left: 10,
+                      },
+                  },
+                  legend: {
+                      show: true,
+                      horizontalAlign: "center",
+                      offsetX: 0,
+                      offsetY: -5,
+                      markers: {
+                          width: 9,
+                          height: 9,
+                          radius: 6,
+                      },
+                      itemMargin: {
+                          horizontal: 10,
+                          vertical: 0,
+                      },
+                  },
+                  plotOptions: {
+                      bar: {
+                          columnWidth: "30%",
+                          barHeight: "70%",
+                      },
+                  },
+                  colors: linechartcustomerColors,
+                  tooltip: {
+                      shared: true,
+
+
+                      y: [{
+                          formatter: function (y) {
+                              if (typeof y !== "undefined") {
+                                  return y.toFixed(0) ;
+                              }
+                              return y;
+                          },
+                      },
+
+                      ],
+                  },
+              };
+              var chart = new ApexCharts(
+                  document.querySelector("#customer_impression_charts"),
+                  options
+              );
+              chart.render();
+
+
+          }
+      }
+      ///////////////////////////////////
+     
+
+      /////////////////////////////
+      function NewgetData() {
+          var dateValue = [];
+          var countValue = [];
+          var sumValue = [];
+          $.ajax({
+              type: "GET",
+              url: "/api/Statistics/GetSystemExpensesForAffiliatePerMounth/",
+              beforeSend: function (xhr) {
+                  xhr.setRequestHeader("XSRF-TOKEN",
+                      $('input:hidden[name="__RequestVerificationToken"]').val());
+              }
+              ,
+              dataType: 'json',
+              contentType: "application/json",
+
+              async: false
+          }).done(function (data) {
+              data.forEach(function (obj) {
+                  dateValue.push(obj.Lable);
+                  countValue.push(obj.Count);
+                  sumValue.push(obj.Sum);
+              });
+          });
+          return {
+              dateValue: dateValue,
+              countValue: countValue,
+              sumValue: sumValue
+          };
+      }
+     var NewlinechartcustomerColors = getChartColorsArray("Newcustomer_impression_charts");
+      function NewAutoFollow(data) {
+          if (NewlinechartcustomerColors) {
+              var options = {
+                   series: [{
+                name: "QTY",
+                type: "area",
+                data: data.countValue,
+            },
+            {
+                name: "Amount",
+                type: "bar",
+                data:data.sumValue,
+            }
+            
+        ],
+        chart: {
+            height: 370,
+            type: "line",
+            toolbar: {
+                show: true,
+            },
+        },
+        stroke: {
+            curve: "straight",
+            dashArray: [0, 0, 8],
+            width: [2, 0, 2.2],
+        },
+        fill: {
+            opacity: [0.1, 0.9, 1],
+        },
+        markers: {
+            size: [0, 0, 0],
+            strokeWidth: 2,
+            hover: {
+                size: 4,
+            },
+        },
+        xaxis: {
+            categories:data.dateValue
+               
+            ,
+            axisTicks: {
+                show: true,
+            },
+            axisBorder: {
+                show: true,
+            },
+        },
+        grid: {
+            show: true,
+            xaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+            yaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+            padding: {
+                top: 0,
+                right: -2,
+                bottom: 15,
+                left: 10,
+            },
+        },
+        legend: {
+            show: true,
+            horizontalAlign: "center",
+            offsetX: 0,
+            offsetY: -5,
+            markers: {
+                width: 9,
+                height: 9,
+                radius: 6,
+            },
+            itemMargin: {
+                horizontal: 10,
+                vertical: 0,
+            },
+        },
+        plotOptions: {
+            bar: {
+                columnWidth: "30%",
+                barHeight: "70%",
+            },
+        },
+                  colors: NewlinechartcustomerColors,
+                  tooltip: {
+                      shared: true,
+
+
+                      y: [{
+                          formatter: function (y) {
+                              if (typeof y !== "undefined") {
+                                  return y.toFixed(0) ;
+                              }
+                              return y;
+                          },
+                      },
+
+                      ],
+                  },
+              };
+              var chart = new ApexCharts(
+                  document.querySelector("#Newcustomer_impression_charts"),
+                  options
+              );
+              chart.render();
+
+
+          }
+      }
+//////////////////////////////////
+ let dountchart;
+    function getSeries() {
+        
+        $.ajax({
+            type: "GET",
+            url: "/api/Statistics/GetDountChart/",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            dataType: 'json',
+            contentType: "application/json",
+
+            async: false
+        }).done(function (dataDount) {
+            var _data = dataDount;
+            var _chartLabels = _data[0];
+            var _chartData = _data[1];
+            var chartDonutBasicColors = getChartColorsArray("store-visits-source");
+            if (chartDonutBasicColors) {
+                var options = {
+                    series: _chartData,
+                    labels: _chartLabels,
+                    chart: {
+                        height: 333,
+                        type: "donut",
+                         toolbar: {
+                          show: true,
+                      },
+                    },
+
+                    legend: {
+                        position: "bottom",
+                    },
+                    stroke: {
+                        show: false
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        dropShadow: {
+                            enabled: true,
+                        },
+                    },
+                    colors: chartDonutBasicColors,
+                };
+
+                dountchart = new ApexCharts(
+                    document.querySelector("#store-visits-source"),
+                    options
+                );
+                dountchart.render();
+
+            }
+
+        });
+
+    }
+   
+    
+
+</script>
+
+
+

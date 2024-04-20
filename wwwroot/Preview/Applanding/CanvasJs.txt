@@ -1,0 +1,1 @@
+https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993$@https://localhost:7203/External/applandingTemplate/js/jquery.js$@/External/applandingTemplate/js/plugins.min.js$@/External/applandingTemplate/js/functions.js

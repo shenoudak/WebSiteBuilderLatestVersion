@@ -1,0 +1,209 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@model iTech.Models.Brands
+@{
+}
+@*
+<div class="modal fade" id="showBrandEditModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Edit Video Material"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+            <form asp-area="Admin" asp-page="/Configurations/AffiliatePrices/Index" asp-page-handler="EditAffiliatePrices">
+                <div class="modal-body">
+                    <div class="row g-3">
+              
+                        <input asp-for="@Model.AffiliatePriceId" id="HiddenId" value="@Model.AffiliatePriceId" hidden>
+                        
+                        
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.AffiliatePriceTitle" class="form-label">@sharedResource["Affiliate Price Title"]</label>
+                                <input data-val-required="@sharedResource["Enter Affiliate Price Title"]" id="AffiliatePriceTitleID" type="text" asp-for="@Model.AffiliatePriceTitle" class="form-control" placeholder="@sharedResource["Enter Affiliate Price Title"]" required />
+                                <span asp-validation-for="@Model.AffiliatePriceTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.From" class="form-label">@sharedResource["From"]</label>
+                                <input data-val-required="@sharedResource["Enter From"]" id="FromID" type="text" asp-for="@Model.From" class="form-control" placeholder="@sharedResource["Enter From"]" required />
+                                <span asp-validation-for="@Model.From" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.To" class="form-label">@sharedResource["To"]</label>
+                                <input data-val-required="@sharedResource["Enter From"]" id="ToID" type="text" asp-for="@Model.To" class="form-control" placeholder="@sharedResource["Enter To"]" required />
+                                <span asp-validation-for="@Model.To" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Point" class="form-label">@sharedResource["Point"]</label>
+                                <input data-val-required="@sharedResource["Enter Point"]" id="PointID" type="text" asp-for="@Model.Point" class="form-control" placeholder="@sharedResource["Enter Point"]" required />
+                                <span asp-validation-for="@Model.Point" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">
+                            @sharedResource["Close"]
+                        </button>
+                        <button type="submit" class="btn btn-success"
+                                id="add-btn">
+                            @sharedResource["Edit"]
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+*@
+
+
+
+
+<div class="modal fade" id="showBrandEditModal" tabindex="-1" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div class="modal-content">
+            <!--begin::Modal header-->
+            <div class="modal-header">
+                <!--begin::Modal title-->
+                <h2>@sharedResource["Edit Brand"]</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i class="ki-duotone ki-cross fs-1">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div class="card mb-5 mb-xl-10">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+                        <!--begin::Card title-->
+                        <div class="card-title m-0">
+                            <h3 class="fw-bold m-0">@sharedResource["Edit Brand"]</h3>
+                        </div>
+                        <!--end::Card title-->
+                    </div>
+                    <!--begin::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_profile_details" class="collapse show">
+                        <!--begin::Form-->
+                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="PublicContentEditor" asp-page-handler="EditPublicBrand" asp-route-BrandsId="@Model.BrandsId" enctype="multipart/form-data" onsubmit="return validateMyForm();">
+                            <!--begin::Step 1-->
+                            <div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+                                <div b-cpu6lo70wp="" class="w-100">
+                                    <!--begin::Input group-->
+                                    <input asp-for="@Model.BrandsId" id="HiddenIdBrandsId" hidden>
+                                    <input asp-for="@Model.Images" id="BackgroundIdBrand" hidden>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label text-lg-right">Upload File:</label>
+                                        <div class="col-lg-6">
+                                            <div class="uppy" id="kt_uppy_5">
+                                                <div class="uppy-wrapper">
+                                                    <div class="uppy-Root uppy-FileInput-container">
+                                                        <input class="uppy-FileInput-input uppy-input-control uppy-input-label btn btn-light-primary btn-sm btn-bold" type="file" name="fileBrand" id="kt_uppy_5_input_control" style="">                                                <div class="uppy-list"></div>
+                                                    </div>
+                                                    <div class="uppy-status">
+                                                        <div class="uppy-Root uppy-StatusBar is-waiting" aria-hidden="true" dir="ltr">
+                                                            <div class="uppy-StatusBar-progress
+                           " role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div><div class="uppy-StatusBar-actions"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uppy-informer uppy-informer-min">
+                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+                                        <div class="d-flex flex-stack pt-10 m-0">
+                                            <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                </i>@sharedResource["Close"]
+                                            </button>
+                                            <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                                @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                </i>
+                                            </button>
+                                        </div>
+                                        <!--end::Input group-->
+                                        <!--begin::Actions-->
+                                        @*									<div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                        <!--begin::Wrapper-->
+                                        <div b-cpu6lo70wp="" class="me-2">
+                                        <button b-cpu6lo70wp="" type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                        <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                        </i>@sharedResource["Close"]
+                                        </button>
+                                        </div>
+                                        <!--end::Wrapper-->
+                                        <!--begin::Wrapper-->
+                                        <div b-cpu6lo70wp="">
+                                        <button b-cpu6lo70wp="" type="button" class="btn btn-lg btn-primary" id="add-btn">
+                                        <span b-cpu6lo70wp="" class="indicator-label">
+                                        @sharedResource["Add Affiliate Price"]
+                                        <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                        </i>
+                                        </span>
+                                        <span b-cpu6lo70wp="" class="indicator-progress">
+                                        @sharedResource["Please wait..."]
+                                        <span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                        </span>
+                                        </button>
+
+                                        </div>
+                                        <!--end::Wrapper-->
+                                        </div>
+                                        *@									<!--end::Actions-->
+                                    </div>
+                                </div>
+                                <!--end::Step 1-->
+
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

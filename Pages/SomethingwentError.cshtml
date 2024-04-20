@@ -1,0 +1,62 @@
+﻿@page
+@model iTech.Pages.SomethingwentErrorModel
+@{
+    ViewData["Title"] = "SomeThing Went Error";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+}
+<style>
+
+
+body, button {
+    background: #F5F1E3;
+    font-family: 'Armata', sans-serif;
+}
+
+.errorModule {
+    margin: 40px auto 20px;
+    text-align: center;
+    color: #A80000;
+    
+}
+.errorMsg {
+    font-size:40px;
+}
+
+
+</style>
+<div role="main" class="main">
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/Public/img/page-header/page-header-about-us.jpg);margin-bottom:0px;">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-9 font-weight-bold">@sharedResource["SomeThing Went Error"]</h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li><a href="#">@sharedResource["Home"]</a></li>
+                        <li class="active">@sharedResource["SomeThing Went Error"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="errorModule">
+        <div class="errorIcon">
+          @*  <i class="fa fa-unlink"></i>*@
+        </div>
+        @{ if (Model.ErrorMessage != null)
+            {
+                <div class="errorMsg">
+                @Model.ErrorMessage
+                </div>
+            }
+            else
+            {
+                <div class="errorMsg">@sharedResource["Oops! Something went Wrong. Try Again"]</div>
+            }
+        }
+
+    </div>
+</div>
+
+

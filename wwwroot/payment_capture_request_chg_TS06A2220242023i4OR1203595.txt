@@ -1,0 +1,3 @@
+Method: Get
+Resource: 
+Parameters: HeaderParameter { Name = authorization, Value = Bearer sk_test_OVdtIlexf8S3sPnuHkANQJ0a, Type = HttpHeader, Encode = False, ContentType = text/plain }, BodyParameter { Name = undefined, Value = {}, Type = RequestBody, Encode = False, ContentType = text/plain, DataFormat = None, ContentEncoding =  }

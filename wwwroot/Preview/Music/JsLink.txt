@@ -1,0 +1,106 @@
+<div id="track-onload" data-track="demos/music/tracks/clean-clean.mp3" data-poster="demos/music/images/popular-songs/7.jpg" data-title="Clean Clean" data-singer="R Costello"></div>
+
+<div id="gotoTop" class="icon-angle-up" style="bottom: 70px;"></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+
+<script src="demos/music/js/mediaelement/mediaelement-and-player.js"></script>
+
+<script src="js/functions.js"></script>
+<script>
+
+		// Custom Tab jQuery
+		// jQuery( '.tabs' ).on( 'tabsactivate', function( event, ui ) {
+		// 	var gridContainerAvailable = jQuery( ui.newPanel ).find('.grid-container');
+
+		// 	if( gridContainerAvailable.length > 0 ) {
+		// 		gridContainerAvailable.each( function(){
+		// 			var portfolioGrid = jQuery(this);
+
+		// 			if( !portfolioGrid.hasClass('tabs-enabled-grid-container') ) {
+		// 				portfolioGrid.isotope('layout');
+		// 				jQuery(window).trigger('resize');
+		// 				portfolioGrid.addClass('tabs-enabled-grid-container');
+		// 			}
+		// 		});
+		// 	}
+		// });
+
+		// Music playing Scripts
+		var trackPlaying = '',
+			audioPlayer = document.getElementById('audio-player');
+
+		audioPlayer.addEventListener("ended", function(){
+			jQuery('.track-list').find('i').removeClass('icon-pause').addClass('icon-play');
+		});
+
+		audioPlayer.addEventListener("pause", function(){
+			jQuery('.track-list').find('i').removeClass('icon-pause').addClass('icon-play');
+		});
+
+		function changeAudio( sourceUrl, posterUrl, trackTitle, trackSinger, playAudio = true ) {
+			var audio = $("#audio-player"),
+				clickEl = jQuery('[data-track="'+sourceUrl+'"]'),
+				playerId = audio.closest('.mejs__container').attr('id'),
+				playerObject = mejs.players[playerId];
+
+			jQuery('.track-list').find('i').removeClass('icon-pause').addClass('icon-play');
+
+			if( sourceUrl == trackPlaying ) {
+				if (playerObject.node.paused) {
+					playerObject.play();
+					clickEl.find('i').removeClass('icon-play').addClass('icon-pause');
+				} else {
+					playerObject.pause();
+					clickEl.find('i').removeClass('icon-pause').addClass('icon-play');
+				}
+				return true;
+			}
+
+			trackPlaying = sourceUrl;
+
+			audio.attr( 'poster', posterUrl );
+			audio.attr( 'title', trackTitle );
+
+			jQuery('.mejs__layers').html('').html('<div class="mejs-track-artwork"><img src="'+ posterUrl +'" alt="Track Poster" /></div><div class="mejs-track-details"><h3>'+ trackTitle +'<br><span>'+ trackSinger +'</span></h3></div>');
+
+			if( sourceUrl != '' ) {
+				playerObject.setSrc( sourceUrl );
+			}
+			playerObject.pause();
+			playerObject.load();
+
+			if( playAudio == true ) {
+				playerObject.play();
+				jQuery(clickEl).find('i').removeClass('icon-play').addClass('icon-pause');
+			}
+		}
+
+		jQuery('.track-list').on( 'click', function(){
+			var audioTrack = jQuery(this).attr('data-track'), // Track url
+				posterUrl = jQuery(this).attr('data-poster'), // Track Poster Image
+				trackTitle = jQuery(this).attr('data-title'); // Track Title
+				trackSinger = jQuery(this).attr('data-singer'); // Track Singer Name
+
+			changeAudio( audioTrack, posterUrl, trackTitle, trackSinger );
+			return false;
+		});
+
+		jQuery(window).on( 'load', function(){
+			var trackOnload = jQuery('#track-onload');
+
+			if( trackOnload.length > 0 ) {
+				var audioTrack = trackOnload.attr('data-track'), // Track url
+					posterUrl = trackOnload.attr('data-poster'), // Track Poster Image
+					trackTitle = trackOnload.attr('data-title'); // Track Title
+					trackSinger = trackOnload.attr('data-singer'); // Track Singer Name
+
+				setTimeout( function(){
+					changeAudio( audioTrack, posterUrl, trackTitle, trackSinger, false );
+				}, 500);
+			}
+		});
+
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a18d0f92dc81222","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

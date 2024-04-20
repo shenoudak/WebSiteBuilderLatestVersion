@@ -1,0 +1,677 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.IndexModel
+@{
+	Layout = "_Layout";
+}
+<!-- jsvectormap css -->
+					<!--begin::Content wrapper-->
+<div class="d-flex flex-column flex-column-fluid">
+	<!--begin::Toolbar-->
+	<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+		<!--begin::Toolbar container-->
+		<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+			<!--begin::Page title-->
+			<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+				<!--begin::Title-->
+				<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">@sharedResource["Admin Dashboard"]</h1>
+				<!--end::Title-->
+				<!--begin::Breadcrumb-->
+				<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">
+						<a href="/admin/index" class="text-muted text-hover-primary">@sharedResource["Home"]</a>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item">
+						<span class="bullet bg-gray-400 w-5px h-2px"></span>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">@sharedResource["Dashboard"]</li>
+					<!--end::Item-->
+				</ul>
+				<!--end::Breadcrumb-->
+			</div>
+			<!--end::Page title-->
+			
+		</div>
+		<!--end::Toolbar container-->
+	</div>
+	<!--end::Toolbar-->
+	<!--begin::Content-->
+	<div id="kt_app_content" class="app-content flex-column-fluid">
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container container-xxl">
+			<!--begin::Row-->
+			<div class="row g-5 g-xl-10 mb-xl-10">
+				<!--begin::Col-->
+				<div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
+					<!--begin::Card widget 4-->
+					<div class="card card-flush h-md-50 mb-5 mb-xl-10">
+						<!--begin::Header-->
+						<div class="card-header pt-5">
+							<!--begin::Title-->
+							<div class="card-title d-flex flex-column">
+								<!--begin::Info-->
+								<div class="d-flex align-items-center">
+									<!--begin::Currency-->
+									<!--end::Currency-->
+									<!--begin::Amount-->
+									<span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.SitesCount</span>
+									<!--end::Amount-->
+									<!--begin::Badge-->
+									<!--end::Badge-->
+								</div>
+								<!--end::Info-->
+								<!--begin::Subtitle-->
+								<span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Total number of sites"]</span>
+								<!--end::Subtitle-->
+							</div>
+							<!--end::Title-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<!--end::Card body-->
+					</div>
+					<!--end::Card widget 4-->
+					<!--begin::Card widget 5-->
+					<div class="card card-flush h-md-50 mb-xl-10">
+						<!--begin::Header-->
+						<div class="card-header pt-5">
+							<!--begin::Title-->
+							<div class="card-title d-flex flex-column">
+								<!--begin::Info-->
+								<div class="d-flex align-items-center">
+									<!--begin::Amount-->
+									<span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.TotalPointsCountNotPaid</span>
+									<!--end::Amount-->
+									<!--begin::Badge-->
+									<!--end::Badge-->
+								</div>
+								<!--end::Info-->
+								<!--begin::Subtitle-->
+								<span class="text-gray-400 pt-1 fw-semibold fs-6"> @sharedResource["Total Points Not Paid Count"]</span>
+								<!--end::Subtitle-->
+							</div>
+							<!--end::Title-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<!--end::Card body-->
+					</div>
+					<!--end::Card widget 5-->
+				</div>
+				<!--end::Col-->
+				<!--begin::Col-->
+				<div class="col-md-6 col-lg-6 col-xl-6 col-xxl-3 mb-md-5 mb-xl-10">
+					<!--begin::Card widget 6-->
+					<div class="card card-flush h-md-50 mb-5 mb-xl-10">
+						<!--begin::Header-->
+						<div class="card-header pt-5">
+							<!--begin::Title-->
+							<div class="card-title d-flex flex-column">
+								<!--begin::Info-->
+								<div class="d-flex align-items-center">
+									<!--begin::Currency-->
+									<!--end::Currency-->
+									<!--begin::Amount-->
+									<span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.SitesAmount</span>
+									<!--end::Amount-->
+									<!--begin::Badge-->
+									<!--end::Badge-->
+								</div>
+								<!--end::Info-->
+								<!--begin::Subtitle-->
+								<span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Sites Total Amount"]</span>
+								<!--end::Subtitle-->
+							</div>
+							<!--end::Title-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<!--end::Card body-->
+					</div>
+					<!--end::Card widget 6-->
+					<!--begin::Card widget 7-->
+					<div class="card card-flush h-md-50 mb-xl-10">
+						<!--begin::Header-->
+						<div class="card-header pt-5">
+							<!--begin::Title-->
+							<div class="card-title d-flex flex-column">
+								<!--begin::Amount-->
+								<span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.TotalPointAmountPaid</span>
+								<!--end::Amount-->
+								<!--begin::Subtitle-->
+								<span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Total Points Paid Amount"]</span>
+								<!--end::Subtitle-->
+							</div>
+							<!--end::Title-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<!--end::Card body-->
+					</div>
+					<!--end::Card widget 7-->
+				</div>
+				<!--end::Col-->
+				<!--begin::ColChart-->
+				<div class="col-lg-12 col-xl-12 col-xxl-6 mb-5 mb-xl-0">
+					<!--begin::Chart widget 3-->
+					<div class="card card-flush overflow-hidden h-md-100">
+						<!--begin::Header-->
+						<div class="card-header py-5">
+							<!--begin::Title-->
+							<h3 class="card-title align-items-start flex-column">
+								<span class="card-label fw-bold text-dark">@sharedResource["Sites Revenue Per Month"]</span>
+							</h3>
+							<!--end::Title-->
+							<!--begin::Toolbar-->
+							<!--end::Toolbar-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
+							<!--begin::Statistics-->
+							<!--end::Statistics-->
+							<!--begin::Chart-->
+							<div class=" min-h-auto ps-4 pe-6" style=" height: 373px; min-height: 315px;">
+								<div id="customer_impression_charts"
+									 data-colors='["--vz-primary", "--vz-success", "--vz-danger"]'
+									 class="apex-charts  " dir="ltr"></div>
+							</div>
+							<!--end::Chart-->
+						</div>
+						<!--end::Card body-->
+					</div>
+					<!--end::Chart widget 3-->
+				</div>
+				<!--end::Col-->
+
+			</div>
+			<!--end::Row-->
+			<!--begin::Row-->
+			<div class="row gy-5 g-xl-10">
+				<!--begin::Col-->
+				<div class="col-xl-6 mb-xl-10">
+					<!--begin::Chart widget 3-->
+					<div class="card card-flush overflow-hidden h-md-100">
+						<!--begin::Header-->
+						<div class="card-header py-5">
+							<!--begin::Title-->
+							<h3 class="card-title align-items-start flex-column">
+								<span class="card-label fw-bold text-dark">@sharedResource["Expenses Affiliate Per Mounth"]</span>
+							</h3>
+							<!--end::Title-->
+							<!--begin::Toolbar-->
+							<!--end::Toolbar-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
+							<!--begin::Statistics-->
+							<!--end::Statistics-->
+							<!--begin::Chart-->
+							<div class=" min-h-auto ps-4 pe-6" style=" height: 373px; min-height: 315px;">
+								<div id="Newcustomer_impression_charts"
+									 data-colors='["--vz-primary", "--vz-success", "--vz-danger"]'
+									 class="apex-charts  " dir="ltr"></div>
+							</div>
+							<!--end::Chart-->
+						</div>
+						<!--end::Card body-->
+					</div>
+					<!--end::Chart widget 3-->
+				</div>
+
+				<!--end::Col-->
+				<!--begin::Col-->
+				<div class="col-xl-6 mb-5 mb-xl-10">
+					<!--begin::Chart widget 4-->
+					<div class="card card-flush overflow-hidden h-md-100">
+						<!--begin::Header-->
+						<div class="card-header py-5">
+							<!--begin::Title-->
+							<h3 class="card-title align-items-start flex-column">
+								<span class="card-label fw-bold text-dark">@sharedResource["Sites Revenue Percentage Per Catagory"]</span>
+							</h3>
+							<!--end::Title-->
+							<!--begin::Toolbar-->
+							<!--end::Toolbar-->
+						</div>
+						<!--end::Header-->
+						<!--begin::Card body-->
+						<div class="card-body d-flex justify-content-between flex-column pb-1 px-0">
+							
+							<div id="store-visits-source"
+								 data-colors='["--vz-primary", "--vz-success", "--vz-warning", "--vz-danger", "--vz-info"]'
+								 class="apex-charts" dir="ltr"></div>
+						</div>
+																	<!--end::Chart-->
+					</div>
+					<!--end::Card body-->
+				</div>
+				<!--end::Chart widget 4-->
+			</div>
+			<!--end::Col-->
+		</div>
+		<!--end::Row-->
+		<!--begin::Row-->
+		<!--end::Row-->
+	</div>
+	<!--end::Content container-->
+</div>
+<!--end::Content-->
+						
+<!--end::Content wrapper-->
+
+
+
+
+<script src="~/assets/libs/apexcharts/apexcharts.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+	// get colors array from the string
+	$(document).ready(function () {
+		var data = getData();
+		AutoFollow(data);
+		var Newdata = NewgetData();
+		NewAutoFollow(Newdata);
+		getSeries();
+	}
+	)
+
+	function getChartColorsArray(chartId) {
+		if (document.getElementById(chartId) !== null) {
+			var colors = document.getElementById(chartId).getAttribute("data-colors");
+			if (colors) {
+				colors = JSON.parse(colors);
+				return colors.map(function (value) {
+					var newValue = value.replace(" ", "");
+					if (newValue.indexOf(",") === -1) {
+						var color = getComputedStyle(document.documentElement).getPropertyValue(
+							newValue
+						);
+						if (color) return color;
+						else return newValue;
+					} else {
+						var val = value.split(",");
+						if (val.length == 2) {
+							var rgbaColor = getComputedStyle(
+								document.documentElement
+							).getPropertyValue(val[0]);
+							rgbaColor = "rgba(" + rgbaColor + "," + val[1] + ")";
+							return rgbaColor;
+						} else {
+							return newValue;
+						}
+					}
+				});
+			} else {
+				console.warn('data-colors atributes not found on', chartId);
+			}
+		}
+	}
+	function getData() {
+		var dateValue = [];
+		var countValue = [];
+		var sumValue = [];
+		$.ajax({
+			type: "GET",
+			url: "/api/Statistics/GetSitesRevienuePerMounth/",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			}
+			,
+			dataType: 'json',
+			contentType: "application/json",
+
+			async: false
+		}).done(function (data) {
+			data.forEach(function (obj) {
+				dateValue.push(obj.Lable);
+				countValue.push(obj.Count);
+				sumValue.push(obj.Sum);
+			});
+		});
+		return {
+			dateValue: dateValue,
+			countValue: countValue,
+			sumValue: sumValue
+		};
+	}
+
+
+	var linechartcustomerColors = getChartColorsArray("customer_impression_charts");
+	function AutoFollow(data) {
+		if (linechartcustomerColors) {
+			var options = {
+				series: [{
+					name: "QTY",
+					type: "area",
+					data: data.countValue,
+				},
+				{
+					name: "Amount",
+					type: "bar",
+					data: data.sumValue,
+				}
+
+				],
+				fill: {
+					colors: ["#FF0000", "#00FF00"], // Example colors: red and green
+				},
+				chart: {
+					height: 370,
+					type: "area",
+					zoom: {
+						autoScaleYaxis: true
+					},
+					toolbar: {
+						show: true,
+					},
+				},
+				dataLabels: {
+					enabled: true,
+				},
+				stroke: {
+					curve: "smooth",
+					//dashArray: [0, 0, 8, 8],
+					//width: [2, 0, 2.2],
+				},
+				//fill: {
+				//	opacity: [0.1, 0.9, 1],
+				//},
+				markers: {
+
+					size: [0, 0, 0],
+					strokeWidth: 2,
+					hover: {
+						size: 4,
+					},
+				},
+				xaxis: {
+
+
+					categories: data.dateValue,
+				},
+
+
+				grid: {
+					show: true,
+					xaxis: {
+						lines: {
+							show: true,
+						},
+					},
+					yaxis: {
+						lines: {
+							show: true,
+						},
+					},
+					padding: {
+						top: 0,
+						right: -2,
+						bottom: 15,
+						left: 10,
+					},
+				},
+				legend: {
+					show: true,
+					horizontalAlign: "center",
+					offsetX: 0,
+					offsetY: -5,
+					markers: {
+						width: 9,
+						height: 9,
+						radius: 6,
+					},
+					itemMargin: {
+						horizontal: 10,
+						vertical: 0,
+					},
+				},
+				plotOptions: {
+					bar: {
+						columnWidth: "30%",
+						barHeight: "70%",
+					},
+				},
+				colors: linechartcustomerColors,
+				tooltip: {
+					shared: true,
+
+
+					y: [{
+						formatter: function (y) {
+							if (typeof y !== "undefined") {
+								return y.toFixed(0);
+							}
+							return y;
+						},
+					},
+
+					],
+				},
+			};
+			var chart = new ApexCharts(
+				document.querySelector("#customer_impression_charts"),
+				options
+			);
+			chart.render();
+
+
+		}
+	}
+	///////////////////////////////////
+	let dountchart;
+	function getSeries() {
+
+		$.ajax({
+			type: "GET",
+			url: "/api/Statistics/GetDountChart/",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			}
+			,
+			dataType: 'json',
+			contentType: "application/json",
+
+			async: false
+		}).done(function (dataDount) {
+			var _data = dataDount;
+			var _chartLabels = _data[0];
+			var _chartData = _data[1];
+			var chartDonutBasicColors = getChartColorsArray("store-visits-source");
+			if (chartDonutBasicColors) {
+				var options = {
+					series: _chartData,
+					labels: _chartLabels,
+					chart: {
+						height: 333,
+						type: "donut",
+						toolbar: {
+							show: true,
+						},
+					},
+
+					legend: {
+						position: "bottom",
+					},
+					stroke: {
+						show: false
+					},
+					dataLabels: {
+						enabled: true,
+						dropShadow: {
+							enabled: true,
+						},
+					},
+					colors: chartDonutBasicColors,
+				};
+
+				dountchart = new ApexCharts(
+					document.querySelector("#store-visits-source"),
+					options
+				);
+				dountchart.render();
+
+			}
+
+		});
+
+	}
+
+	/////////////////////////////
+	function NewgetData() {
+		var dateValue = [];
+		var countValue = [];
+		var sumValue = [];
+		$.ajax({
+			type: "GET",
+			url: "/api/Statistics/GetSystemExpensesForAffiliatePerMounth/",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			}
+			,
+			dataType: 'json',
+			contentType: "application/json",
+
+			async: false
+		}).done(function (data) {
+			data.forEach(function (obj) {
+				dateValue.push(obj.Lable);
+				countValue.push(obj.Count);
+				sumValue.push(obj.Sum);
+			});
+		});
+		return {
+			dateValue: dateValue,
+			countValue: countValue,
+			sumValue: sumValue
+		};
+	}
+	var NewlinechartcustomerColors = getChartColorsArray("Newcustomer_impression_charts");
+	function NewAutoFollow(data) {
+		if (NewlinechartcustomerColors) {
+			var options = {
+					fill: {
+					colors: ["#FF0000", "#00FF00"], // Example colors: red and green
+				},
+				series: [{
+					name: "QTY",
+					type: "area",
+					data: data.countValue,
+				},
+				{
+					name: "Amount",
+					type: "bar",
+					data: data.sumValue,
+				}
+				
+				],
+				chart: {
+					height: 370,
+					type: "line",
+					toolbar: {
+						show: true,
+					},
+				},
+				stroke: {
+					curve: "straight",
+					dashArray: [0, 0, 8],
+					width: [2, 0, 2.2],
+				},
+				//fill: {
+				//	opacity: [0.1, 0.9, 1],
+				//},
+				markers: {
+					size: [0, 0, 0],
+					strokeWidth: 2,
+					hover: {
+						size: 4,
+					},
+				},
+				xaxis: {
+					categories: data.dateValue
+
+					,
+					axisTicks: {
+						show: true,
+					},
+					axisBorder: {
+						show: true,
+					},
+				},
+				grid: {
+					show: true,
+					xaxis: {
+						lines: {
+							show: true,
+						},
+					},
+					yaxis: {
+						lines: {
+							show: true,
+						},
+					},
+					padding: {
+						top: 0,
+						right: -2,
+						bottom: 15,
+						left: 10,
+					},
+				},
+				legend: {
+					show: true,
+					horizontalAlign: "center",
+					offsetX: 0,
+					offsetY: -5,
+					markers: {
+						width: 9,
+						height: 9,
+						radius: 6,
+					},
+					itemMargin: {
+						horizontal: 10,
+						vertical: 0,
+					},
+				},
+				plotOptions: {
+					bar: {
+						columnWidth: "30%",
+						barHeight: "70%",
+					},
+				},
+				colors: NewlinechartcustomerColors,
+				tooltip: {
+					shared: true,
+
+
+					y: [{
+						formatter: function (y) {
+							if (typeof y !== "undefined") {
+								return y.toFixed(0);
+							}
+							return y;
+						},
+					},
+
+					],
+				},
+			};
+			var chart = new ApexCharts(
+				document.querySelector("#Newcustomer_impression_charts"),
+				options
+			);
+			chart.render();
+
+
+		}
+	}
+		//////////////////////////////////
+</script>

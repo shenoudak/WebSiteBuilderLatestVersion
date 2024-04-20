@@ -1,0 +1,387 @@
+﻿@page
+@model iTech.Pages.UserSiteNameModel
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+@await Component.InvokeAsync("NToastNotify")
+
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/Public/img/page-header/page-header-about-us.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-9 font-weight-bold">@sharedResource["Add Site"]</h1>
+                   
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li><a href="#">@sharedResource["Home"]</a></li>
+                        <li class="active">@sharedResource["User Site Name"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container py-4">
+
+        <div class="row justify-content-center" style="margin-top: -2rem;">
+            <div class="col-lg-9 order-1 order-lg-2">
+
+                <div class="row justify-content-md-center">
+                    <div class="col-md-9">
+                        <div class="featured-box featured-box-primary text-start mt-0">
+                            <div class="box-content">
+                                <h4 class="color-primary font-weight-semibold text-4 text-uppercase mb-3">@sharedResource["Add Site"] </h4>
+                                @{
+                                    if(Model.PlanObj is not null && Model.TemplatePages is not null)
+                                    {
+                                        if (Model.PlanObj.PlanId == 1 && Model.TemplatePages.Count() > 3)
+                                        {
+                                            <div class="row mb-3">
+
+                                                <div class="col-12">
+                                                    <p>@sharedResource["This Template is not available for your plan"]</p>
+                                                    <p>
+
+                                                        @sharedResource["Template Pages"] : @Model.TemplatePages.Count()
+                                                    </p>
+                                                </div>
+                                                <div class="col-12">
+                                                    <p>@sharedResource["Your plan have limited pages"]: @sharedResource["Want more pages?"]</p>
+                                                    <a asp-page="/PlanPrice" asp-route-TemplateId="@Model.TemplateId" class="btn btn-success">@sharedResource["Upgrade Plan"]</a>
+                                                </div>
+
+
+                                            </div>
+
+                                        }
+                                        else
+                                        {
+                                            <form id="frmSignIn" method="post" class="needs-validation" novalidate="novalidate" onsubmit="return validateForm()">
+                                                <div class="row">
+                                                    <div class="form-group col">
+                                                        <label for="SiteTitleId" style="translate: none; rotate: none; scale: none; transform-origin: 558px 21px 0px; transform: translate(0px); opacity: 1;" class="form-label">@sharedResource["Site Name"]</label>
+                                                        <input type="text" name="siteName" class="form-control form-control-lg" id="SiteTitleId" placeholder=@sharedResource["Enter Site Name"] required="">
+                                                        <span asp-validation-for="@Model.SiteObj.SiteTitle" id="errorSiteNameInput" class="text-danger"></span>
+                                                        <br />
+                                                        <label for="SiteDomainId" style="translate: none; rotate: none; scale: none; transform-origin: 558px 21px 0px; transform: translate(0px); opacity: 1;" class="form-label">@sharedResource["Domain"]</label>
+                                                        <input type="text" name="siteDomain" class="form-control form-control-lg" id="SiteDomainId" placeholder=@sharedResource["Enter Site Domain"]>
+                                                        <span asp-validation-for="@Model.SiteObj.UserDomain?" class="text-danger"></span>
+
+                                                        @{
+                                                            if (BrowserCulture == "en-US")
+                                                            {
+                                                                <div class="fs-13 fw-semibold text-start d-flex">
+                                                                    @if (Model.TemplateObj.TemplatePrice == 0)
+                                                                    {
+                                                                        <div class="col-8">
+                                                                            <p>Template used : @Model.TemplateObj.TitleEn</p>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <p> Price : <span>Free</span></p>
+                                                                        </div>
+
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <div class="col-8">
+                                                                            <p>Template used : @Model.TemplateObj.TitleEn</p>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <p> Price : <span>@Model.TemplateObj.TemplatePrice</span></p>
+                                                                        </div>
+
+
+                                                                    }
+
+
+                                                                </div>
+                                                            }
+                                                            else
+                                                            {
+                                                                <div class="fs-5 fw-semibold text-start d-flex">
+                                                                    @if (Model.TemplateObj.TemplatePrice == 0)
+                                                                    {
+                                                                        <div class="col-8">
+                                                                            <p>اسم النموذج : @Model.TemplateObj.TitleAr </p>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <p> السعر : <span>مجاني</span></p>
+                                                                        </div>
+
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <div class="col-8">
+                                                                            <p>اسم النموذج : @Model.TemplateObj.TitleAr </p>
+                                                                        </div>
+                                                                        <div class="col-4">
+                                                                            <p> السعر : <span>@Model.TemplateObj.TemplatePrice</span></p>
+                                                                        </div>
+
+
+                                                                    }
+
+
+                                                                </div>
+                                                            }
+                                                        }
+
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="form-group col">
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-3">
+
+                                                    @{
+                                                        //     if (Model.PlanObj.PlanId == 1 && Model.TemplatePages > 3)
+                                                        // {
+                                                        // <div class="col-4">
+                                                        //     <p>
+                                                        //         @sharedResource["Template Pages"] : @Model.TemplatePages.Count()
+                                                        //         <a onclick="EditTemplatePages(@Model.TemplatePages)" style="color:white;background-color: #0074d9;" class="btn btn-modern">@sharedResource["Choose Pages"]</a>
+                                                        //     </p>
+                                                        // </div>
+                                                        // <div class="col-8">
+                                                        //     <p>@sharedResource["Your plan have limited pages"]: @sharedResource["Want more pages?"]<a asp-page="/PlanPrice" asp-route-TemplateId="@Model.TemplateId" class="btn btn-success">@sharedResource["Upgrade Plan"]</a></p>
+
+                                                        // </div>
+
+                                                        // }
+
+                                                    }
+                                                </div>
+
+
+
+                                                <div class="row">
+                                                    @{
+                                                        if (Model.TemplateObj.TemplatePrice == 0)
+                                                        {
+                                                            <div class="form-group col-lg-6">
+                                                                <input type="submit" value=@sharedResource["Create"] class="btn btn-primary btn-modern float-end" data-loading-text="Loading...">
+                                                            </div>
+
+                                                            <div class="form-group col-lg-6" style=" padding-right: 12rem;">
+                                                                <a asp-page="/index" class="btn btn-primary btn-modern float-end">@sharedResource["Back"]</a>
+
+                                                            </div>
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <div class="form-group col-lg-6">
+                                                                <input type="submit" value=@sharedResource["Go To Payment"] class="btn btn-primary btn-modern float-end" data-loading-text="Loading...">
+                                                            </div>
+                                                            <div class="form-group col-lg-6">
+
+                                                                <a asp-page="/index" class="btn btn-success waves-effect me-4">@sharedResource["Back"]</a>
+                                                            </div>
+                                                        }
+                                                    }
+
+                                                </div>
+                                            </form>
+
+                                        }
+
+                                    }
+                                    }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            @*	<div class="col-md-6 col-lg-5">
+            <h2 class="font-weight-bold text-5 mb-0">Register</h2>
+            <form action="https://www.okler.net/" id="frmSignUp" method="post">
+            <div class="row">
+            <div class="form-group col">
+            <label class="form-label text-color-dark text-3">Username or email address <span class="text-color-danger">*</span></label>
+            <input type="text" value="" class="form-control form-control-lg text-4" required="">
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col">
+            <label class="form-label text-color-dark text-3">Password <span class="text-color-danger">*</span></label>
+            <input type="password" value="" class="form-control form-control-lg text-4" required="">
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col">
+            <p class="text-2 mb-2">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="#" class="text-decoration-none">privacy policy.</a></p>
+            </div>
+            </div>
+            <div class="row">
+            <div class="form-group col">
+            <button type="submit" class="btn btn-dark btn-modern w-100 text-uppercase rounded-0 font-weight-bold text-3 py-3" data-loading-text="Loading...">Register</button>
+            </div>
+            </div>
+            </form>
+            </div>*@
+        </div>
+
+    </div>
+
+
+
+
+    <div></div>
+</div>
+
+
+
+
+
+
+
+
+<!--OLD Page-->
+@*<div class="col-lg-8 m-auto mt-5 p-5 ">
+    <div class="card ">
+        <div class="card-body shadow bg-body-tertiary bg-marketplace text-center">
+            <div class="tab-content">
+                <div class="tab-pane active" id="home-1" role="tabpanel">
+                    <h5 class="card-title">@sharedResource["Add Site"]</h5>
+
+                    <form method="Post" class="mt-4">
+
+                        <div asp-validation-summary="ModelOnly" class="text-danger p-3"></div>
+
+                        <div class="row g-3">
+                            <div class="col-lg-6 m-auto">
+                                <label for="SiteTitleId" class="form-label">@sharedResource["Site Name"]</label>
+                                <input class="form-control bg-light border-light" asp-for="@Model.SiteObj.SiteTitle" id="SiteTitleId" placeholder=@sharedResource["Enter Site Name"] required />
+
+                                @{
+                                    if(Model.TemplateObj.TemplatePrice != 0)
+                                    {
+                                        <label for="SiteTitleId" class="form-label">@sharedResource["Affiliate Token"]</label>
+                                        <input class="form-control bg-light border-light" asp-for="@Model.TokenValue" placeholder=@sharedResource["Enter Affiliate Token"] />
+                                    }
+                                }
+
+
+                                <span asp-validation-for="@Model.SiteObj.SiteTitle"></span>
+                                @{
+                                    if (BrowserCulture == "en-US")
+                                    {
+                                        <div class="fs-13 fw-semibold text-start d-flex">
+                                            @if(Model.TemplateObj.TemplatePrice == 0)
+                                            {
+                                                <div class="col-8">
+                                                    <p>Template used : @Model.TemplateObj.TitleEn</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p> Price : <span>Free</span></p>
+                                                </div>
+
+
+                                            }
+                                            else
+                                            {
+                                                <div class="col-8">
+                                                    <p>Template used : @Model.TemplateObj.TitleEn</p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p> Price : <span>@Model.TemplateObj.TemplatePrice</span></p>
+                                                </div>
+
+
+                                            }
+
+
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="fs-5 fw-semibold text-start d-flex">
+                                            @if (Model.TemplateObj.TemplatePrice == 0)
+                                            {
+                                                <div class="col-8">
+                                                    <p>اسم النموذج : @Model.TemplateObj.TitleAr </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p> السعر : <span>مجاني</span></p>
+                                                </div>
+
+                                            }
+                                            else
+                                            {
+                                                <div class="col-8">
+                                                    <p>اسم النموذج : @Model.TemplateObj.TitleAr </p>
+                                                </div>
+                                                <div class="col-4">
+                                                    <p> السعر : <span>@Model.TemplateObj.TemplatePrice</span></p>
+                                                </div>
+
+
+                                            }
+
+
+                                        </div>
+                                    }
+                                }
+
+
+
+                            </div><!--end col-->
+
+                            <div class="col-12">
+                                @{
+                                    if (Model.TemplateObj.TemplatePrice == 0)
+                                    {
+                                        <button type="submit" class="btn btn-success  me-4">@sharedResource["Add"]</button>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit" class="btn btn-success  me-4">@sharedResource["Go To Payment"]</button>
+                                    }
+                                }
+
+                                <a asp-page="/index" class="btn btn-success waves-effect me-4">@sharedResource["Back"]</a>
+                            </div>
+                        </div><!--end row-->
+                    </form>
+                </div><!--end tab-pane-->
+
+
+            </div><!--end tab-content-->
+        </div>
+    </div><!--end card-->
+
+</div>
+*@
+
+                                        <script>
+    // function EditTemplatePages(TemplatePages) {
+
+
+
+    //     $('#showSitePages').modal('show');
+
+    // }
+
+
+        function validateForm() {
+        var SiteNameInput = document.getElementById("SiteTitleId").value;
+
+            var nameRegex = /^[A-Za-z\s]+$/;
+
+            if (!nameRegex.test(SiteNameInput)) {
+                document.getElementById("errorSiteNameInput").innerHTML = "Please enter a valid English name without special characters.";
+                return false;
+            }
+
+            return true;
+        }
+                                         </script>

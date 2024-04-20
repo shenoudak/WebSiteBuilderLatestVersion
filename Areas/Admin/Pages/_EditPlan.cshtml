@@ -1,0 +1,107 @@
+﻿@{
+}
+@model iTech.Models.Plan
+
+<div class="modal fade" id="showPlanEditModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Edit Count Info"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <!--end::Form-->
+
+                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditPlan">
+                            <div class="modal-body">
+                                <div class="row g-3">
+
+                                    <input asp-for="@Model.PlanId" id="HiddenPlanId" value="@Model.PlanId" hidden>
+
+
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.TitleAr" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Arabic Title"]</label>
+                                            <input data-val-required="@sharedResource["Enter Arabic Title"]" id="PlanTitleArId" type="text" asp-for="@Model.TitleAr" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Arabic Title"]" required />
+                                            <span asp-validation-for="@Model.TitleAr" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.TitleEn" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["English Title"]</label>
+                                            <input data-val-required="@sharedResource["Enter English Title"]" id="PlanTitleEnId" type="text" asp-for="@Model.TitleEn" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter English Title"]" required />
+                                            <span asp-validation-for="@Model.TitleEn" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.Price" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Original Price"]</label>
+                                            <input data-val-required="@sharedResource["Enter Price"]" id="PlanPriceId" type="text" asp-for="@Model.Price" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Price"]" required />
+                                            <span asp-validation-for="@Model.Price" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.PriceAfterDiscount" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Price After Discount"]</label>
+                                            <input data-val-required="@sharedResource["Enter Price"]" id="PriceAfterDiscountId" type="text" asp-for="@Model.PriceAfterDiscount" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Price"]" required />
+                                            <span asp-validation-for="@Model.PriceAfterDiscount" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.PagesCount" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Pages Count"]</label>
+                                            <input data-val-required="@sharedResource["Enter Pages Count"]" id="PlanPageCountId" type="text" asp-for="@Model.PagesCount" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Pages Count"]" required />
+                                            <span asp-validation-for="@Model.PagesCount" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end row-->
+                            </div>
+                            <div class="d-flex flex-stack pt-10 m-0">
+                                <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>@sharedResource["Close"]
+                                </button>
+                                <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                    @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

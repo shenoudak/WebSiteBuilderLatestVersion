@@ -1,0 +1,31 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+
+		jQuery(document).ready( function($){
+			function modeSwitcher( elementCheck, elementParent ) {
+				if( elementCheck.filter(':checked').length > 0 ) {
+					elementParent.addClass('dark');
+					$('.mode-switcher').toggleClass('pts-switch-active');
+				} else {
+					elementParent.removeClass('dark');
+					$('.mode-switcher').toggleClass('pts-switch-active', false);
+				}
+			}
+
+			$('.pts-switcher').each( function(){
+				var element = $(this),
+					elementCheck = element.find(':checkbox'),
+					elementParent = $('body');
+
+				modeSwitcher( elementCheck, elementParent );
+
+				elementCheck.on( 'change', function(){
+					modeSwitcher( elementCheck, elementParent );
+				});
+			});
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a121a433df511b1","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

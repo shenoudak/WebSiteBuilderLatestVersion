@@ -1,0 +1,89 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+<div role="main" class="main">
+	<section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/Public/img/page-header/page-header-about-us.jpg);">
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-12 align-self-center p-static order-2 text-center">
+					<h1 class="text-9 font-weight-bold">@sharedResource["Privacy"]</h1>
+				</div>
+				<div class="col-md-12 align-self-center order-1">
+					<ul class="breadcrumb breadcrumb-light d-block text-center">
+						<li><a href ="/Index">@sharedResource["Home"]</a></li>
+						<li class="active">@sharedResource["Privacy"]</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<div class="container my-5 pt-4 pb-5">
+		<div class="row">
+			<div class="col-lg-12 order-lg-2 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="animation-delay: 500ms;">
+				<p class="text-3-5">
+					@{
+						if (Model.BrowserCulture == "en-US")
+						{
+							@Html.Raw(@Model.ContentEn)
+
+							
+						}
+						//Arabic
+						else
+						{
+							@Html.Raw(@Model.ContentAr)
+							
+						}
+					}
+				</p>
+
+			</div>
+
+		</div>
+
+	</div>
+@*	<section class="section section-height-3  m-0 border-0" style="background-color: white;">
+		<div class="container">
+			<div class="row align-items-center justify-content-center">
+				<div class="col-lg-6 pb-sm-4 pb-lg-0 pe-lg-5 mb-sm-5 mb-lg-0">
+					<h2 class="text-color-dark font-weight-normal text-6 mb-2"><strong class="font-weight-extra-bold">
+							@{
+								if (Model.BrowserCulture == "en-US")
+								{
+									<p class="pe-5 me-5">@Model.pageTitleEn</p>
+								}
+								//Arabic
+								else
+								{
+									<p class="pe-5 me-5">@Model.pageTitleAr</p>
+								}
+							}
+					</strong></h2>
+
+					@{
+						if (Model.BrowserCulture == "en-US")
+						{
+							<p class="pe-5 me-5">@Model.ContentEn</p>
+						}
+						//Arabic
+						else
+						{
+							<p class="pe-5 me-5">@Model.ContentAr</p>
+						}
+					}
+
+				</div>
+			</div>
+		</div>
+	</section>*@
+
+
+</div>
+

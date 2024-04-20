@@ -1,0 +1,51 @@
+﻿@{
+}
+<div class="modal fade" id="showAddModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Add New Page"] </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+            
+                <div class="modal-body">
+
+                    <div class="row g-3">
+                        <!--end col-->
+                        <div class="col-lg-12">
+                            <div>
+                                
+
+                                <input type="text" id="pageNameId"
+                                       class="form-control"
+                                       placeholder="@sharedResource["Enter The Page Name"]" required />
+
+                            </div>
+                        </div>
+
+                        <!--end col-->
+                        <!--end col-->
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">
+                            @sharedResource["Close"]
+                        </button>
+                    <button type="button" onclick="AddPostPage()" class="btn btn-sm fw-bold btn-primary"
+                                id="add-btn">
+                            @sharedResource["Add"]
+                        </button>
+
+                    </div>
+                </div>
+           
+        </div>
+    </div>
+</div>

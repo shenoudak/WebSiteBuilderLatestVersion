@@ -1,0 +1,1 @@
+/External/HostelTemplate/js/jquery.js$@/External/HostelTemplate/js/plugins.min.js$@/External/HostelTemplate/js/components/datepicker.js$@/External/HostelTemplate/js/functions.js$@https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993

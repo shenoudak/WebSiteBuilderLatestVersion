@@ -1,0 +1,1 @@
+/External/eduwellTemplate/vendor/bootstrap/css/bootstrap.min.css$@/External/eduwellTemplate/assets/css/fontawesome.css$@/External/eduwellTemplate/assets/css/templatemo-eduwell-style.css$@/External/eduwellTemplate/assets/css/owl.css$@/External/eduwellTemplate/assets/css/lightbox.css

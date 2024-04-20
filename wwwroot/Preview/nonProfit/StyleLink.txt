@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+<link rel="stylesheet" href="css/dark.css" type="text/css" />
+<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<link rel="stylesheet" href="css/calendar.css" type="text/css" />
+<link rel="stylesheet" href="css/colors.php?color=C6C09C" type="text/css" /> 
+<link rel="stylesheet" href="demos/nonprofit/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="demos/nonprofit/nonprofit.css" type="text/css" />
+<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>

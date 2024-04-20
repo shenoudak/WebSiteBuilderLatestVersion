@@ -1,0 +1,97 @@
+﻿@page
+@model iTech.Pages.DefaultEditorDarkModel
+@{
+    ViewData["Title"] = "Editor";
+    Layout = "Shared/Public/_DefaultEditorLayoutDark.cshtml";
+}
+<meta charset="UTF-8">
+
+<link href="~/css/editor.css" rel="stylesheet" />
+
+<partial name="_AddPage" view-data=" ViewData" />
+<partial name="_DeletePage" view-data=" ViewData" />
+<partial name="_EditPage" view-data=" ViewData" />
+
+<div class="app-main flex-column flex-row-fluid mb-6" id="kt_app_main">
+    <div class="d-flex flex-column flex-column-fluid">
+        <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 " style="background-color:#151521">
+            <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+                <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                    <h1 class="page-heading d-flex fw-bold fs-3 flex-column justify-content-center my-0" style="color: white;">
+                        @Model.SiteName
+                    </h1>
+
+                </div>
+                <p id="planSiteId" style="display:none" >@Model.PlanId</p>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="d-flex align-items-center">
+                        <span class="fs-7 fw-bold text-gray-700 pe-4 text-nowrap d-none d-md-block">@sharedResource["Page:"]</span>
+                        <select onchange="getPage(this.value)" id="PagesDrowpDown" class="form-select form-select-sm form-select-solid w-100px w-xxl-125px" data-control="select2" data-placeholder="No Page" data-hide-search="true">
+                        </select>
+                        <span class="fs-7 fw-bold text-gray-700 pe-4 text-nowrap d-none d-md-block" id="Pages"></span>
+                        @if (Model.TemplatePages != null)
+                        {
+                            @if (Model.TemplatePages.Count() >= 0)
+                            {
+                                <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="@sharedResource["Add Page"]">
+                                    <a class="btn btn-sm btn-icon  btn-active-icon-primary">
+                                        <i onclick="AddPage()" class="ki-duotone ki-plus-square fs-2hx"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+                                    </a>
+                                </div>
+                            }
+                            else if (Model.TemplatePages.Count() > 3 && Model.PlanId == 1)
+                            {
+                                <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="@sharedResource["Add Page"]">
+                                    <a class="btn btn-sm btn-icon  btn-active-icon-primary">
+                                        <i onclick="AddPage()" class="ki-duotone ki-plus-square fs-2hx"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+                                    </a>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div>
+                                <p>@sharedResource["There no Site Pages"]</p>
+                            </div>   
+                        }
+
+                        
+
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="bullet bg-secondary h-35px w-1px mx-5"></div>
+                        <span class="fs-7 text-gray-700 fw-bold">@sharedResource["Zoom:"]</span>
+                        <div class="d-flex align-items-center ps-4">
+                            <div id="kt_app_toolbar_slider" class="noUi-target noUi-target-primary w-75px w-xxl-150px noUi-sm"></div>
+
+                            <span id="kt_app_toolbar_slider_value" class="d-flex flex-center bg-light-primary rounded-circle w-35px h-35px ms-4 fs-7 fw-bold text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Set Zoom level">
+                            </span>
+                        </div>
+                        <div class="bullet bg-secondary h-35px w-1px mx-5"></div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="d-flex gap-2">
+                            <a onclick="SavePage()" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+                                @sharedResource["Save"]
+                            </a>
+                            <a onclick="RedirectToSitePublish()" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_createNew_app">
+                                @sharedResource["Publish"]
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="kt_app_content" class="app-content mt-16 mb-6 flex-column-fluid ">
+            <div id="gjs" style="overflow:hidden;direction:ltr !important"></div>
+        </div>
+    </div>
+</div>
+<input value="@Model.SiteName" id="SiteNId" hidden />
+<input value="@Model.url" id="UrlId" hidden />
+
+
+
+
+<script src="~/js/DefaultEditorDark.js"></script>

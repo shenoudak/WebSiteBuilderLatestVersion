@@ -1,0 +1,74 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@{
+	var socialLinks = _context.SocialMediaLinks.FirstOrDefault();
+	var facebook = _context.SocialMediaLinks.Where(e=>e.SocialMediaLinkId==1).Select(e=>e.Facebook).FirstOrDefault();
+	int hostEndIndex = facebook.IndexOf('/', "https://".Length);
+
+	// Extract the desired part from the URL
+	string path = facebook.Substring(hostEndIndex + 1);
+}
+@{
+	var contacts = _context.SocialMediaLinks.FirstOrDefault();
+	if(contacts != null)
+	{
+		<footer id="footer" style="margin-top: auto;">
+			<div class="container">
+				<div class="row py-5">
+					<div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-4 mb-lg-0">
+						<a href="/index" class="logo pe-0 pe-lg-3 ps-3 ps-md-0">
+							<img alt="Itech" src="/Public/img/Logo.png" height="32">
+						</a>
+					</div>
+					<div class="col-md-8 d-flex justify-content-center justify-content-md-end mb-4 mb-lg-0">
+						<a asp-page="/Privacy" style="margin-left: 1rem;">@sharedResource["Privacy"]</a>
+						<a asp-page="/TermsandConditions" style="margin-left: 3rem;">@sharedResource["Terms and Conditions"]</a>
+						<div class="mb-3 mb-md-0">
+								<div class="ms-3 text-center text-md-end">
+									<h5 class="text-3 mb-0 text-color-light">@contacts.Address</h5>
+									<p class="text-4 mb-0">
+										<i class="fab fa-whatsapp text-color-primary top-1 p-relative"></i>
+										<span class="ps-1"><a href="tel:@contacts?.ContactPhone1" class="text-decoration-none">@contacts?.ContactPhone1</a></span>
+									</p>
+								</div>
+							</div>
+						<div style="margin-left: 3rem;">
+								<div class="ms-3 text-center text-md-end">
+									<h5 class="text-3 mb-0 text-color-light">@sharedResource["Contact Us"]</h5>
+									<p class="text-4 mb-0">
+										<i class="fab fa-whatsapp text-color-primary top-1 p-relative"></i>
+										<span class="ps-1"><a href="tel:@contacts?.ContactPhone2" class="text-decoration-none">@contacts?.ContactPhone2</a></span>
+									</p>
+								</div>
+							</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="footer-copyright footer-copyright-style-2">
+				<div class="container py-2">
+					<div class="row py-4">
+						<div class="col-md-4 d-flex align-items-center justify-content-center justify-content-md-start mb-2 mb-lg-0">
+							<p><strong>TechTime</strong> - @sharedResource["© Copyright 2023. All Rights Reserved."]</p>
+						</div>
+						<div class="col-md-8 d-flex align-items-center justify-content-center justify-content-md-end mb-4 mb-lg-0">
+							<p>
+								<i class="far fa-envelope text-color-primary top-1 p-relative"></i><a href="mailto:@contacts.ContactMail" class="opacity-7 ps-1" style="padding: 5px;">@contacts.ContactMail</a>
+							</p>
+							<ul class="footer-social-icons social-icons social-icons-clean social-icons-icon-light ms-3">
+
+								<li class="social-icons-facebook"><a href="@contacts.Facebook" target="_blank" title="Facebook"><i class="fab fa-facebook-f text-2"></i></a></li>
+								<li class="social-icons-twitter"><a href="@contacts.Twitter" target="_blank" title="Twitter"><i class="fab fa-twitter text-2"></i></a></li>
+								<li class="social-icons-linkedin"><a href="@contacts.LinkedIn" target="_blank" title="Linkedin"><i class="fab fa-linkedin-in text-2"></i></a></li>
+								<li class="social-icons-instagram"><a href="@contacts.Instgram" target="_blank" title="Instagram"><i class="fab fa-instagram text-2"></i></a></li>
+								<li class="social-icons-youtube"><a href="@contacts.Youtube" target="_blank" title="Youtube"><i class="fab fa-youtube text-2"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	}
+
+}

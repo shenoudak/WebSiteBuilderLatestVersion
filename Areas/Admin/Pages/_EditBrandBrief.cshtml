@@ -1,0 +1,88 @@
+﻿@{
+}
+@model iTech.Models.BrandsBrief
+
+<div class="modal fade" id="showBrandBriefEditModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Edit Brand Brief Details"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <!--end::Form-->
+
+                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework"  asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditBrandsBrief">
+                            <div class="modal-body">
+                                <div class="row g-3">
+
+                                    <input asp-for="@Model.BrandsBriefId" id="HiddenBrandsBriefId" value="@Model.BrandsBriefId" hidden>
+
+
+
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.BriefAR" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2>@sharedResource["Arabic Brief"]</label>
+                                            <textarea data-val-required="@sharedResource["Enter Arabic Brief"]" id="BrandsBriefTitleArId" type="text" asp-for="@Model.BriefAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Arabic Brief"]" required></textarea>
+                                            <span asp-validation-for="@Model.BriefAR" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.BriefEN" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2>@sharedResource["English Brief"]</label>
+                                            <textarea data-val-required="@sharedResource["Enter English Brief"]" id="BrandsBriefTitleEnId" type="text" asp-for="@Model.BriefEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter English Brief"]" required></textarea>
+                                            <span asp-validation-for="@Model.BriefEN" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!--end row-->
+                            </div>
+                            <div class="d-flex flex-stack pt-10 m-0">
+                                <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>@sharedResource["Close"]
+                                </button>
+                                <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                    @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

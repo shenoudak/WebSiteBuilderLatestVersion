@@ -1,0 +1,147 @@
+﻿@page
+@model iTech.Pages.ChooseTemplateModel
+@{
+    ViewData["Title"] = "Templates";
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+
+}
+
+
+<section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-12 align-self-center p-static order-2 text-center">
+                <h1 class="text-10"><strong>@sharedResource["Templates"]</strong></h1>
+            </div>
+            <div class="col-md-12 align-self-center order-1">
+                <ul class="breadcrumb breadcrumb-light d-block text-center">
+                    <li><a href="/Index">@sharedResource["Home"]</a></li>
+                    <li class="active">@sharedResource["Templates"]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container py-2">
+
+    <div class="row mt-3 pt-2">
+        <div class="col-lg-3 position-relative">
+            <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
+                <h5 class="font-weight-semi-bold">Filter By</h5>
+                <ul class="nav nav-list flex-column sort-source mb-5" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
+                    <li class="nav-item" data-option-value="*"><a class="nav-link active" href="#">Show All</a></li>
+                    @{
+                        if (Model.siteCategories != null)
+                        {
+                            foreach (var item in Model.siteCategories)
+                            {
+                                if (Model.BrowserCulture == "en-US")
+                                {
+                                    <li class="nav-item" data-option-value=".@item.SiteCategoryId"><a class="nav-link" href="#">@item.TitleEn</a></li>
+
+                                }
+                                //Arabic
+                                else
+                                {
+                                    <li class="nav-item" data-option-value=".@item.SiteCategoryId"><a class="nav-link" href="#">@item.TitleAr</a></li>
+
+                                }
+                            }
+                        }
+                    }
+                </ul>
+            </aside>
+        </div>
+        <div class="col-lg-9">
+
+            <div class="sort-destination-loader sort-destination-loader-showing">
+                <div class="row portfolio-list sort-destination" data-sort-id="portfolio">
+                    @{
+                        if (Model.Templates != null)
+                        {
+                            foreach (var item in Model.Templates)
+                            {
+                                <div class="col-md-6 col-lg-4 isotope-item @item.SiteCategoryId">
+                                    <div class="portfolio-item">
+                                        <a href="portfolio-single-wide-slider.html">
+                                            <span class="thumb-info thumb-info-lighten border-radius-0">
+                                                <span class="thumb-info-wrapper border-radius-0">
+                                                    <img src="/@item.TemplatePic" class="img-fluid border-radius-0" alt="">
+                                                    <span class="thumb-info-title">
+                                                        <span class="thumb-info-inner">
+                                                            @if (Model.BrowserCulture == "en-US")
+                                                            {
+                                                                <span class="thumb-info-inner">@item.TitleEn</span>
+
+
+                                                            }
+                                                            //Arabic
+                                                            else
+                                                            {
+                                                                <span class="thumb-info-inner">@item.TitleAr</span>
+
+
+                                                            }
+                                                        </span>
+                                                        <span class="thumb-info-type">
+                                                            @{
+                                                                if (@item.TemplatePrice == 0)
+                                                                {
+                                                                    <span class="thumb-info-inner">@sharedResource["Free"]</span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    @if (Model.BrowserCulture == "en-US")
+                                                                    {
+                                                                        <span class="thumb-info-inner">@item.TemplatePrice KD</span>
+
+
+                                                                    }
+                                                                    //Arabic
+                                                                    else
+                                                                    {
+                                                                        <span class="thumb-info-inner">@item.TemplatePrice دينار</span>
+
+
+                                                                    }
+
+                                                                }
+                                                            }
+                                                        </span>
+                                                    </span>
+                                                    <span class="thumb-info-action">
+                                                        <span class="thumb-info-action-icon bg-dark opacity-8"><i class="fas fa-plus"></i></span>
+                                                    </span>
+                                                </span>
+                                            </span>
+                                        </a>
+                                        <h5 class="text-color-dark text-capitalize mt-3">
+                                            @if (Model.BrowserCulture == "en-US")
+                                            {
+                                                <span class="thumb-info-inner">@item.TitleEn</span>
+
+
+                                            }
+                                            //Arabic
+                                            else
+                                            {
+                                                <span class="thumb-info-inner">@item.TitleAr</span>
+
+
+                                            }
+                                        </h5>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

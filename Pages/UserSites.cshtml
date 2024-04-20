@@ -1,0 +1,309 @@
+﻿@page
+@model iTech.Pages.UserSitesModel
+@using Microsoft.EntityFrameworkCore
+@Html.AntiForgeryToken()
+@inject CRMDBContext _context;
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@inject iTech.Data.CRMDBContext _context
+@{
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+    ViewBag.Title = @sharedResource["User Sites"];
+    ViewBag.pTitle = @sharedResource["User Sites"];
+    ViewBag.pageTitle = @sharedResource["User Sites"];
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+
+}
+
+<div role="main" class="main">
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/Public/img/page-header/page-header-about-us.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-9 font-weight-bold">@sharedResource["My Sites"]</h1>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li><a href="#">@sharedResource["Home"]</a></li>
+                        <li class="active">@sharedResource["My Sites"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</section>
+
+	<div class="container py-4">
+
+		<div class="row">
+			<div class="col">
+				<div class="blog-posts">
+
+					<div class="row">
+						@{
+							
+							if(Model.Sites != null || Model.Sites?.Count() > 0){
+								foreach(var item in Model.Sites){
+									
+                                    <div class="col-md-4 col-lg-3">
+                                    <article class="post post-medium border-0 pb-0 mb-5">
+                                        <div class="post-image">
+                                                        <a href="@item.SiteTitle">
+                                                <img src="@item.Templates?.TemplatePic" style="height:16rem" class="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                            </a>
+                                        </div>
+
+                                        <div class="post-content">
+                                                        
+                                                        <h2 class="font-weight-semibold text-5 line-height-6 mt-3 mb-2"><a href="@item.SiteTitle">@item.SiteTitle</a></h2>
+
+                                                        @if (item.UserDomain is not null)
+                                                {
+                                                            @if (@Model.BrowserCulture == "en-US")
+                                                    {
+                                                        <p>
+                                                            Domain:@item.UserDomain                                                        
+                                                            <a onclick="EditDomain('@item.UserDomain', @item.SiteId)" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Edit"]</a>
+                                                        </p>
+
+                                                    }
+                                                    else
+                                                    {
+                                                        <p>
+                                                            دومين:@item.UserDomain                                                         
+                                                            <a onclick="EditDomain('@item.UserDomain', @item.SiteId)" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Edit"]</a>
+                                                        </p>
+
+                                                    }
+
+                                                }
+                                                else
+                                                {
+                                                     <p>
+                                                            <a onclick="EditDomain('@item.UserDomain', @item.SiteId)" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Add Domain"]</a>
+                                                        </p>
+
+                                                    
+                                                }
+                                                
+                                                <p>
+                                                    @{
+                                                        var subscriptions = _context.WebEditorSubscriptions.Where(a => a.SiteId == item.SiteId).FirstOrDefault();
+                                                        var subscriptionReqs = _context.SiteModificationRequests.Where(a => a.SiteId == item.SiteId).ToList();
+                                                        
+                                                    }
+                                                    @if(subscriptions == null)
+                                                    {
+                                                        <a asp-page="/EditorPlanPrice" asp-route-SiteId="@item.SiteId" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Add Editor"]</a>
+                                                    }
+                                                    else
+                                                    {
+                                                    <p>@sharedResource["A Request for web editor has made"]</p>
+                                                    }
+                                                    @* @if (subscriptions != null)
+                                                    {
+                                                        var userPlan = _context.WebEditorPlans.Where(a => a.WebEditorPlanId == subscriptions.PlanId).FirstOrDefault();
+                                                        @if (subscriptionReqs.Count <= userPlan.RequestsCount)
+                                                        {
+                                                            <button disabled  style="color:black;background-color: gray;" class="btn btn-modern text-uppercase">@sharedResource["Add Request"]</button>
+                                                        }
+                                                        else
+                                                        {
+                                                            <a onclick="EditEditor('@Model.UserId', @item.SiteId)" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Add Request"]</a>
+
+                                                        }
+
+
+                                                    }
+                                                    
+                                                    else
+                                                    {
+                                                        <a asp-page="/EditorPlanPrice" asp-route-SiteId="@item.SiteId" style="color:white;background-color: #0074d9;" class="btn btn-modern text-uppercase">@sharedResource["Add Editor"]</a>
+
+                                                    }
+                                                    *@
+                                                </p>
+                                                <div class="post-meta">
+                                                            @if (item.IsActive)
+													{
+
+                                                                <span><i class="far fa-user"></i>@sharedResource["Active"]</span>
+
+													}
+													else
+													{
+                                                                <span><i class="far fa-user"></i>@sharedResource["Not Active"]</span>
+													}
+                                                            @{
+                                                        var plan = _context.SiteSubscriptions.Where(a => a.SiteId == item.SiteId).Include(a => a.Plan).FirstOrDefault();
+
+                                                                        @if (plan is not null)
+                                                        {
+                                                                            @if (@Model.BrowserCulture == "en-US")
+                                                            {
+                                                                                <span><i class="far fa-comments"></i> @sharedResource["Website Plan"]: @plan.Plan.TitleEn</span>
+
+                                                            }
+                                                            else
+                                                            {
+                                                                <span><i class="far fa-comments"></i> @sharedResource["Website Plan"]:  @plan.Plan.TitleAr</span>
+
+
+
+                                                            }
+
+                                                        }
+                                                            }
+                                                    @{
+                                                        var SubEditor = _context.WebEditorSubscriptions.Where(a => a.SiteId == item.SiteId).FirstOrDefault();
+                                                        @if (SubEditor is not null)
+                                                        {
+                                                            var planEditor = _context.WebEditorPlans.Where(a => a.WebEditorPlanId == SubEditor.PlanId).FirstOrDefault();
+
+                                                            @if (planEditor is not null)
+                                                            {
+                                                                @if (@Model.BrowserCulture == "en-US")
+                                                                {
+                                                                    <span><i class="far fa-comments"></i> @sharedResource["Editor Plan"]: @planEditor.TitleEn</span>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span><i class="far fa-comments"></i> @sharedResource["Editor Plan"]:  @planEditor.TitleAr</span>
+
+
+
+                                                                }
+                                                            }
+                                                           
+
+                                                        }
+                                                    }
+
+
+                                                    <p>@sharedResource["Created at:"] @item.CreatedDate.ToShortDateString()</p>
+                                                            <p>@sharedResource["End Date:"] @item.CreatedDate.AddMonths(12).ToShortDateString()</p>
+                                                            @if (@Model.BrowserCulture == "en-US" && item.Templates?.SiteCategories?.TitleEn != null)
+                                                    {
+                                                                <span>
+                                                                    <i class="far fa-folder"></i>
+                                                                    @item.Templates.SiteCategories.TitleEn
+                                                                </span>
+                                                    }
+                                                    else if (@Model.BrowserCulture != "en-US" && item.Templates?.SiteCategories?.TitleAr != null)
+                                                    {
+                                                                <span>
+                                                                    <i class="far fa-folder"></i>
+                                                                    @item.Templates.SiteCategories.TitleAr
+                                                                </span>
+                                                    }
+                                                    else
+                                                    {
+                                                                <span>
+                                                                    <i class="far fa-folder"></i>
+                                                                    @sharedResource["Other Category"]
+                                                                </span>
+                                                    }
+                                                           
+                                                            <div>
+                                                                
+                                                                <a href="@item.SiteTitle" style="color:white;background-color: #0074d9;" class="btn  btn-modern text-uppercase">@sharedResource["Preview"]</a>
+
+                                                                <a href="/DefaultEditorDark?id=@item.SiteId" target="_blank" class="btn btn-success btn-modern text-1 text-uppercase">@sharedResource["Edit"]</a>
+                                                                <a onclick="deleteSite(@item.SiteId)" class="btn btn-danger btn-modern text-uppercase">@sharedResource["Delete"]</a>
+
+                                                            </div>
+                                                           
+                                                        </div>
+
+                                        </div>
+                                    </article>
+                                    </div>
+                                }
+                            }
+
+                            else
+                            {
+                                <p>@sharedResource["You have not any customized sites yet"]</p>
+                            }
+
+						}
+					</div>
+
+                    <div class="row">
+                        <div class="col">
+                            <ul class="pagination float-end">
+                                @if (@Model.BrowserCulture == "en-US")
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?pageNumber=@(Model.CurrentPage - 1)"><i class="fas fa-angle-left"></i></a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?pageNumber=@(Model.CurrentPage - 1)"><i class="fas fa-angle-right"></i></a>
+                                    </li>
+                                    
+                                }
+                               
+
+                                @for (var i = 1; i <= Model.TotalPageCount; i++)
+                                {
+                                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                                        <a class="page-link" href="?pageNumber=@i">@i</a>
+                                    </li>
+                                }
+                                 @if (@Model.BrowserCulture == "en-US")
+                                 {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?pageNumber=@(Model.CurrentPage + 1)"><i class="fas fa-angle-right"></i></a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?pageNumber=@(Model.CurrentPage + 1)"><i class="fas fa-angle-left"></i></a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+<partial name="_DeleteSite" view-data=" ViewData" />
+<partial name="_EditDomain" view-data=" ViewData" />
+<partial name="_EditorRequest" view-data=" ViewData" />
+
+<script>
+   
+    function deleteSite(SiteId) {
+        document.getElementById('DeleteSiteId').value = SiteId;
+        $('#deleteRecordModal').modal('show');
+        
+    }
+    function EditDomain(UserDomain, SiteId) {
+        document.getElementById("DomainId").value = UserDomain;
+        document.getElementById("EditPageId").value = SiteId;
+
+
+                $('#showDomain').modal('show');
+           
+    }
+    function EditEditor(UserId,SiteId) {
+        document.getElementById("EditorId").value = SiteId;
+        document.getElementById("UserID").value = UserId;
+
+        $('#showEditor').modal('show');
+
+    }
+</script>

@@ -1,0 +1,54 @@
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="demos/writer/js/hover3d.js"></script>
+<script src="js/functions.js"></script>
+<script>
+
+		jQuery(document).ready( function(){
+
+			if( !jQuery('body').hasClass('device-touch') ) {
+
+				var lFollowX = 0,
+					lFollowY = 0,
+					x = 0,
+					y = 0,
+					friction = 1 / 30;
+
+				function moveBackground() {
+					x += (lFollowX - x) * friction;
+					y += (lFollowY - y) * friction;
+
+					translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.1)';
+
+					jQuery('.move-bg').css({
+						'-webit-transform': translate,
+						'-moz-transform': translate,
+						'transform': translate
+					});
+
+					window.requestAnimationFrame(moveBackground);
+				}
+
+				jQuery(window).on('mousemove click', function(e) {
+
+					var lMouseX = Math.max(-100, Math.min(100, jQuery(window).width() / 2 - e.clientX));
+					var lMouseY = Math.max(-100, Math.min(100, jQuery(window).height() / 2 - e.clientY));
+					lFollowX = (10 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+					lFollowY = (10 * lMouseY) / 100;
+
+				});
+
+				moveBackground();
+
+				jQuery(".book-wrap").hover3d({
+					selector: ".book-card",
+					shine: false,
+				});
+
+			}
+
+		});
+
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a291f5568270d8e","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

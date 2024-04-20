@@ -1,0 +1,113 @@
+{
+  "id": "chg_TS06A2220242023i4OR1203595",
+  "object": "charge",
+  "live_mode": false,
+  "customer_initiated": true,
+  "api_version": "V2",
+  "method": "GET",
+  "status": "CAPTURED",
+  "amount": 200.000,
+  "currency": "KWD",
+  "threeDSecure": true,
+  "card_threeDSecure": false,
+  "save_card": false,
+  "product": "GOSELL",
+  "statement_descriptor": "Sample",
+  "description": "iTech Site Web Editor",
+  "metadata": {
+    "udf1": "ac2cf560-5995-49fd-bffd-78accbf31934",
+    "udf2": "codewareTest",
+    "udf3": null,
+    "udf4": "3",
+    "udf5": null
+  },
+  "order": {
+    "id": "ord_ibAc27241723ozMn12Ol2P111"
+  },
+  "transaction": {
+    "authorization_id": "B02405",
+    "timezone": "UTC+03:00",
+    "created": "1710275017674",
+    "expiry": {
+      "period": 30,
+      "type": "MINUTE"
+    },
+    "asynchronous": false,
+    "amount": 200.000,
+    "currency": "KWD"
+  },
+  "reference": {
+    "track": "tck_TS01A2220242023Tb451203642",
+    "payment": "2212242023036425454",
+    "gateway": "407201001197795",
+    "acquirer": "407201001763",
+    "transaction": "txn_0001",
+    "order": "2"
+  },
+  "response": {
+    "code": "000",
+    "message": "Captured"
+  },
+  "gateway": {
+    "response": {
+      "code": "00",
+      "message": "CAPTURED"
+    }
+  },
+  "receipt": {
+    "id": "202312242023033931",
+    "email": false,
+    "sms": true
+  },
+  "customer": {
+    "id": "cus_TS05A3820242023Zx7p1203987",
+    "first_name": "code@codeware.com",
+    "last_name": "test",
+    "email": "code@codeware.com",
+    "phone": {
+      "country_code": "965",
+      "number": "50143413"
+    }
+  },
+  "merchant": {
+    "country": "KW",
+    "currency": "KWD",
+    "id": "25045774"
+  },
+  "source": {
+    "object": "source",
+    "type": "CARD_NOT_PRESENT",
+    "payment_type": "DEBIT",
+    "payment_method": "KNET",
+    "channel": "INTERNET",
+    "id": "src_kw.knet",
+    "on_file": false
+  },
+  "redirect": {
+    "status": "SUCCESS",
+    "url": "https://localhost:44352/CallBack"
+  },
+  "activities": [
+    {
+      "id": "activity_TS04A3920242023Pm451203018",
+      "object": "activity",
+      "created": 1710275017674,
+      "status": "INITIATED",
+      "currency": "KWD",
+      "amount": 200.000,
+      "remarks": "charge - created",
+      "txn_id": "chg_TS06A2220242023i4OR1203595"
+    },
+    {
+      "id": "activity_TS01A5720242023c5J11203674",
+      "object": "activity",
+      "created": 1710275037674,
+      "status": "CAPTURED",
+      "currency": "KWD",
+      "amount": 200.000,
+      "remarks": "charge - captured",
+      "txn_id": "chg_TS06A2220242023i4OR1203595"
+    }
+  ],
+  "auto_reversed": false
+}

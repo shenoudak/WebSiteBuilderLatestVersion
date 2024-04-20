@@ -1,0 +1,10 @@
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/font-icons.css">
+<link rel="stylesheet" href="one-page/css/et-line.css">
+<link rel="stylesheet" href="demos/spa/css/fonts/spa-icons.css">
+<link rel="stylesheet" href="include/rs-plugin/css/settings.css" media="screen">
+<link rel="stylesheet" href="include/rs-plugin/css/layers.css">
+<link rel="stylesheet" href="include/rs-plugin/css/navigation.css">
+<link rel="stylesheet" href="demos/beauty-kit/beauty-kit.css">
+<link rel="stylesheet" href="css/custom.css">

@@ -1,0 +1,20 @@
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+		jQuery(window).on( 'pluginCarouselReady', function(){
+			$('#oc-features').owlCarousel({
+				items: 1,
+				margin: 60,
+			    nav: true,
+			    navText: ['<i class="icon-line-arrow-left"></i>','<i class="icon-line-arrow-right"></i>'],
+			    dots: false,
+			    stagePadding: 30,
+			    responsive:{
+					768: { items: 2 },
+					1200: { stagePadding: 200 }
+				},
+			});
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a18f85c58390fe2","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

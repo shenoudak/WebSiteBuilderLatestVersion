@@ -1,0 +1,1 @@
+/External/prixima-1.0.0/css/bootstrap.min.css$@/External/prixima-1.0.0/css/owl.carousel.min.css$@/External/prixima-1.0.0/css/owl.theme.default.min.css$@https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css$@/External/prixima-1.0.0/css/style.css

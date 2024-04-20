@@ -1,0 +1,7 @@
+           "https://localhost:7203/External/photographyTemplate/js/jquery.js",
+                                    "https://localhost:7203/External/photographyTemplate/js/plugins.min.js",
+                                    "https://localhost:7203/External/photographyTemplate/demos/photography/js/photography-addons.js",
+                                      "https://localhost:7203/External/photographyTemplate/js/transition.js",
+                                    "https://localhost:7203/External/photographyTemplate/js/functions.js",
+
+                                    

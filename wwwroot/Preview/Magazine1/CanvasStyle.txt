@@ -1,0 +1,1 @@
+https://fonts.googleapis.com/css?family=Lato:300,400,400i,700$@/External/magazine1Template/css/bootstrap.css$@/External/magazine1Template/style.css $@/External/magazine1Template/css/dark.css $@/External/magazine1Template/css/font-icons.css$@/External/magazine1Template/css/animate.css$@/External/magazine1Template/css/magnific-popup.css$@/External/magazine1Template/css/custom.css 

@@ -1,0 +1,121 @@
+﻿@page
+@model iTech.Pages.UserProfileModel
+@{
+	Layout = "Shared/Public/_PublicLayout.cshtml";
+
+}
+<div role="main" class="main">
+
+	<section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(/Public/img/page-header/page-header-about-us.jpg);margin-bottom:0px;">
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-md-12 align-self-center p-static order-2 text-center">
+					<h1 class="text-9 font-weight-bold">@sharedResource["User Profile"]</h1>
+				</div>
+				<div class="col-md-12 align-self-center order-1">
+					<ul class="breadcrumb breadcrumb-light d-block text-center">
+						<li><a href="/Index">@sharedResource["Home"]</a></li>
+						<li class="active">@sharedResource["User Profile"]</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<form role="form" method="post" class="needs-validation" enctype="multipart/form-data">
+	<div class="container pt-3 pb-2">
+		
+
+		<div class="row pt-2">
+			<div class="col-lg-3 mt-4 mt-lg-0">
+
+				<div class="d-flex justify-content-center mb-4">
+					<div class="profile-image-outer-container">
+
+							
+							<div class="profile-image-inner-container bg-color-primary">
+								@{
+									//if (Model.user != null)
+									//{
+										if (Model.user.UserPic != null)
+										{
+											<img src="~/@Model.user.UserPic" class="profile-wid-img" alt="">
+										}
+										else
+										{
+											<img src="~/Public/img/avatars/avatar.jpg" class="profile-wid-img" alt="">
+										}
+										
+									//}
+									
+								}
+
+								<span class="profile-image-button bg-color-dark">
+									<i class="fas fa-camera text-light"></i>
+								</span>
+							</div>
+						<input type="file" id="file" name="file" class="form-control profile-image-input">
+					</div>
+				</div>
+
+				<aside class="sidebar mt-2" id="sidebar">
+					<ul class="nav nav-list flex-column mb-5">
+						<li class="nav-item"><a class="nav-link text-3 text-dark active" href="#MYProfile">@sharedResource["My Profile"]</a></li>
+						
+					</ul>
+				</aside>
+
+			</div>
+			<div  class="col-lg-9">
+
+				
+					
+					
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">@sharedResource["Email"]</label>
+						<div class="col-lg-9">
+							<input class="form-control text-3 h-auto py-2" type="email" asp-for="@Model.ChangePasswordVM.CurrentEmail">
+						</div>
+					</div>
+					
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">@sharedResource["Password"]</label>
+						<div class="col-lg-9">
+							<input class="form-control text-3 h-auto py-2" type="password" asp-for="@Model.ChangePasswordVM.CurrentPassword" >
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">@sharedResource["New Password"]</label>
+						<div class="col-lg-9">
+							<input class="form-control text-3 h-auto py-2" type="password" asp-for="@Model.ChangePasswordVM.NewPassword">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-lg-3 col-form-label form-control-label line-height-9 pt-2 text-2 required">@sharedResource["Confirm password"]</label>
+						<div class="col-lg-9">
+							<input class="form-control text-3 h-auto py-2" type="password" asp-for="@Model.ChangePasswordVM.ConfirmPassword">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="form-group col-lg-9">
+						</div>
+						<div class="form-group col-lg-3">
+							<input type="submit" value=@sharedResource["Save"] class="btn btn-primary btn-modern float-end" data-loading-text="Loading...">
+						</div>
+					</div>
+				
+
+			</div>
+
+			
+
+
+		</div>
+
+	</div>
+
+</form>
+
+</div>

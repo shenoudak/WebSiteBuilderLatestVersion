@@ -1,0 +1,15 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="techsite" />
+<link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/dark.css" type="text/css" />
+<link rel="stylesheet" href="demos/barber/barber.css" type="text/css" />
+<link rel="stylesheet" href="demos/barber/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+<link rel="stylesheet" href="one-page/css/et-line.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/colors.php?color=BF9456" type="text/css" />

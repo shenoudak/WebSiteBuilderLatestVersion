@@ -1,0 +1,15 @@
+<link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400i|Playfair+Display:400,400i,700|Lato:300,400,700|Nothing+You+Could+Do&display=swap" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/dark.css" type="text/css" />
+<link rel="stylesheet" href="demos/cafe/cafe.css" type="text/css" />
+<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+<link rel="stylesheet" href="demos/cafe/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="css/colors.php?color=c0bb62" type="text/css" />
+<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/settings.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/layers.css">
+<link rel="stylesheet" type="text/css" href="include/rs-plugin/css/navigation.css">

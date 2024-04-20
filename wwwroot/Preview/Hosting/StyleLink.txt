@@ -1,0 +1,13 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Istok+Web:400,700&display=swap" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/dark.css" type="text/css" />
+<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+<link rel="stylesheet" href="css/animate.css" type="text/css" />
+<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+<link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />
+<link rel="stylesheet" href="css/custom.css" type="text/css" />
+<meta name='viewport' content='initial-scale=1, viewport-fit=cover'>
+<link rel="stylesheet" href="css/colors.php?color=44aaac" type="text/css" /> 
+<link rel="stylesheet" href="demos/hosting/css/fonts.css" type="text/css" />
+<link rel="stylesheet" href="demos/hosting/hosting.css" type="text/css" />

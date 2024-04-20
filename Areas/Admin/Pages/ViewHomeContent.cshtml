@@ -1,0 +1,213 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.ViewHomeContentModel
+@Html.AntiForgeryToken()
+@{
+    ViewBag.Title = @sharedResource["View Public Home Content"];
+    ViewBag.pTitle = @sharedResource["View Public Home Content"];
+	
+}
+
+<div class="d-flex flex-column flex-column-fluid">
+
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+
+
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                    @sharedResource["View Public Home Content"]
+                </h1>
+                <!--end::Title-->
+
+            </div>
+            <!--end::Page title-->
+            <!--begin::Action group-->
+            <div class="d-flex align-items-center gap-2">
+               
+            </div>
+            <!--end::Action group-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-fluid ">
+           
+            <!--end::Layout Builder Notice-->
+            <!--begin::Card-->
+            <div class="card">
+                <!--begin::Header-->
+                <div class="card-header card-header-stretch overflow-auto" style="height: 5.5rem;">
+                    <h1 style="padding-top: 2rem;">@sharedResource["View Public Home Content"]</h1>
+                </div>
+                <!--end::Header-->
+                <!--begin::Form-->
+                <!--begin::Body-->
+                <div class="card-body">
+                    <div class="card card-flush py-4">
+                        <!--begin::Card header-->
+                        <div class="card-header">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>@sharedResource["Image"]</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body text-center pt-0">
+                            <!--begin::Image input-->
+                            <!--begin::Image input-->
+                            <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3" data-kt-image-input="true">
+                                <!--begin::Preview existing avatar-->
+                                <div class="image-input-wrapper w-150px h-150px" style="background-image: url(/@Model.publicHomeContent.Pic)"></div>
+                                <!--end::Preview existing avatar-->
+                                <!--begin::Label-->
+                                
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Image input-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    
+                    <br /><div class="d-flex flex-column flex-xl-row gap-7 gap-lg-10">
+                        <!--begin::Payment address-->
+                        <div class="card card-flush py-4 flex-row-fluid position-relative">
+
+                            <!--begin::Card header-->
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h2>@sharedResource["About Section Title En"]</h2>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                @Model.publicHomeContent.AboutSectionTitleEn
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                    </div>
+                    <br /><div class="d-flex flex-column flex-xl-row gap-7 gap-lg-10">
+                        <!--begin::Payment address-->
+                        <div class="card card-flush py-4 flex-row-fluid position-relative">
+
+                            <!--begin::Card header-->
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h2>@sharedResource["About Section Title Ar"]</h2>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                @Model.publicHomeContent.AboutSectionTitleAr
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Payment address-->
+                        <!--begin::Shipping address-->
+                        <div class="card card-flush py-4 flex-row-fluid position-relative">
+                            <!--begin::Background-->
+                            <div class="position-absolute top-0 end-0 bottom-0 opacity-10 d-flex align-items-center me-5">
+                                <i class="ki-solid ki-delivery" style="font-size: 13em">
+                                </i>
+                            </div>
+                            <!--end::Background-->
+                            <!--begin::Card header-->
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h2>@sharedResource["Description Ar"]</h2>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                @Model.publicHomeContent.AboutSectionDescAr
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Shipping address-->
+                    </div>
+                    <br /><div class="d-flex flex-column flex-xl-row gap-7 gap-lg-10">
+                        <!--begin::Payment address-->
+                        <div class="card card-flush py-4 flex-row-fluid position-relative">
+
+                            <!--begin::Card header-->
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h2>@sharedResource["Description En"]</h2>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                @Model.publicHomeContent.AboutSectionDescEn
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Payment address-->
+                        <!--begin::Shipping address-->
+                        <!--end::Shipping address-->
+                    </div>
+                    <br /><div class="d-flex flex-column flex-xl-row gap-7 gap-lg-10">
+                        <!--begin::Payment address-->
+                        <!--end::Payment address-->
+                        <!--begin::Shipping address-->
+                        <div class="card card-flush py-4 flex-row-fluid position-relative">
+                            <!--begin::Background-->
+                            <div class="position-absolute top-0 end-0 bottom-0 opacity-10 d-flex align-items-center me-5">
+                                <i class="ki-solid ki-delivery" style="font-size: 13em">
+                                </i>
+                            </div>
+                            <!--end::Background-->
+                            <!--begin::Card header-->
+                            <div class="card-header">
+                                <div class="card-title">
+                                    <h2>@sharedResource["Description Ar"]</h2>
+                                </div>
+                            </div>
+                            <!--end::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body pt-0">
+                                @Model.publicHomeContent.AboutSectionDescAr
+                            </div>
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Shipping address-->
+                    </div>
+                   <div class="d-flex flex-stack pt-10 m-0">
+                        <a asp-area="Admin" asp-page="PublicContentEditor" class="btn btn-lg btn-light-primary me-3">
+                            <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                <span b-cpu6lo70wp="" class="path1"></span>
+                                <span b-cpu6lo70wp="" class="path2"></span>
+                            </i>@sharedResource["Close"]
+                        </a>
+                    </div>
+                </div>
+               
+                <!--end::Body-->
+                <!--end::Form-->
+            </div>
+            <!--end::Card-->
+        </div>
+        <!--end::Content container-->
+    </div>
+    <!--end::Content-->
+</div>
+
+	
+
+
+
+

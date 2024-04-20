@@ -1,0 +1,1 @@
+https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993$@/External/freelancingTemplate/js/jquery.js$@/External/freelancingTemplate/js/plugins.min.js$@/External/freelancingTemplate/js/functions.js

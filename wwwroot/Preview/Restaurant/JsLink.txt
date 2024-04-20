@@ -1,0 +1,32 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
+<script src="js/components/datepicker.js"></script>
+<script src="js/functions.js"></script>
+<script>
+		var carouselRTL = false;
+
+		if( $('body').hasClass('rtl') ) { carouselRTL = true; }
+
+		$(window).on( 'pluginCarouselReady', function(){
+			$('#food-menu-carousel').owlCarousel({
+				animateIn: 'fadeIn',
+				animateOut: 'fadeOut',
+				items: 1,
+				mouseDrag: false,
+				dotsContainer: '#item-thumb',
+				rtl: carouselRTL
+			});
+
+			$('#dessert-menu-carousel').owlCarousel({
+				animateIn: 'fadeIn',
+				animateOut: 'fadeOut',
+				items: 1,
+				mouseDrag: false,
+				dotsContainer: '#item-thumb1',
+				rtl: carouselRTL
+			});
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a0fff8d2f1f41d6","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

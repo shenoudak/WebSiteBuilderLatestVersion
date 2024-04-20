@@ -1,0 +1,103 @@
+﻿@page
+@model iTech.Areas.CRM.Pages.SystemConfiguration.ManageServices.EditModel
+
+@Html.AntiForgeryToken()
+@{
+	ViewBag.Title = @sharedResource["Edit Page Content"];
+	ViewBag.pTitle = @sharedResource["Edit Page Content"];
+	
+}
+
+
+	<!-- begin row  Arabic content -->
+<form method="post" enctype="multipart/form-data">
+		  <input type="hidden" asp-for="service.ServicesId"/>
+		<div class="row mt-2">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-header">
+					<div class="form-group col">
+						<label asp-for="@Model.service.TitleAr" class="form-label text-color-dark text-3">@sharedResource["TitleAr"]<span class="text-color-danger">*</span></label>
+						<input asp-for="@Model.service.TitleAr" type="text" class="form-control form-control-lg text-4" required="">
+						<span asp-validation-for="@Model.service.TitleAr" class="text-danger"></span>
+
+					</div>
+					
+					</div>
+					<div class="card-body">
+					<textarea asp-for="service.ContentAr " id="textareacontent" class="form-control"> </textarea>
+					<span asp-validation-for="service.ContentAr" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- end row -->
+		<!-- begin row  Arabic content -->
+		<div class="row mt-2">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-header">
+					<div class="form-group col">
+						<label asp-for="@Model.service.TitleEn" class="form-label text-color-dark text-3">@sharedResource["TitleEN"]<span class="text-color-danger">*</span></label>
+						<input asp-for="@Model.service.TitleEn" type="text"  class="form-control form-control-lg text-4" required="">
+						<span asp-validation-for="@Model.service.TitleEn" class="text-danger"></span>
+
+					</div>
+						
+					</div>
+					<div class="card-body">
+					<textarea asp-for="service.ContentEn " id="textareacontent" class="form-control"></textarea>
+					<span asp-validation-for="service.ContentEn" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!--PIC-->
+	<div class="row mt-2">
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="card-header">
+					<div class="form-group col">
+						<label class="form-label"> @sharedResource["Image"]</label>
+
+						<div class="custom-file">
+							<input type="file" name="Editfile" class="custom-file-input" id="Editfile">
+							<label class="custom-file-label" for="Editfile"></label>
+						</div>
+
+					</div>
+
+				</div>
+				
+			</div>
+		</div>
+
+	</div>
+		<!--EndPIC-->
+		<div class="row mt-2">
+		<div class="col-lg-6 m-auto d-flex justify-content-center mb-5">
+				<button type="submit" class="btn btn-primary me-5 fs-5">@sharedResource["Edit"]</button>
+				@*<a asp-page="./index" class="btn btn-success   fs-5">@sharedResource["Back"]</a>*@
+			</div>
+		</div>
+	</form>
+	
+
+
+	@section scripts{
+
+	<script src="~/js/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+
+	<script>
+		tinymce.init({             
+			selector: '#textareacontent',
+			statusbar: false,
+			promotion: false,
+			branding: false,
+			
+		});
+		
+	</script>
+
+}

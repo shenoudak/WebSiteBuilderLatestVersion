@@ -1,0 +1,78 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+
+<script src="js/functions.js"></script>
+<script src="js/swiper.js"></script>
+<script>
+		jQuery(window).on( 'pluginSwiperReady', function(){
+			var swiperParent = new Swiper('.swiper-parent',{
+				paginationClickable: false,
+				slidesPerView: 4,
+				grabCursor: true,
+				navigation: {
+			    	nextEl: '.slider-arrow-right',
+			    	prevEl: '.slider-arrow-left',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 4
+			        },
+			        992: {
+			          slidesPerView: 3
+			        },
+			        768: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested1 = new Swiper('.swiper-nested-1',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 3,
+				navigation: {
+			    	nextEl: '#sw1-arrow-bottom',
+			    	prevEl: '#sw1-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 3
+			        },
+			        992: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested2 = new Swiper('.swiper-nested-2',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw2-arrow-bottom',
+			    	prevEl: '#sw2-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+
+			var swiperNested3 = new Swiper('.swiper-nested-3',{
+				direction: 'vertical',
+				paginationClickable: false,
+				slidesPerView: 2,
+				navigation: {
+			    	nextEl: '#sw3-arrow-bottom',
+			    	prevEl: '#sw3-arrow-top',
+			    },
+				breakpoints: {
+					1200: {
+			          slidesPerView: 2
+			        }
+		     	}
+			});
+		});
+	</script> 
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a31bfcb694441cb","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

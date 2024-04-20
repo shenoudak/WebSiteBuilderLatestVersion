@@ -1,0 +1,198 @@
+﻿@page
+@model iTech.Areas.CRM.Pages.BuilderModel
+@{
+    ViewBag.pTitle = sharedResource["Site Name"];
+}
+
+<link href="~/editor/lib/grapesjs/dist/css/grapes.min.css" rel="stylesheet" />
+<script src="~/Editor/Lib/grapesjs/dist/grapes.min.js"></script>
+<script src="~/Editor/Lib/grapesjs-preset-webpage/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-blocks-basic/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-preset-newsletter/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-mjml/dist/index.js"></script>
+
+<style>
+    .custom-hover-nav-tabs .nav-item .nav-link {
+        width: auto !important;
+    }
+
+    .gjs-one-bg {
+        /*background-color: #f3f3f9 !important;*/
+        background-color : hwb(217deg 88% 7%) !important;
+    }
+
+    .gjs-two-color
+    {
+        color: #495057 !important; 
+        
+    }
+    .gjs-block-category gjs-open
+    {
+        background-color: #f5f6f9 !important;
+    }
+    .gjs-blocks-c
+    {
+            background-color: white !important;
+        color: #495057 !important;
+    }
+
+    .gjs-four-color-h:hover
+    {
+        color: #405189 !important;
+    }
+  
+</style>
+
+<div class="row">
+    <div class="col-xxl-9">
+        <div class="card">
+            <div class="card-header">
+                <div class="d-flex align-items-center">
+                    <div class="flex-grow-1 toolbar d-flex align-items-start  flex-wrap gap-2 panel__devices" id="pnlDevices">
+                        @*<button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-map-pin-line"></i></button>
+                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-delete-bin-5-line"></i></button>
+                        <button type="button" class="btn btn-success btn-icon waves-effect waves-light"><i class="ri-check-double-line"></i></button>
+                        <button type="button" class="btn btn-light btn-icon waves-effect"><i class="ri-brush-2-fill"></i></button>*@
+                    </div>
+                    <div class="toolbar d-flex align-items-start justify-content-center flex-wrap gap-2">
+
+
+                        <button type="button" class="btn btn-outline-primary btn-icon waves-effect waves-light"><i class="ri-24-hours-fill"></i></button>
+                        <button type="button" class="btn btn-outline-danger btn-icon waves-effect waves-light"><i class="ri-customer-service-2-line"></i></button>
+                        <button type="button" class="btn btn-outline-success btn-icon waves-effect waves-light"><i class="ri-mail-send-line"></i></button>
+                        <button type="button" class="btn btn-outline-warning btn-icon waves-effect waves-light"><i class="ri-menu-2-line"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <div id="gjs">
+                    <h1>@sharedResource["Hello World Component!"] </h1>
+                </div>
+            </div>
+        </div>
+
+        <!--end card-->
+
+    </div>
+    <!--end col-->
+
+    <div class="col-xxl-3">
+        <div class="card" id="pnlPages">
+            <div class="card-header align-items-center d-flex">
+                <h4 class="card-title mb-0 flex-grow-1">@sharedResource["Pages"]</h4>
+                <div class="flex-shrink-0">
+                    <button type="button" class="btn btn-soft-info btn-sm">
+                        <i class="ri-file-list-3-line align-middle"></i> +
+                    </button>
+                </div>
+            </div><!-- end card header -->
+
+            <div class="card-body">
+                <div class="table-responsive table-card">
+                    <table class="table table-hover table-centered align-middle table-nowrap mb-0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">@sharedResource["Index"]</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="hstack gap-3 flex-wrap" style="float:right !important">
+                                        <a href="javascript:void(0);" class="link-success fs-15"><i class="ri-edit-2-line"></i></a>
+                                        <a href="javascript:void(0);" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">@sharedResource["About"]</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="hstack gap-3 flex-wrap" style="float:right !important">
+                                        <a href="javascript:void(0);" class="link-success fs-15"><i class="ri-edit-2-line"></i></a>
+                                        <a href="javascript:void(0);" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">@sharedResource["Contact"]</a>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    <div class="hstack gap-3 flex-wrap" style="float:right !important">
+                                        <a href="javascript:void(0);" class="link-success fs-15"><i class="ri-edit-2-line"></i></a>
+                                        <a href="javascript:void(0);" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table><!-- end table -->
+                </div>
+
+            </div>
+        </div>
+        <!--end card-->
+        <div class="card" id="pnlExplorer">
+            <div class="border">
+                <ul class="nav nav-pills nav-justified custom-hover-nav-tabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a href="#pnlStyle" data-bs-toggle="tab" aria-expanded="false" class="nav-link active" aria-selected="false" role="tab" tabindex="-1">
+                            <i class="ri-user-fill nav-icon nav-tab-position"></i>
+                            <h5 class="nav-titl nav-tab-position m-0">Style</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#pnlSettings" data-bs-toggle="tab" aria-expanded="true" class="nav-link " aria-selected="true" role="tab">
+                            <i class="ri-file-text-line nav-icon nav-tab-position"></i>
+                            <h5 class="nav-titl nav-tab-position m-0">Settings</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#pnlLayers" data-bs-toggle="tab" aria-expanded="false" class="nav-link" aria-selected="false" tabindex="-1" role="tab">
+                            <i class="ri-star-half-line nav-icon nav-tab-position"></i>
+                            <h5 class="nav-titl nav-tab-position m-0">Layers</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a href="#pnlBlocks" data-bs-toggle="tab" aria-expanded="false" class="nav-link" aria-selected="false" tabindex="-1" role="tab">
+                            <i class="ri-star-half-line nav-icon nav-tab-position"></i>
+                            <h5 class="nav-titl nav-tab-position m-0">Blocks</h5>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body p-0" >
+                <div class="tab-content text-muted">
+                    <div class="tab-pane active show" id="pnlStyle" role="tabpanel" >
+                        <div id="pnlselectors-container"></div>
+                        @*<div id="pnltraits-container"></div>*@
+                        <div id="pnlstyle-manager-container"></div>
+                    </div>
+                    <div class="tab-pane" id="pnlSettings" role="tabpanel">
+                       
+                    </div>
+                    <div class="tab-pane" id="pnlLayers" role="tabpanel">
+                    </div>
+                    <div class="tab-pane" id="pnlBlocks" role="tabpanel" aria-labelledby='block-tab'>
+                        
+                    </div>
+                </div>
+            </div><!-- end card-body -->
+        </div>
+
+        <!--end card-->
+    </div>
+    <!--end col-->
+</div>
+
+<script src="~/Editor/Editor.js"></script>

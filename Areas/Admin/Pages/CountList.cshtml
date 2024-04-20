@@ -1,0 +1,181 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.CountListModel
+
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    ViewBag.Title = @sharedResource["Counts"];
+	ViewBag.pTitle = @sharedResource["Counts"];
+	ViewBag.pageTitle = @sharedResource["Counts"];
+	ViewData["Title"] = @sharedResource["Counts"];
+}
+
+<div class="d-flex flex-column flex-column-fluid">
+	<!--begin::Toolbar-->
+	<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+		<!--begin::Toolbar container-->
+		<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+			<!--begin::Page title-->
+			<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+				<!--begin::Title-->
+				<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">@sharedResource["Counts"]</h1>
+				<!--end::Title-->
+				<!--begin::Breadcrumb-->
+				<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">
+						<a asp-page="Index" asp-area="Admin" class="text-muted text-hover-primary">@sharedResource["Dashboard"]</a>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item">
+						<span class="bullet bg-gray-400 w-5px h-2px"></span>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">@sharedResource["Counts"]</li>
+					<!--end::Item-->
+				</ul>
+				<!--end::Breadcrumb-->
+			</div>
+			<!--end::Page title-->
+			
+		</div>
+		<!--end::Toolbar container-->
+	</div>
+	<!--end::Toolbar-->
+	<!--begin::Content-->
+	<div id="kt_app_content" class="app-content flex-column-fluid">
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container container-xxl">
+			
+			<!--begin::Tables Widget 11-->
+			<div class="card mb-5 mb-xl-8">
+				<!--begin::Header-->
+				<div class="card-header border-0 pt-5">
+
+					<h3 class="card-title align-items-start flex-column">
+						<span class="card-label fw-bold fs-3 mb-1">@sharedResource["Counts"]</span>
+					</h3>
+					<!--begin::Actions-->
+					<div class="d-flex align-items-center gap-2 gap-lg-3">
+						
+						<!--begin::Secondary button-->
+						<!--end::Secondary button-->
+						<!--begin::Primary button-->
+					
+						<!--end::Primary button-->
+					</div>
+					<!--end::Actions-->
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				<div class="card-body py-3">
+					<!--begin::Table container-->
+					<div class="table-responsive">
+						<!--begin::Table-->
+						<table class="table align-middle gs-0 gy-4">
+							<!--begin::Table head-->
+							<thead>
+								<tr class="fw-bold text-muted bg-light">
+
+									<th class="ps-4 min-w-325px rounded-start">@sharedResource["Arabic Title"]</th>
+									<th class="min-w-125px">@sharedResource["English Title"]</th>
+									<th class="min-w-125px">@sharedResource["Count"]</th>
+									
+									<th class="min-w-200px text-end rounded-end">@sharedResource["Action"]</th>
+								</tr>
+							</thead>
+							<!--end::Table head-->
+							<!--begin::Table body-->
+							<tbody>
+								@{
+									if (Model.Counts!=null)
+									{
+										foreach (var item in Model.Counts)
+										{
+											<tr>
+
+												<td class=" fw-bold">@item.TitleAR </td>
+												<td class=" fw-bold">@item.TitleEN</td>
+												<td class=" fw-bold">@item.count</td>
+
+
+												<td class="text-end">
+
+													<a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" href="javascript:void(0)" data-bs-toggle="modal">
+														<i class="ki-duotone ki-pencil fs-2" onclick="editButtonClick(@item.CountId)">
+															<span class="path1"></span>
+															<span class="path2"></span>
+														</i>
+													</a>
+
+
+												</td>
+											</tr>
+
+										}
+									}
+									
+								}
+							</tbody>
+							<!--end::Table body-->
+						</table>
+						<!--end::Table-->
+					</div>
+					<!--end::Table container-->
+				</div>
+				<!--begin::Body-->
+			</div>
+			<!--end::Tables Widget 11-->
+			
+		</div>
+		<!--end::Content container-->
+	</div>
+	<!--end::Content-->
+</div>
+
+
+
+
+
+
+
+<partial name="_EditCount" model="@Model.countObj" view-data="ViewData" />
+
+
+<script>
+
+
+	function editButtonClick(CountId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/CountList?handler=SingleCountForEdit",
+
+			data: { "CountId": CountId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+					
+					    document.getElementById("HiddenId").value = response.CountId
+						document.getElementById("TitleENId").value = response.TitleEN
+						document.getElementById("TitleARId").value = response.TitleAR
+				       document.getElementById("NewCountId").value = response.count
+               
+				$('#showCountItemEditModal').modal('show');
+
+
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    
+</script>      

@@ -1,0 +1,1 @@
+/External/writerTemplate/js/jquery.js$@/External/writerTemplate/demos/writer/js/hover3d.js$@/External/writerTemplate/js/plugins.min.js$@/External/writerTemplate/js/functions.js

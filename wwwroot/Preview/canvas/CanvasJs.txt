@@ -1,0 +1,1 @@
+/External/CanvasTemplate/js/functions.js$@/External/CanvasTemplate/js/plugins.min.js$@/External/CanvasTemplate/js/jquery.js

@@ -1,0 +1,1 @@
+https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993$@/External/ResumeTemplate/js/jquery.js$@/External/ResumeTemplate/js/plugins.min.js$@/External/ResumeTemplate/js/functions.js

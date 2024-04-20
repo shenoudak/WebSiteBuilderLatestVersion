@@ -1,0 +1,1 @@
+/External/landingtemplate/js/jquery.js$@/External/landingtemplate/js/functions.js$@/External/landingtemplate/js/plugins.min.js

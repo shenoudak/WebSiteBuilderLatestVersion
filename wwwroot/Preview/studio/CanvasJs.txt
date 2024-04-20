@@ -1,0 +1,1 @@
+/External/studioTemplate/js/jquery/jquery-2.2.4.min.js$@/External/studioTemplate/js/popper.min.js$@/External/studioTemplate/js/bootstrap.min.js$@/External/studioTemplate/js/plugins.js$@/External/studioTemplate/js/active.js

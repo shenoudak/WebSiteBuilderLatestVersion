@@ -1,0 +1,41 @@
+﻿@{
+}
+<div class="modal fade" id="showSitePages" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Edit SitePages"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+      
+                <div class="modal-body">
+
+                <form asp-page="/UserSiteName" asp-page-handler="EditSitePages">
+                   @*  <input name="siteId" id="EditPageId" hidden>
+                    <div class="col-lg-12">
+                        <div>
+                            <label class="form-label">@sharedResource["SitePages"]</label>
+
+                            <input type="text" id="SitePagesId" name="SitePages"
+                                   class="form-control"
+                                   placeholder="Enter SitePages" required />
+
+
+                        </div>
+                    </div> *@
+
+                    <button class="btn btn-danger mt-3" type="submit" id="delete-record">
+                        @sharedResource["Edit"]
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+      

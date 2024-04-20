@@ -1,0 +1,258 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@model iTech.Models.Template
+@{
+}
+
+<div class="modal fade" id="showEditModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Edit Template Details"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="/Configurations/ManageTemplates/Index" asp-page-handler="EditTemplate" enctype="multipart/form-data" onsubmit="return validateMyForm();">
+                            <!--begin::Step 1-->
+                            <div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+                                <div b-cpu6lo70wp="" class="w-100">
+                                    <!--begin::Input group-->
+                                    <input asp-for="@Model.TemplateId" id="TemplateId" value="@Model.TemplateId" hidden>
+
+
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.TitleAr" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["TitleAr"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleAr"]" data-bs-original-title="@sharedResource["Enter TitleAr"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" id="TitleAr" data-val-required="@sharedResource["Enter Ar Title"]" type="text" asp-for="@Model.TitleAr" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Title Ar"]" required>
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.TitleAr" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.TitleEn" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["TitleEn"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleEn"]" data-bs-original-title="@sharedResource["Title En"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" id="TitleEn" type="text" data-val-required="@sharedResource["Enter Title En"]" asp-for="@Model.TitleEn" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Title En"]" required>
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.TitleEn" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="TemplateCategory" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Template Category"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Template Category"]" data-bs-original-title="@sharedResource["Template Category"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <!--begin::Action wrapper-->
+                                        <select id="SiteCategoryId" asp-for="@Model.SiteCategoryId" class="form-control form-control-lg form-control-solid m-bootstrap-select m-bootstrap-select--air m-bootstrap-select--pill m_selectpicker" title="Air &amp; pill style" tabindex="-98">
+                                                <option class="bs-title-option" value="">@sharedResource["Select Tempalate Category"]</option>
+                                            @{
+                                                var SiteCategories = _context.SiteCategories.Select(e => new { e.SiteCategoryId, e.TitleEn, e.TitleAr });
+                                                var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+                                                var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+
+                                                if (SiteCategories != null)
+                                                {
+                                                    foreach (var item in SiteCategories)
+                                                    {
+                                                       if (BrowserCulture == "en-US")
+                                                            {
+                                                            <option value="@item.SiteCategoryId">@item.TitleEn</option>
+
+                                                        }
+                                                        //Arabic
+                                                        else
+                                                        {
+                                                            <option value="@item.SiteCategoryId">@item.TitleAr</option>
+
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            </select>
+                                    </div>
+
+
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.SortOrder" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@(sharedResource["Sort Order"])</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@(sharedResource["Sort Order"])" data-bs-original-title="@sharedResource["Enter Sort Order"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" id="SortOrder" data-val-required="@sharedResource["Enter Sort Order"]" type="number" asp-for="@Model.SortOrder" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Sort Order"]" required min="1">
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.SortOrder" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" asp-for="@Model.TemplatePrice" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Template Price"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Template Price"]" data-bs-original-title="@sharedResource["Enter Template Price"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" data-val-required="@sharedResource["Enter Template Price"]" type="text" id="TemplatePrice" asp-for="@Model.TemplatePrice" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Template Price"]" step="any" min="0" required>
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.TemplatePrice" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" asp-for="@Model.TemplatePrice" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Image"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Image"]"  data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <div class="col-lg-12 fv-row fv-plugins-icon-container">
+                                            <div class="uppy" id="kt_uppy_5">
+                                                <div class="uppy-wrapper">
+                                                    <div class="uppy-Root uppy-FileInput-container">
+                                                        <input type="file" name="file" accept=".png, .jpg, .jpeg" class="form-control form-control-lg form-control-solid">
+                                                    </div>
+                                                    <div class="uppy-status">
+                                                        <div class="uppy-Root uppy-StatusBar is-waiting" aria-hidden="true" dir="ltr">
+                                                            <div class="uppy-StatusBar-progress
+                           " role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div><div class="uppy-StatusBar-actions"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uppy-informer uppy-informer-min">
+                                                        <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    
+
+
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                            <!--begin::Label-->
+                                            <label for="@Model.IsActive" class="form-check form-check-custom form-check-solid">
+                                                <input id="IsActive" asp-for="@Model.IsActive" class="form-check-input" type="checkbox">
+                                                <span class="form-check-label text-gray-600">@sharedResource["Is Active"]</span>
+                                            </label>
+
+                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                <span asp-validation-for="@Model.IsActive" class="text-danger"></span>
+                                            </div>
+                                        </div>
+
+
+
+                                        <div class="d-flex flex-stack pt-10 m-0">
+                                            <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                </i>@sharedResource["Close"]
+                                            </button>
+                                            <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                                @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                </i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end::Step 1-->
+
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

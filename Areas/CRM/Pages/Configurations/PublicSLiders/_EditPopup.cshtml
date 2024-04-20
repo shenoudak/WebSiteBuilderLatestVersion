@@ -1,0 +1,449 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model iTech.Models.PublicSlider
+
+
+<div class="modal fade" id="showEditModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+	<!--begin::Modal dialog-->
+	<div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+		<!--begin::Modal content-->
+		<div b-cpu6lo70wp="" class="modal-content">
+			<!--begin::Modal header-->
+			<div b-cpu6lo70wp="" class="modal-header">
+				<!--begin::Modal title-->
+				<h2 b-cpu6lo70wp="">@(sharedResource["Edit Public Slider"])</h2>
+				<!--end::Modal title-->
+				<!--begin::Close-->
+				<div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+					<i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+						<span b-cpu6lo70wp="" class="path1"></span>
+						<span b-cpu6lo70wp="" class="path2"></span>
+					</i>
+				</div>
+				<!--end::Close-->
+			</div>
+			<!--end::Modal header-->
+			<!--begin::Modal body-->
+			<div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+				<!--begin::Stepper-->
+				<div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+					<!--begin::Content-->
+					<div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+						<!--begin::Form-->
+						<form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="CRM" asp-page="/Configurations/PublicSLiders/Index" asp-page-handler="EditPublicSlider" enctype="multipart/form-data" onsubmit="return validateMyForm();">
+							<!--begin::Step 1-->
+							<div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+								<div b-cpu6lo70wp="" class="w-100">
+									<!--begin::Input group-->
+									<input asp-for="@Model.PublicSliderId" id="HiddenId" value="@Model.PublicSliderId" hidden>
+									<input asp-for="@Model.Background" id="BackgroundId" hidden>
+
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<!--begin::Label-->
+										<label for="avatar" class="fs-6 fw-semibold mb-3">
+											<span>@sharedResource["Update BackGround"]  </span>
+											<span class="ms-1" data-bs-toggle="tooltip" aria-label="" data-bs-original-title="" data-kt-initialized="1">
+												<i class="ki-duotone ki-information fs-7">
+													<span class="path1"></span>
+													<span class="path2"></span>
+													<span class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Image input wrapper-->
+										<div class="mt-1">
+											<!--begin::Image placeholder-->
+											<style>
+												.image-input-placeholder {
+													background-image: url('~/assets/media/svg/files/blank-image.svg');
+												}
+
+												[data-bs-theme="dark"] .image-input-placeholder {
+													background-image: url('/assets/media/svg/files/blank-image-dark.svg');
+												}</style>
+											<!--end::Image placeholder-->
+											<!--begin::Image input-->
+											<div class="image-input image-input-outline image-input-placeholder image-input-empty image-input-empty" data-kt-image-input="true">
+												<!--begin::Preview existing avatar-->
+												<div class="image-input-wrapper w-100px h-100px" style="background-image: url('')"></div>
+												<!--end::Preview existing avatar-->
+												<!--begin::Edit-->
+												<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar" data-bs-original-title="Change avatar" data-kt-initialized="1">
+													<i class="ki-duotone ki-pencil fs-7">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+													<!--begin::Inputs-->
+													<input type="file" id="Editfile" name="avatar">
+													<input type="hidden" name="avatar_remove">
+													<!--end::Inputs-->
+												</label>
+												<!--end::Edit-->
+												<!--begin::Cancel-->
+												<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" aria-label="Cancel avatar" data-bs-original-title="Cancel avatar" data-kt-initialized="1">
+													<i class="ki-duotone ki-cross fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</span>
+												<!--end::Cancel-->
+												<!--begin::Remove-->
+												<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" aria-label="Remove avatar" data-bs-original-title="Remove avatar" data-kt-initialized="1">
+													<i class="ki-duotone ki-cross fs-2">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</span>
+												<!--end::Remove-->
+											</div>
+											<!--end::Image input-->
+										</div>
+										<!--end::Image input wrapper-->
+
+									</div>
+
+									
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="@Model.Title1Ar" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["Title1Ar"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Title1Ar"]" data-bs-original-title="@sharedResource["Enter TitleAr"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" id="Title1ArID" data-val-required="@sharedResource["Enter ArTitle"]" type="text" asp-for="@Model.Title1Ar" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter TitleAr"]" required>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.Title1Ar" class="text-danger"></span>
+										</div>
+									</div>
+									<!--end::Input group-->
+									<!--begin::Input group-->
+									
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="@Model.Title1En" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["Title1En"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Title1En"]" data-bs-original-title="@sharedResource["Title1En"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" id="TitleEn1ID" type="text" data-val-required="@sharedResource["Enter Title1En"]" asp-for="@Model.Title1En" class="form-control form-control-lg form-control-solid"  placeholder="@sharedResource["Enter Title1En"]"  required>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.Title1En" class="text-danger"></span>
+										</div>
+									</div>
+									<!--end::Input group-->
+									<!--begin::Input group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="@Model.Title2Ar" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@(sharedResource["Title2Ar"])</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@(sharedResource["Title2Ar"])" data-bs-original-title="@sharedResource["Enter Title2Ar"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" id="Title2ArID" data-val-required="@sharedResource["Enter Title2Ar"]" type="text" asp-for="@Model.Title2Ar" class="form-control form-control-lg form-control-solid"  placeholder="@sharedResource["Enter Title2Ar"]"  required>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.Title2Ar" class="text-danger"></span>
+										</div>
+									</div>
+									<!--end::Input group-->
+									<!--begin::Input group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" asp-for="@Model.Title2En" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["Title2En"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Title2En"]" data-bs-original-title="@sharedResource["Enter Title2En"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" data-val-required="@sharedResource["Enter Title2En"]" type="text" id="Title2EnID" asp-for="@Model.Title2En"  class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Title2En"]" required>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.Title2En" class="text-danger"></span>
+										</div>
+									</div>
+									
+									
+									
+									<!--begin::Input DESC group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" asp-for="@Model.DescriptionAr" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["DescriptionAr"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["DescriptionAr"]" data-bs-original-title="@sharedResource["Enter DescriptionAr"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<textarea b-cpu6lo70wp="" data-val-required="@sharedResource["Enter DescriptionAr"]" asp-for="@Model.DescriptionAr" id="DescriptionArID"
+												  class="form-control form-control-lg form-control-solid" cols="2"
+                                          placeholder=@sharedResource["Enter DescriptionAr"] required></textarea>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.DescriptionAr" class="text-danger"></span>
+										</div>
+									</div>
+
+
+
+
+
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" asp-for="@Model.DescriptionEn" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["DescriptionEn"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["DescriptionEn"]" data-bs-original-title="@sharedResource["Enter DescriptionAr"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<textarea b-cpu6lo70wp="" data-val-required="@sharedResource["Enter DescriptionEn"]" asp-for="@Model.DescriptionEn" id="DescriptionEnID"
+												  class="form-control form-control-lg form-control-solid" cols="2"
+												  placeholder=@sharedResource["Enter DescriptionEn"] required></textarea>
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.DescriptionEn" class="text-danger"></span>
+										</div>
+									</div>
+
+
+
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label for="@Model.IsImage" class="form-check form-check-custom form-check-solid">
+											<input id="EIsActiveId" asp-for="@Model.IsImage" class="form-check-input" type="checkbox" >
+											<span class="form-check-label text-gray-600">@sharedResource["IsImage"]</span>
+										</label>
+
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.IsImage" class="text-danger"></span>
+										</div>
+									</div>
+
+									<div class="d-flex flex-stack pt-10 m-0">
+										<button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+											<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+												<span b-cpu6lo70wp="" class="path1"></span>
+												<span b-cpu6lo70wp="" class="path2"></span>
+											</i>@sharedResource["Close"]
+										</button>
+										<button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+											@sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+												<span b-cpu6lo70wp="" class="path1"></span>
+												<span b-cpu6lo70wp="" class="path2"></span>
+											</i>
+										</button>
+									</div>
+									<!--end::Input group-->
+									<!--begin::Actions-->
+									@*									<div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+									<!--begin::Wrapper-->
+									<div b-cpu6lo70wp="" class="me-2">
+									<button b-cpu6lo70wp="" type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+									<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+									<span b-cpu6lo70wp="" class="path1"></span>
+									<span b-cpu6lo70wp="" class="path2"></span>
+									</i>@sharedResource["Close"]
+									</button>
+									</div>
+									<!--end::Wrapper-->
+									<!--begin::Wrapper-->
+									<div b-cpu6lo70wp="">
+									<button b-cpu6lo70wp="" type="button" class="btn btn-lg btn-primary" id="add-btn">
+									<span b-cpu6lo70wp="" class="indicator-label">
+									@sharedResource["Add Affiliate Price"]
+									<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+									<span b-cpu6lo70wp="" class="path1"></span>
+									<span b-cpu6lo70wp="" class="path2"></span>
+									</i>
+									</span>
+									<span b-cpu6lo70wp="" class="indicator-progress">
+									@sharedResource["Please wait..."]
+									<span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+									</span>
+									</button>
+
+									</div>
+									<!--end::Wrapper-->
+									</div>
+									*@									<!--end::Actions-->
+								</div>
+							</div>
+							<!--end::Step 1-->
+
+						</form>
+						<!--end::Form-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Stepper-->
+			</div>
+			<!--end::Modal body-->
+		</div>
+		<!--end::Modal content-->
+	</div>
+	<!--end::Modal dialog-->
+</div>
+
+
+@*<div class="modal fade" id="showEditModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Edit Country"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+            <form asp-area="CRM" asp-page="/Configurations/PublicSlider/Index" asp-page-handler="EditPublicSlider" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="row g-3">
+
+                        <input asp-for="@Model.PublicSliderId" id="HiddenId" value="@Model.PublicSliderId" hidden>
+                        <input asp-for="@Model.Background" id="BackgroundId" hidden>
+
+
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Title1Ar" class="form-label">@sharedResource["Title1Ar"]</label>
+                                <input data-val-required="@sharedResource["Enter TitleAr"]" id="Title1ArID" type="text" asp-for="@Model.Title1Ar" class="form-control" placeholder="@sharedResource["Enter Title1Ar"]" required />
+                                <span asp-validation-for="@Model.Title1Ar" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Title1En" class="form-label">@sharedResource["Title1En"]</label>
+                                <input data-val-required="@sharedResource["Enter Title1En"]" id="TitleEn1ID" type="text" asp-for="@Model.Title1En" class="form-control" placeholder="@sharedResource["Enter Title2En"]" required />
+                                <span asp-validation-for="@Model.Title1En" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Title2Ar" class="form-label">@sharedResource["Title2Ar"]</label>
+                                <input data-val-required="@sharedResource["Enter Title2Ar"]" id="Title2ArID" type="text" asp-for="@Model.Title2Ar" class="form-control" placeholder="@sharedResource["Enter Title2Ar"]" required />
+                                <span asp-validation-for="@Model.Title2Ar" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Title2En" class="form-label">@sharedResource["Title2En"]</label>
+                                <input data-val-required="@sharedResource["Enter Title2En"]" id="Title2EnID" type="text" asp-for="@Model.Title2En" class="form-control" placeholder="@sharedResource["Enter Title2En"]" required />
+                                <span asp-validation-for="@Model.Title2En" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.DescriptionAr"
+                                       class="form-label">@(sharedResource["DescriptionAr"])</label>
+                                <textarea asp-for="@Model.DescriptionAr" id="DescriptionArID"
+                                          class="form-control" cols="2"
+                                          placeholder=@sharedResource["Enter DescriptionAr"]></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.DescriptionEn"
+                                       class="form-label">@(sharedResource["DescriptionEn"])</label>
+                                <textarea asp-for="@Model.DescriptionEn" id="DescriptionEnID"
+                                          class="form-control" cols="2"
+                                          placeholder=@sharedResource["Enter DescriptionEn"]></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label class="form-label"> @sharedResource["Background"]</label>
+
+                                <div class="custom-file">
+                                    <input type="file" name="Editfile"  class="custom-file-input" id="Editfile">
+                                    <label class="custom-file-label" for="Editfile"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-check">
+                                <input id="EIsActiveId" asp-for="@Model.IsImage" class="form-check-input" type="checkbox">
+                                <label for="@Model.IsImage" class="form-check-label">@sharedResource["IsImage"]</label>
+                                <span asp-validation-for="@Model.IsImage" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">
+                            @sharedResource["Close"]
+                        </button>
+                        <button type="submit" class="btn btn-success"
+                                id="add-btn">
+                            @sharedResource["Edit"]
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+                

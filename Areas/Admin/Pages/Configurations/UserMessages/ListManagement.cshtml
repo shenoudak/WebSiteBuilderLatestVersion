@@ -1,0 +1,125 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.Configurations.UserMessages.ListManagementModel
+@{
+    ViewBag.Title = "User Messages";
+    ViewBag.pTitle = "User Messages";
+    ViewBag.pageTitle = "User Messages";
+}
+<div class="d-flex flex-column flex-column-fluid">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                    @sharedResource["User Messages"]
+                </h1>
+                <!--end::Title-->
+            </div>
+            <!--end::Page title-->
+            <!--begin::Action group-->
+            <div class="d-flex align-items-center gap-2">
+                <div class="d-flex align-items-center gap-2 gap-lg-3">
+                    <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+                        Create
+                    </a>
+                    <!--end::Primary button-->
+                </div>
+            </div>
+            <!--end::Action group-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-fluid ">
+                   
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Title</h3>
+                    <div class="card-toolbar">
+                        <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_invite_friends">
+                            <i class="ki-duotone ki-plus fs-2"></i>                New Member
+                        </a>
+                    </div>
+                </div>
+              
+             
+                <div class="card-body">
+                    <table id="tblList" class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                <th>id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Message</th>
+                                <th>SendingDate</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+              
+                </div>
+               
+            </div>
+            
+        </div>
+       
+    </div>
+</div>
+<script src="~/Other/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tblList").DataTable({
+            "proccessing": true,
+            "serverSide": true,
+            "ajax": {
+                url: "/admin/Configurations/UserMessages/ListManagement",
+                type: 'POST',
+                headers: { 'XSRF-TOKEN': $('@Html.AntiForgeryToken()').val() }
+            },
+            "columnDefs": [
+                {
+                    "targets": -1,
+                    "data": null,
+                    "render": function (data, type, row, meta) {
+                        return '<a href="/Tables3/edit?id=' + row.id + '">Edit</a> | <a href="/Tables3/details?id=' + row.id + '">Details</a> | <a href="/customers/delete?id=' + row.id + '">Delete</a>';
+                    },
+                    "sortable": false
+                },
+                { "name": "ContactUsID", "data": "ContactUsID", "targets": 0, "visible": false },
+                { "name": "Name", "data": "Name", "targets": 1, "visible": true },
+                { "name": "Email", "data": "Email", "targets": 2 },
+                { "name": "Message", "data": "Message", "targets": 3 },
+                { "name": "SendingDate", "data": "SendingDate", "targets": 4 }
+
+
+                
+            ],
+            "order": [[4, "desc"]],
+            "language": {
+                "lengthMenu": "Show _MENU_",
+            },
+            "dom":
+                "<'row'" +
+                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                ">" +
+
+                "<'table-responsive'tr>" +
+
+                "<'row'" +
+                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                ">",
+
+        });
+    });
+</script>

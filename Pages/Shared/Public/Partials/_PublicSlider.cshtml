@@ -1,0 +1,144 @@
+﻿@model List<iTech.ViewModel.PublicSlider>
+@{
+    
+    var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+<div class="owl-carousel-wrapper" style="height: 100vh;">
+    <div class="owl-carousel dots-inside dots-horizontal-center show-dots-hover nav-inside nav-inside-plus nav-dark nav-md nav-font-size-md show-nav-hover mb-0" data-plugin-options="{'responsive': {'0': {'items': 1}, '479': {'items': 1}, '768': {'items': 1}, '979': {'items': 1}, '1199': {'items': 1}}, 'loop': false, 'autoHeight': false, 'margin': 0, 'dots': true, 'dotsVerticalOffset': '-75px', 'nav': true, 'animateIn': 'fadeIn', 'animateOut': 'fadeOut', 'mouseDrag': false, 'touchDrag': false, 'pullDrag': false, 'autoplay': true, 'autoplayTimeout': 9000, 'autoplayHoverPause': true, 'rewind': true}">
+
+        @{
+            if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    if (@item.IsImage)
+                    {
+
+                        <!-- Carousel Slide -- Image -->
+                        <div class="position-relative overlay overlay-show overlay-op-8 pt-5" style="background-image: url(/@item.Background); background-size: cover; background-position: center; height: 100vh;">
+                            <div class="container position-relative z-index-3 h-100">
+                                <div class="row justify-content-center align-items-center h-100">
+                                    <div class="col-lg-6">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h3 class="position-relative text-color-light text-5 line-height-5 font-weight-medium px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
+                                                <span class="position-absolute right-100pct top-50pct transform3dy-n50 opacity-3">
+                                                    <img src="public/img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                                </span>
+                                                @if (@BrowserCulture == "en-US")
+                                                {
+                                                    @item.Title1En
+
+                                                }
+                                                else
+                                                {
+                                                    @item.Title1Ar
+
+
+                                                }
+                                                <span class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-3">
+                                                    <img src="public/img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                                </span>
+                                            </h3>
+                                            <h2 class="text-color-light font-weight-extra-bold text-12 mb-3 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
+                                                @if (@BrowserCulture == "en-US")
+                                                {
+                                                    @item.Title2En
+
+                                                }
+                                                else
+                                                {
+                                                    @item.Title2Ar
+
+
+                                                }
+                                            </h2>
+                                            <h2 class="text-color-light font-weight-extra-bold text-4 mb-3 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
+
+                                                @if (@BrowserCulture == "en-US")
+                                                {
+                                                    @item.DescriptionEn
+
+                                                }
+                                                else
+                                                {
+                                                    @item.DescriptionAr
+
+                                                }
+                                            </h2>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <!-- Carousel Slide -- Video -->
+                        <div class="position-relative video overlay overlay-show overlay-op-8 pt-5" data-video-path="/@item.Background" data-plugin-video-background data-plugin-options="{'posterType': 'jpg', 'position': '50% 50%'}" style="height: 100vh;">
+                            <div class="container position-relative z-index-3 h-100">
+                                <div class="row justify-content-center align-items-center h-100">
+                                    <div class="col-lg-6">
+                                        <div class="d-flex flex-column align-items-center">
+                                            <h3 class="position-relative text-color-light text-5 line-height-5 font-weight-medium px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
+                                                <h3 class="position-relative text-color-light text-5 line-height-5 font-weight-medium px-4 mb-2 appear-animation" data-appear-animation="fadeInDownShorterPlus" data-plugin-options="{'minWindowWidth': 0}">
+                                                    <span class="position-absolute right-100pct top-50pct transform3dy-n50 opacity-3">
+                                                        <img src="public/img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                                    </span>
+                                                    @if (@BrowserCulture == "en-US")
+                                                    {
+                                                        @item.Title1En
+
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Title1Ar
+
+
+                                                    }
+                                                    <span class="position-absolute left-100pct top-50pct transform3dy-n50 opacity-3">
+                                                        <img src="public/img/slides/slide-title-border.png" class="w-auto appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="250" data-plugin-options="{'minWindowWidth': 0}" alt="" />
+                                                    </span>
+                                                </h3>
+                                                <h2 class="text-color-light font-weight-extra-bold text-12 mb-3 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
+                                                    @if (@BrowserCulture == "en-US")
+                                                    {
+                                                        @item.Title2En
+
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.Title2Ar
+
+
+                                                    }
+                                                </h2>
+                                                <h1 class="text-color-light font-weight-extra-bold text-4 mb-3 appear-animation" data-appear-animation="blurIn" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">
+
+                                                    @if (@BrowserCulture == "en-US")
+                                                    {
+                                                        @item.DescriptionEn
+
+                                                    }
+                                                    else
+                                                    {
+                                                        @item.DescriptionAr
+
+                                                    }
+                                                </h1>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+            }
+        }
+    </div>
+</div>
+

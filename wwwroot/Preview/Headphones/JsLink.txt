@@ -1,0 +1,37 @@
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+		jQuery(document).ready( function(){
+
+			// on hover Changes Scripts -->
+			function showcaseSection( element ){
+				var otherElements = element.parents('.showcase-section').find('.showcase-feature'),
+					elementTarget = jQuery( element.attr('data-target') ),
+					otherTargets = element.parents('.showcase-section').find('.showcase-target');
+
+				otherElements.removeClass('showcase-feature-active');
+				element.addClass('showcase-feature-active');
+				otherTargets.removeClass('showcase-target-active');
+				elementTarget.addClass('showcase-target-active');
+			}
+
+			jQuery('.showcase-section').each( function(){
+				if ( jQuery(this).find('.showcase-feature-active').length < 1 ) {
+					jQuery(this).find('.showcase-feature:eq(0)').addClass('showcase-feature-active');
+				}
+			});
+
+			var elementActive = jQuery('.showcase-feature-active');
+
+			elementActive.each( function(){
+				showcaseSection( jQuery(this) );
+			});
+
+			jQuery('.showcase-feature').hover( function(){
+				showcaseSection( jQuery(this) );
+			}); // --> Scripts End.
+
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a0957d379170db8","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

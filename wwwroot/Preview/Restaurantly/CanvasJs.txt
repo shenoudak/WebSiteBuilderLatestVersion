@@ -1,0 +1,15 @@
+/External/RestaurantlyTemplate/assets/vendor/aos/aos.js$@/External/RestaurantlyTemplate/assets/vendor/bootstrap/js/bootstrap.bundle.min.js$@/External/RestaurantlyTemplate/assets/vendor/glightbox/js/glightbox.min.js$@/External/RestaurantlyTemplate/assets/vendor/isotope-layout/isotope.pkgd.min.js$@/External/RestaurantlyTemplate/assets/vendor/php-email-form/validate.js$@/External/RestaurantlyTemplate/assets/vendor/swiper/swiper-bundle.min.js$@/External/RestaurantlyTemplate/assets/js/main.js
+
+
+
+
+
+
+
+
+
+
+
+
+
+

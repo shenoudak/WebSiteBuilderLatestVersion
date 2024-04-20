@@ -1,0 +1,63 @@
+﻿
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject CRMDBContext _context
+@{
+	// var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+	// var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+	// var currentuser = await UserManager.GetUserAsync(User);
+	// var contacts = _context.SocialMediaLinks.FirstOrDefault();
+}
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TechTime IT Solutions</title>
+
+    <meta name="keywords" content="WebSite Template" />
+    <meta name="description" content="Porto - Multipurpose Website Template">
+    <meta name="author" content="okler.net">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="~/Public/img/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="~/Public/img/apple-touch-icon.png">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+   @*  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/grapes.min.js"></script> *@
+    @* <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/grapesjs"></script> *@
+
+    <link rel="stylesheet" href="~/DefaultEditor/stylesheets/grapes.min.css?v0.21.6">
+    <link rel="stylesheet" href="~/DefaultEditor/stylesheets/material.css">
+    <link rel="stylesheet" href="~/DefaultEditor/stylesheets/tooltip.css">
+    <link rel="stylesheet" href="~/DefaultEditor/stylesheets/demos.css?v2">
+    
+    <script src="~/DefaultEditor/js/grapes.min.js?v0.21.6"></script>
+    <!-- <script src="./js/ckeditor/ckeditor.js"></script> -->
+    <!-- <script src="https://unpkg.com/grapesjs-plugin-ckeditor@0.0.10"></script> -->
+    <script src="~/DefaultEditor//js/grapesjs-plugin-ckeditor/index.js"></script>
+    <script src="https://unpkg.com/grapesjs-preset-newsletter@1.0.1"></script>
+
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    @RenderBody()
+
+    
+</body>
+</html>

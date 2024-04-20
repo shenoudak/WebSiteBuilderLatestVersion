@@ -1,0 +1,156 @@
+﻿@model iTech.Models.AffilateFeedback
+
+
+
+<div class="modal fade" id="showEditAffFBCModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Edit Affiliate Feedback Details"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <!--end::Form-->
+
+                        <form method="post" class="form fv-plugins-bootstrap5 fv-plugins-framework" enctype="multipart/form-data" asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditAfFBC">
+
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+                            <div class="row col-12">
+                                <input asp-for="@Model.AffilateFeedbackId" id="AfFBCHiddenId" hidden>
+
+
+
+
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-6">
+                                    <label asp-for="@Model.TitleAr" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Arabic Title"]</label>
+                                    <input asp-for="@Model.TitleAr" id="FBCTitleArId" class="form-control form-control-lg form-control-solid" />
+                                    <span asp-validation-for="@Model.TitleAr" class="text-danger"></span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label asp-for="@Model.TitleEn" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["English Title"]</label>
+                                    <input asp-for="@Model.TitleEn" id="FBCTitleEnId" class="form-control form-control-lg form-control-solid" />
+                                    <span asp-validation-for="@Model.TitleEn" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserOneFeedbackAr" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User One Feedback Arabic"]</label>
+                                    <textarea asp-for="@Model.UserOneFeedbackAr" id="UserOneFeedbackArId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserOneFeedbackAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserOneFeedbackEn" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User One Feedback English"]</label>
+                                    <textarea asp-for="@Model.UserOneFeedbackEn" id="UserOneFeedbackEnId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserOneFeedbackEn" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserTwoFeedbackAr" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User Two Feedback Arabic"]</label>
+                                    <textarea asp-for="@Model.UserTwoFeedbackAr" id="UserTwoFeedbackArId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserTwoFeedbackAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserTwoFeedbackEn" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User Two Feedback English"]</label>
+                                    <textarea asp-for="@Model.UserTwoFeedbackEn" id="UserTwoFeedbackEnId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserTwoFeedbackEn" class="text-danger"></span>
+                                </div>
+
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserThreeFeedbackAr" class="control-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User Three Feedback Arabic"]</label>
+                                    <textarea asp-for="@Model.UserThreeFeedbackAr" id="UserThreeFeedbackArId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserThreeFeedbackAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row col-12">
+                                <div class="form-group col-12">
+                                    <label asp-for="@Model.UserThreeFeedbackEn" class="control-label  d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["User Three Feedback English"]</label>
+                                    <textarea asp-for="@Model.UserThreeFeedbackEn" id="UserThreeFeedbackEnId" class="form-control form-control-lg form-control-solid"></textarea>
+                                    <span asp-validation-for="@Model.UserThreeFeedbackEn" class="text-danger"></span>
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="d-flex flex-stack pt-10 m-0">
+                                <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>@sharedResource["Close"]
+                                </button>
+                                <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                    @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

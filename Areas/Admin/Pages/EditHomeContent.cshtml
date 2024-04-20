@@ -1,0 +1,223 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.ViewHomeContentModel
+@Html.AntiForgeryToken()
+@{
+	ViewBag.Title = @sharedResource["Edit Page Content"];
+	ViewBag.pTitle = @sharedResource["Edit Page Content"];
+	
+}
+
+<div class="d-flex flex-column flex-column-fluid">
+
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+
+
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                    @sharedResource["Page Content Editor"]
+                </h1>
+                <!--end::Title-->
+
+            </div>
+            <!--end::Page title-->
+            <!--begin::Action group-->
+            <div class="d-flex align-items-center gap-2">
+                
+            </div>
+            <!--end::Action group-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-fluid ">
+           
+            <!--end::Layout Builder Notice-->
+            <!--begin::Card-->
+            <div class="card">
+                <!--begin::Header-->
+                <div class="card-header card-header-stretch overflow-auto" style="height: 5.5rem;">
+					<h1 style="padding-top: 2rem;">@sharedResource["Edit Public Home Content"]</h1>
+                </div>
+                <!--end::Header-->
+                <!--begin::Form-->
+                <!--begin::Body-->
+                <div class="card-body">
+                    
+					<!-- begin row  Arabic content -->
+                    <!--begin::Form-->
+                    <form  asp-area="Admin" asp-page="/EditHomeContent" asp-page-handler="EditHomePage" enctype="multipart/form-data" onsubmit="return validateMyForm();">
+                        <!--begin::Step 1-->
+                        <div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+                            <div b-cpu6lo70wp="" class="w-100">
+                                <!--begin::Input group-->
+                                <input asp-for="@Model.publicHomeContent.PublicHomeContentId" id="HiddenIdSlider" hidden>
+                                <input asp-for="@Model.publicHomeContent.Pic" id="BackgroundId" hidden>
+
+
+
+                                <!--begin::Input group-->
+                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                    <label b-cpu6lo70wp="" for="@Model.publicHomeContent?.AboutSectionTitleAr" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                        <span b-cpu6lo70wp="" class="required">@(sharedResource["Title2Ar"])</span>
+                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@(sharedResource["Title2Ar"])" data-bs-original-title="@sharedResource["Enter Title2Ar"]" data-kt-initialized="1">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input b-cpu6lo70wp="" id="Title2ArID" data-val-required="@sharedResource["Enter Title2Ar"]" type="text" asp-for="@Model.publicHomeContent.AboutSectionTitleAr" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Title2Ar"]" required>
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container invalid-feedback">
+                                        <span asp-validation-for="@Model.publicHomeContent.AboutSectionTitleAr?" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                    <label b-cpu6lo70wp="" asp-for="@Model.publicHomeContent.AboutSectionTitleEn?" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Title2En"]</span>
+                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Title2En"]" data-bs-original-title="@sharedResource["Enter Title2En"]" data-kt-initialized="1">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input b-cpu6lo70wp="" data-val-required="@sharedResource["Enter Title2En"]" type="text" id="Title2EnID" asp-for="@Model.publicHomeContent.AboutSectionTitleEn?" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Title2En"]" required>
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container invalid-feedback">
+                                        <span asp-validation-for="@Model.publicHomeContent.AboutSectionTitleEn?" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+
+
+                                <!--begin::Input DESC group-->
+                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                    <label b-cpu6lo70wp="" asp-for="@Model.publicHomeContent.AboutSectionDescAr?" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                        <span b-cpu6lo70wp="" class="required">@sharedResource["DescriptionAr"]</span>
+                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["DescriptionAr"]" data-bs-original-title="@sharedResource["Enter DescriptionAr"]" data-kt-initialized="1">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <textarea b-cpu6lo70wp="" data-val-required="@sharedResource["Enter DescriptionAr"]" asp-for="@Model.publicHomeContent.AboutSectionDescAr?" id="DescriptionArID"
+                                              class="form-control form-control-lg form-control-solid" cols="2"
+                                              placeholder=@sharedResource["Enter DescriptionAr"] required></textarea>
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container invalid-feedback">
+                                        <span asp-validation-for="@Model.publicHomeContent.AboutSectionDescAr?" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                    <!--begin::Label-->
+                                    <label b-cpu6lo70wp="" asp-for="@Model.publicHomeContent.AboutSectionDescEn?" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                        <span b-cpu6lo70wp="" class="required">@sharedResource["DescriptionEn"]</span>
+                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["DescriptionEn"]" data-bs-original-title="@sharedResource["Enter DescriptionEn"]" data-kt-initialized="1">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                            </i>
+                                        </span>
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <textarea b-cpu6lo70wp="" data-val-required="@sharedResource["Enter DescriptionEn"]" asp-for="@Model.publicHomeContent.AboutSectionDescEn?" id="DescriptionEnID"
+                                              class="form-control form-control-lg form-control-solid" cols="2"
+                                              placeholder=@sharedResource["Enter DescriptionEn"] required></textarea>
+                                    <!--end::Input-->
+                                    <div class="fv-plugins-message-container invalid-feedback">
+                                        <span asp-validation-for="@Model.publicHomeContent.AboutSectionDescEn?" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label class="col-lg-3 col-form-label text-lg-right">Upload File:</label>
+                                    <div class="col-lg-6">
+                                        <div class="uppy" id="kt_uppy_5">
+                                            <div class="uppy-wrapper">
+                                                <div class="uppy-Root uppy-FileInput-container">
+                                                    <input class="uppy-FileInput-input uppy-input-control uppy-input-label btn btn-light-primary btn-sm btn-bold" type="file" name="Editfile" id="kt_uppy_5_input_control" style="">                                                <div class="uppy-list"></div>
+                                                </div>
+                                                <div class="uppy-status">
+                                                    <div class="uppy-Root uppy-StatusBar is-waiting" aria-hidden="true" dir="ltr">
+                                                        <div class="uppy-StatusBar-progress
+                           " role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div><div class="uppy-StatusBar-actions"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="uppy-informer uppy-informer-min">
+                                                    <div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="d-flex flex-stack pt-10 m-0">
+                                        <a href="./PublicContentEditor" class="btn btn-lg btn-light-primary me-3">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                            </i>@sharedResource["Close"]
+                                        </a>
+                                        <button type="submit">
+                                            @sharedResource["Edit Content"] 
+                                        </button>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    								<!--end::Actions-->
+                                </div>
+                            </div>
+                            <!--end::Step 1-->
+
+                    </form>
+                    <!--end::Form-->
+                </div>
+                <!--end::Body-->
+                <!--end::Form-->
+            </div>
+            <!--end::Card-->
+        </div>
+        <!--end::Content container-->
+    </div>
+    <!--end::Content-->
+</div>
+
+	
+
+
+

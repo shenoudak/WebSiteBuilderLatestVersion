@@ -1,0 +1,1 @@
+/External/hostingTemplate/js/jquery.js$@/External/hostingTemplate/js/plugins.min.js$@/External/hostingTemplate/js/jquery.hotspot.js$@/External/hostingTemplate/js/components/rangeslider.min.js$@/External/hostingTemplate/js/functions.js$@https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993

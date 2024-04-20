@@ -1,0 +1,553 @@
+﻿@page
+@model iTech.Areas.iTech.Pages.Configurations.ManageCategory.IndexModel
+@{
+    ViewBag.Title = "Category";
+    ViewBag.pTitle = "Category";
+    ViewBag.pageTitle = "Category";
+    //Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!--begin::Tables Widget 11-->
+<div class="card mb-5 mb-xl-8">
+	<!--begin::Header-->
+	<div class="card-header border-0 pt-5">
+		<h3 class="card-title align-items-start flex-column">
+			<span class="card-label fw-bold fs-3 mb-1">New Arrivals</span>
+			<span class="text-muted mt-1 fw-semibold fs-7">Over 500 new products</span>
+		</h3>
+		<div class="card-toolbar">
+			<a href="#" class="btn btn-sm btn-light-primary">
+				<i class="ki-duotone ki-plus fs-2"></i>New Member
+			</a>
+		</div>
+	</div>
+	<!--end::Header-->
+	<!--begin::Body-->
+	<div class="card-body py-3">
+		<!--begin::Table container-->
+		<div class="table-responsive">
+			<!--begin::Table-->
+			<table class="table align-middle gs-0 gy-4">
+				<!--begin::Table head-->
+				<thead>
+					<tr class="fw-bold text-muted bg-light">
+						<th class="ps-4 min-w-325px rounded-start">Product</th>
+						<th class="min-w-125px">Price</th>
+						<th class="min-w-125px">Deposit</th>
+						<th class="min-w-200px">Agent</th>
+						<th class="min-w-150px">Status</th>
+						<th class="min-w-200px text-end rounded-end"></th>
+					</tr>
+				</thead>
+				<!--end::Table head-->
+				<!--begin::Table body-->
+				<tbody>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-5">
+									<img src="assets/media/stock/600x400/img-26.jpg" class="" alt="" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-dark fw-bold text-hover-primary mb-1 fs-6">Sant Extreanet Solution</a>
+									<span class="text-muted fw-semibold text-muted d-block fs-7">HTML, JS, ReactJS</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$2,790</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Paid</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$520</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Rejected</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">Bradly Beal</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Insurance</span>
+						</td>
+						<td>
+							<span class="badge badge-light-primary fs-7 fw-bold">Approved</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-switch fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-pencil fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+								<i class="ki-duotone ki-trash fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+									<span class="path5"></span>
+								</i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-5">
+									<img src="assets/media/stock/600x400/img-3.jpg" class="" alt="" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-dark fw-bold text-hover-primary mb-1 fs-6">Telegram Development</a>
+									<span class="text-muted fw-semibold text-muted d-block fs-7">C#, ASP.NET, MS SQL</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$4,790</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Paid</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$240</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Rejected</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">Chris Thompson</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">NBA Player</span>
+						</td>
+						<td>
+							<span class="badge badge-light-danger fs-7 fw-bold">In Progress</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-switch fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-pencil fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+								<i class="ki-duotone ki-trash fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+									<span class="path5"></span>
+								</i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-5">
+									<img src="assets/media/stock/600x400/img-9.jpg" class="" alt="" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-dark fw-bold text-hover-primary mb-1 fs-6">Payroll Application</a>
+									<span class="text-muted fw-semibold text-muted d-block fs-7">PHP, Laravel, VueJS</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$4,390</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Paid</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$593</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Rejected</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">Zoey McGee</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Ruby Developer</span>
+						</td>
+						<td>
+							<span class="badge badge-light-success fs-7 fw-bold">Success</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-switch fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-pencil fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+								<i class="ki-duotone ki-trash fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+									<span class="path5"></span>
+								</i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-5">
+									<img src="assets/media/stock/600x400/img-18.jpg" class="" alt="" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-dark fw-bold text-hover-primary mb-1 fs-6">HR Management System</a>
+									<span class="text-muted fw-semibold text-muted d-block fs-7">Python, PostgreSQL, ReactJS</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$7,990</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Paid</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$980</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Rejected</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">Brandon Ingram</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Insurance</span>
+						</td>
+						<td>
+							<span class="badge badge-light-info fs-7 fw-bold">Rejected</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-switch fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-pencil fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+								<i class="ki-duotone ki-trash fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+									<span class="path5"></span>
+								</i>
+							</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="d-flex align-items-center">
+								<div class="symbol symbol-50px me-5">
+									<img src="assets/media/stock/600x400/img-8.jpg" class="" alt="" />
+								</div>
+								<div class="d-flex justify-content-start flex-column">
+									<a href="#" class="text-dark fw-bold text-hover-primary mb-1 fs-6">Telegram Mobile</a>
+									<span class="text-muted fw-semibold text-muted d-block fs-7">HTML, JS, ReactJS</span>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$5,790</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Paid</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">$750</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Rejected</span>
+						</td>
+						<td>
+							<a href="#" class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">Natali Trump</a>
+							<span class="text-muted fw-semibold text-muted d-block fs-7">Insurance</span>
+						</td>
+						<td>
+							<span class="badge badge-light-warning fs-7 fw-bold">Approved</span>
+						</td>
+						<td class="text-end">
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-switch fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+								<i class="ki-duotone ki-pencil fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+								</i>
+							</a>
+							<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+								<i class="ki-duotone ki-trash fs-2">
+									<span class="path1"></span>
+									<span class="path2"></span>
+									<span class="path3"></span>
+									<span class="path4"></span>
+									<span class="path5"></span>
+								</i>
+							</a>
+						</td>
+					</tr>
+				</tbody>
+				<!--end::Table body-->
+			</table>
+			<!--end::Table-->
+		</div>
+		<!--end::Table container-->
+	</div>
+	<!--begin::Body-->
+</div>
+<!--end::Tables Widget 11-->
+<!--datatable css-->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css" />
+<!--datatable responsive css-->
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
+<style>
+    .dataTables_filter {
+        display: none;
+    }
+</style>
+
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card" id="List">
+            <div class="card-header border-0">
+                <input type="text" asp-for="@Model.url" value="@Model.url" hidden id="UrlId" />
+
+                <div class="row g-4 align-items-center">
+                    <div class="col-sm-3">
+                        <div class="search-box">
+                            <input type="text" class="form-control search" id="txtSearch"
+                                   placeholder="@sharedResource["Search for..."]">
+                            <i class="ri-search-line search-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-auto ms-auto">
+                        <div class="hstack gap-2">
+
+                            <button type="button" class="btn btn-success add-btn"
+                                    data-bs-toggle="modal" id="create-btn"
+                                    data-bs-target="#AddModal">
+                                <i class="ri-add-line align-bottom me-1"></i> @sharedResource["Add"]
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="table-responsive table-card">
+                        <table id="myTable" class="table  dt-responsive nowrap  align-middle" style="width:100%">
+                            <thead class="table-light">
+                                <tr>
+                                    <th data-ordering="false">@sharedResource["Image"]</th>
+                                    <th data-ordering="false">@sharedResource["Arabic Title"]</th>
+                                    <th data-ordering="false">@sharedResource["English Title"]</th>
+                                    <th data-ordering="false">@sharedResource["Sort Index"]</th>
+                                    <th data-ordering="false">@sharedResource["Is Active?"]</th>
+                                    <th data-ordering="false">@sharedResource["Actions"]</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!--end modal-->
+        </div>
+    </div>
+    <!--end col-->
+</div>
+
+<partial name="_AddPopup" model="@Model.category" view-data="ViewData" />
+<partial name="_ViewPopup" model="@Model.category" view-data="ViewData" />
+<partial name="_EditPopup" model="@Model.category" view-data="ViewData" />
+<partial name="_DeletePopup" model="@Model.category" view-data="ViewData" />
+
+<!--datatable js-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<!--End datatable js-->
+@section scripts{
+    <!-- list.js min js -->
+    <script src="~/assets/libs/list.js/list.min.js"></script>
+    <script src="~/assets/libs/list.pagination.js/list.pagination.min.js"></script>
+    <!-- crm leads init -->
+    <script src="~/assets/js/pages/crm-leads.init.js"></script>
+}
+
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        var domainUrl = document.getElementById("UrlId").value;
+        $('#myTable').DataTable({
+            "dom": 'rt<"bottom"ip><"clear">',
+                ajax: { url: domainUrl + '/api/Lists/GetCategories' },
+            columns: [
+                {
+                        "data": "Pic",
+                    "render": function (data, row) {
+                        return "<img src='/" + data + "' alt='' class='avatar-xxs rounded-circle image_src object-cover'>";
+                    }
+                },
+                    { data: 'TitleAr' },
+                    { data: 'TitleEn' },
+                { data: 'SortOrder' },
+                {
+                    data: "IsActive",
+
+                },
+                {
+                        data: "SiteCategoryId",
+                    render: function (data, type, row) {
+
+                        return '<ul class="list-inline hstack gap-2 mb-0"> <li class="list-inline-item" data-bs-toggle="tooltip"data-bs-trigger="hover" data-bs-placement="top"title="View"><a href="javascript:void(0)" data-bs-toggle="modal"><i class="ri-eye-fill align-bottom text-muted" onclick="ShowViewPopUp(' + data + ')" ></i></a></li> <li class="list-inline-item" data-bs-toggle="tooltip"data-bs-trigger="hover" data-bs-placement="top"title="Edit" ><a class="edit-item-btn" href="javascript:void(0)"data-bs-toggle="modal" > <i class="ri-pencil-fill align-bottom text-muted" onclick="editButtonClick(' + data + ')"></i> </a> </li>    <li class="list-inline-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top"title="Delete"> <a class="remove-item-btn" data-bs-toggle="modal"href="javascript:void(0)" > <i class="ri-delete-bin-fill align-bottom text-muted" onclick="deleteCategory(' + data + ')"></i> </a></li></ul>';
+
+                    },
+                    className: "dt-body-center"
+                },
+
+
+            ],
+
+
+
+        });
+    });
+
+
+
+
+
+
+    $('#txtSearch').keyup(function () {
+        var table = $('#myTable').DataTable();
+        //alert(table);
+        table.search($(this).val()).draw();
+    });
+
+    function validateMyForm() {
+
+
+        if (document.getElementById("file").files.length == 0) {
+            alert("You Must Select Image");
+            return false;
+        }
+        return true;
+    }
+
+        function editButtonClick(SiteCategoryId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/CRM/Configurations/ManageCategory/Index?handler=SingleCategoryForEdit",
+
+                data: { "SiteCategoryId": SiteCategoryId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementsByClassName('categoryImgCla')[0].src = "/" + response.Pic
+                    document.getElementById("CategoryHiddenId").value = response.SiteCategoryId
+                document.getElementById("CategoryPicHiddenId").value = response.Pic
+                    document.getElementById("CategoryTLARId").value = response.TitleAr
+                    document.getElementById("CategoryTLENId").value = response.TitleEn
+                document.getElementById("IsActiveId").checked = response.IsActive
+                document.getElementById("SortOrderId").value = response.SortOrder
+
+
+                $('#showEditModal').modal('show');
+
+
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+        function ShowViewPopUp(SiteCategoryId) {
+
+        $.ajax({
+            type: "GET",
+            url: "/CRM/Configurations/ManageCategory/Index?handler=SingleCategoryForView",
+                data: { "SiteCategoryId": SiteCategoryId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("DCategoryPicId").src = "/" + response.Pic
+                    document.getElementById("DCategoryTLARId").innerHTML = response.TitleAr
+                    document.getElementById("DCategoryTLENId").innerHTML = response.TitleEn
+                    document.getElementById("DSortOrderId").innerHTML = response.SortOrder
+                document.getElementById("DIsActiveId").innerHTML = response.IsActive
+                if (response.IsActive == true) {
+                    document.getElementById("DIsActiveId").innerHTML = "Active"
+
+                }
+                else {
+                    document.getElementById("DIsActiveId").innerHTML = "Not Active"
+                }
+
+                $('#QuickViewPoup').modal('show');
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+
+    }
+        function deleteCategory(SiteCategoryId) {
+
+
+        $.ajax({
+            type: "GET",
+            url: "/CRM/Configurations/ManageCategory/Index?handler=SingleCategoryForDelete",
+                data: { "SiteCategoryId": SiteCategoryId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                    document.getElementById("DeleteCategoryId").value = response.SiteCategoryId
+                $('#deleteRecordModal').modal('show');
+
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+
+
+</script>      

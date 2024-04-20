@@ -1,0 +1,93 @@
+﻿@{
+}
+@model iTech.Models.PublicHomeContent
+
+<div class="modal fade" id="showEditModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Edit Public Home Content"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+            <form asp-area="CRM" asp-page="/Configurations/ManagePublicHomeContent/Index" asp-page-handler="EditPublicHomeContent">
+                <div class="modal-body">
+                    <input type="hidden" id="id-field" />
+                    <div class="row g-3">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <div class="position-relative d-inline-block">
+                                    <div class="position-absolute bottom-0 end-0">
+                                        <label for="Editfile" class="mb-0" data-bs-toggle="tooltip" data-bs-placement="right" title="Select Image">
+                                            <div class="avatar-xs cursor-pointer">
+                                                <div class="avatar-title bg-light border rounded-circle text-muted">
+                                                    <i class="ri-image-fill"></i>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        <input class="form-control d-none" name="Editfile" id="Editfile" type="file"
+                                               accept="image/*">
+                                    </div>
+                                    <div class="avatar-lg p-1">
+                                        <div class="avatar-title bg-light rounded-circle">
+                                            <img src="~/assets/images/users/user-dummy-img.jpg" id="lead-img" class="avatar-md rounded-circle object-cover categoryImgCla" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <h5 class="fs-13  mt-3">@(sharedResource["Image"])</h5>
+                            </div>
+                            <div>
+                                <input asp-for="@Model.PublicHomeContentId" id="CategoryHiddenId" hidden>
+                                <input asp-for="@Model.Pic " id="CategoryPicHiddenId" hidden>
+
+                            </div>
+                            <div class="col-lg-6">
+                                <div>
+                                    <label for="@Model.AboutSectionTitleAr" class="form-label">@sharedResource["ArTitle"]</label>
+                                    <input id="CategoryTLARId" data-val-required=" @sharedResource["Enter ArTitle"]" type="text" asp-for="@Model.AboutSectionTitleAr" class="form-control" placeholder="@sharedResource["Enter ArTitle"]" required />
+                                    <span asp-validation-for="@Model.AboutSectionTitleAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div>
+                                    <label for="@Model.AboutSectionTitleEn" class="form-label">@sharedResource["ENTitle"]</label>
+                                    <input id="CategoryTLENId" data-val-required="@sharedResource["Enter ENTitle"]" type="text" asp-for="@Model.AboutSectionTitleEn" class="form-control" placeholder="@sharedResource["Enter ENTitle"]" required />
+                                    <span asp-validation-for="@Model.AboutSectionTitleEn" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div>
+                                    <label for="@Model.AboutSectionDescAr" class="form-label">@sharedResource["About SectionDesc Ar"]</label>
+                                    <textarea id="AboutSectionDescAr" data-val-required="@sharedResource["Enter AboutSectionDescAr"]" type="text" asp-for="@Model.AboutSectionDescAr" class="form-control" placeholder="@sharedResource["Enter AboutSectionDescAr"]" required ></textarea>
+                                    <span asp-validation-for="@Model.AboutSectionDescAr" class="text-danger"></span>
+                                </div>
+                            </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.AboutSectionDescEn" class="form-label fw-bold">@sharedResource["About SectionDesc En"]</label>
+                                    <textarea asp-for="@Model.AboutSectionDescEn" class="form-check-input code-switcher" type="text" id="AboutSectionDescEn"></textarea>
+                                <span asp-validation-for="@Model.AboutSectionDescEn" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">
+                            @sharedResource["Close"]
+                        </button>
+                        <button type="submit" class="btn btn-success"
+                                id="add-btn">
+                            @sharedResource["Edit"]
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

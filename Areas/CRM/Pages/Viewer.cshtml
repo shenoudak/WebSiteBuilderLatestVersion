@@ -1,0 +1,82 @@
+﻿@page
+@model iTech.Areas.CRM.Pages.ViewerModel
+@{
+    ViewBag.pTitle = sharedResource["Site Name"];
+}
+
+<link href="~/editor/lib/grapesjs/dist/css/grapes.min.css" rel="stylesheet" />
+<script src="~/Editor/Lib/grapesjs/dist/grapes.min.js"></script>
+<script src="~/Editor/Lib/grapesjs-preset-webpage/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-blocks-basic/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-preset-newsletter/dist/index.js"></script>
+<script src="~/Editor/Lib/grapesjs-mjml/dist/index.js"></script>
+
+<div id="gjs">
+</div>
+
+<script>
+
+
+    const editor = grapesjs.init({
+        // Indicate where to init the editor. You can also pass an HTMLElement
+        container: '#gjs',
+        // Get the content for the canvas directly from the element
+        // As an alternative we could use: `components: '<h1>Hello World Component!</h1>'`,
+        fromElement: true,
+        // Size of the editor
+        height: '1000px',
+        width: 'auto',
+        // Disable the storage manager for the moment
+        storageManager: false,
+        // Avoid any default panel
+
+        plugins: ['grapesjs-preset-webpage', 'gjs-blocks-basic', 'grapesjs-preset-newsletter'],
+        pluginsOpts: {
+            'grapesjs-preset-webpage': {
+                blocks: ['link-block', 'quote', 'text-basic']
+            },
+            'gjs-blocks-basic': {
+                blocks: ['column1', 'column2', 'column3', 'column3-7', 'text', 'link', 'image', 'video', 'map']
+
+            },
+            'grapesjs-preset-newsletter': {
+                blocks: ['sect100', 'sect50', 'sect30', 'sect37', 'button', 'divider', 'text', 'text-sect', 'image', 'quote', 'link', 'link-block', 'grid-items', 'list-items']
+            }
+
+        },
+
+        //blockManager: {
+        //    appendTo: '#pnlBlocks',
+        //},
+
+        //styleManager: {
+        //    appendTo: '#pnlstyle-manager-container',
+        //},
+        //layerManager: {
+        //    appendTo: '#pnlLayers',
+        //},
+        //traitManager: {
+        //    appendTo: '#pnlSettings',
+        //},
+        //selectorManager: {
+        //    appendTo: '#pnlselectors-container',
+        //},
+        //deviceManager: {
+        //    appendTo: '#pnlDevices',
+        //},
+
+
+
+   
+
+
+    });
+
+    $.get('your-api-url', function (data) {
+        editor.BlockManager.add(data);
+    });
+
+
+ 
+
+</script>

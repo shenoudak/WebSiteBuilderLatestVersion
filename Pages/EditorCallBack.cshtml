@@ -1,0 +1,88 @@
+﻿@page
+@model iTech.Pages.EditorCallBackModel
+@{
+    Layout = null;
+}
+
+<title> iTech Pay</title>
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fb2a8bbabd.js" crossorigin="anonymous"></script>
+    <style>
+    .get-area {
+    background-image: url("~/Jeel/images/banner/banner-shape6.png") !important;
+    }
+    </style>
+
+
+    <link rel="stylesheet" href="~/Jeel/css/bootstrap.rtl.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/meanmenu.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/animate.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Jeel/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/modal-video.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/odometer.min.css">
+
+    <link rel="stylesheet" type="text/css" href="~/Jeel/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="~/Jeel/css/layers.css">
+    <link rel="stylesheet" type="text/css" href="~/Jeel/css/navigation.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/nice-select.min.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/style.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/responsive.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/theme-dark.css">
+
+    <link rel="stylesheet" href="~/Jeel/css/rtl.css">
+    <link rel="stylesheet" href="~/Jeel/css/Custom.css">
+
+
+    <section class="get-area two col-8 m-auto">
+    <div class="container">
+    <div class="get-content" style="background-color: #F5F5F5 !important;">
+    <div class="get-shape">
+    <img src="~/Jeel/images/get-shape1.png" alt="Shape">
+    <img src="~/Jeel/images/get-shape2.png" alt="Shape">
+    </div>
+            <div class="section-title">
+                @{
+                    if (@Model.PaymentStatus != null)
+                    {
+
+
+                        if (@Model.PaymentStatus == "CAPTURED")
+                        {
+                            <div class="border border-5  border-dark mb-4" style="border-radius:200px; height:200px; width:200px; margin:0 auto;">
+                                <i id="" style="color: #000;" class="fa-9x fst-normal fw-bolder text-success">✓</i>
+                            </div>
+                            <h1 style="color: #000;">@sharedResource["Operation Successed"]</h1>
+                            <a asp-page="/index" class="btn btn-warning text-dark">@sharedResource["Back to Home Page"]</a>
+                            <a asp-page="/UserSites" class="btn btn-info text-dark">@sharedResource["Go to my websites"]</a>
+
+                        }
+                        else
+                        {
+                            <div class="border border-5 border-dark mb-4" style="border-radius:200px; height:200px; width:200px; margin:0 auto;text-align:center">
+                                <i class="fas fa-times fa-9x m-4" style="color: red;"></i>
+                            </div>
+                            <h1 class="text-dark">@sharedResource["Operation Failed"]</h1>
+                            <p class="text-dark">
+                                <span class="text-dark">@sharedResource["Oops! Something went wrong"]</span>
+                            </p>
+
+                        }
+                    }
+
+                }
+            </div>
+    </div>
+    </div>
+    </section>

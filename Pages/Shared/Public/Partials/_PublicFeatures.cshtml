@@ -1,0 +1,66 @@
+﻿@inject CRMDBContext _context
+@model List<iTech.ViewModel.FeaturesVM>
+
+@{
+    var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+
+<section class="section border-0 custom-bg-color-grey-1 m-0">
+    <div class="container py-5">
+
+        <div class="row justify-content-center">
+            <div class="col col-lg-9 text-center">
+
+                <div class="divider divider-small divider-small-lg mt-0 text-center appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="0" style="animation-delay: 0ms;">
+                    <hr class="bg-primary border-radius m-auto">
+                </div>
+                <div class="overflow-hidden mb-1">
+                    <h3 class="font-weight-semi-bold text-color-grey text-uppercase positive-ls-3 text-4 line-height-2 line-height-sm-7 mb-0 appear-animation animated maskUp appear-animation-visible" data-appear-animation="maskUp" data-appear-animation-delay="100" style="animation-delay: 100ms;">@sharedResource["How We Can Help"]</h3>
+                </div>
+                <h2 class="text-color-dark font-weight-bold text-8 pb-4 mb-0 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">@sharedResource["Our Amazing Features"]</h2>
+
+
+            </div>
+        </div>
+        <div class="row py-5 appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+
+        @{
+
+            if(Model != null)
+            {
+
+
+                foreach(var item in Model)
+                {
+                        <div class="col-md-4 mb-4">
+                            <div class="card card-border card-border-top card-border-hover bg-color-light border-0 box-shadow-6 box-shadow-hover anim-hover-translate-top-10px transition-3ms anim-hover-inner-wrapper">
+                                <div class="card-body p-relative zindex-1 p-5 text-center">
+                                    <div class="anim-hover-inner-translate-top-20px transition-3ms">
+                                        <div class="animated-icon animated fadeIn svg-fill-color-primary">
+                                            <img src="/@item.Image" width="72" height="73" />
+                                            
+                                        </div>
+                                        @if (@BrowserCulture == "en-US")
+                                        {
+                                        <h4 class="card-title mt-4 mb-2 text-5 font-weight-bold">@item.TitleEn</h4>
+                                        }else{
+                                        <h4 class="card-title mt-4 mb-2 text-5 font-weight-bold">@item.TitleAr</h4>
+
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                }
+
+            }
+        }
+            </div>
+
+       
+    </div>
+</section>
+

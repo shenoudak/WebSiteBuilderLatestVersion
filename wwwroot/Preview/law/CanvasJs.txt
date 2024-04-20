@@ -1,0 +1,1 @@
+/External/lawTemplate/assets/js/jquery.min.js$@/External/lawTemplate/assets/js/popper.min.js$@/External/lawTemplate/assets/js/bootstrap.min.js$@/External/lawTemplate/assets/js/slick.min.js$@/External/lawTemplate/assets/js/jquery.waypoints.min.js$@/External/lawTemplate/assets/js/jquery.easing.1.3.js$@/External/lawTemplate/assets/js/main.js

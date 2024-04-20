@@ -1,0 +1,1 @@
+/External/CanvasTemplate/css/CanvasAll.css$@/External/CanvasTemplate/css/bootstrap.css$@/External/CanvasTemplate/style.css$@/External/CanvasTemplate/css/swiper.css$@/External/CanvasTemplate/css/dark.css$@/External/CanvasTemplate/css/font-icons.css$@/External/CanvasTemplate/css/animate.css$@/External/CanvasTemplate/css/magnific-popup.css$@/External/CanvasTemplate/css/custom.css

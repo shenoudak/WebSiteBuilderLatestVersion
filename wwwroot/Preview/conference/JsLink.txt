@@ -1,0 +1,40 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyAO2BYvn4xyrdisvP8feA4AS_PGZFxJDp4"></script>
+
+<script src="js/functions.js"></script>
+<script>
+
+		jQuery(document).ready( function(){
+
+			// Ticket Price Changed Script
+			var elementEarlyBird = $("#early-bird-person"),
+				element1Day = $("#1-day-pricing-person"),
+				element2Day = $("#2-day-pricing-person"),
+				elementFull = $("#full-pricing-person");
+
+			elementEarlyBird.on( 'change', function(){
+				pricingEarlyBird = $(this).prop('value');
+				jQuery('.early-bird-pricing').html( '$'+ (pricingEarlyBird * 39) );
+			});
+
+			element1Day.on( 'change', function(){
+				pricing1day = $(this).prop('value');
+				jQuery('.1-day-pricing').html( '$'+ (pricing1day * 29) );
+			});
+
+			element2Day.on( 'change', function(){
+				pricing2Day = $(this).prop('value');
+				jQuery('.2-day-pricing').html( '$'+ (pricing2Day * 49) );
+			});
+
+			elementFull.on( 'change', function(){
+				pricingFull = $(this).prop('value');
+				jQuery('.full-pricing').html( '$'+ (pricingFull * 69) );
+			});
+
+		});
+
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a10c37aed0f076f","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

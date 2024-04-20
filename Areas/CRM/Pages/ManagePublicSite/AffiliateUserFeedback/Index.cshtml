@@ -1,0 +1,141 @@
+﻿@page
+@model iTech.Areas.CRM.Pages.ManagePublicSite.AffiliateUserFeedback.IndexModel
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    ViewBag.Title = @sharedResource["Manage Affiliate User Feedback"];
+    ViewBag.pTitle = @sharedResource["Manage Affiliate User Feedback"];
+    ViewBag.pageTitle = @sharedResource["Manage Affiliate User Feedback"];
+	ViewData["Title"] = @sharedResource["Manage Affiliate User Feedback"];
+}
+
+
+<div class="d-flex flex-column flex-column-fluid">
+	<!--begin::Toolbar-->
+	<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+		<!--begin::Toolbar container-->
+		<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+			<!--begin::Page title-->
+			<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+				<!--begin::Title-->
+				<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Affiliate User Feedback</h1>
+				<!--end::Title-->
+				<!--begin::Breadcrumb-->
+				<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">
+						<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item">
+						<span class="bullet bg-gray-400 w-5px h-2px"></span>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">Affiliate User Feedback</li>
+					<!--end::Item-->
+				</ul>
+				<!--end::Breadcrumb-->
+			</div>
+			<!--end::Page title-->
+			
+		</div>
+		<!--end::Toolbar container-->
+	</div>
+	<!--end::Toolbar-->
+	<!--begin::Content-->
+	<div id="kt_app_content" class="app-content flex-column-fluid">
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container container-xxl">
+			
+			<!--begin::Tables Widget 11-->
+			<div class="card mb-5 mb-xl-8">
+				<!--begin::Header-->
+				<div class="card-header border-0 pt-5">
+
+					<h3 class="card-title align-items-start flex-column">
+						<span class="card-label fw-bold fs-3 mb-1">Affiliate User Feedback</span>
+					</h3>
+					<!--begin::Actions-->
+					<div class="d-flex align-items-center gap-2 gap-lg-3">
+						
+						<!--begin::Secondary button-->
+						<!--end::Secondary button-->
+						<!--begin::Primary button-->
+						<button type="button" class="btn btn-sm btn-light-primary"
+								data-bs-toggle="modal" id="create-btn"
+								data-bs-target="#AddModal">
+							<i class="ki-duotone ki-plus fs-2"></i> @sharedResource["Add Affiliate User Feedback"]
+						</button>
+						<!--end::Primary button-->
+					</div>
+					<!--end::Actions-->
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				<div class="card-body py-3">
+					<!--begin::Table container-->
+					<div class="table-responsive">
+						<!--begin::Table-->
+						<table class="table align-middle gs-0 gy-4">
+							<!--begin::Table head-->
+							<thead>
+								<tr class="fw-bold text-muted bg-light">
+
+									<th class="ps-4 min-w-325px rounded-start">@sharedResource["Affiliate Price Title"]</th>
+									<th class="min-w-125px">@sharedResource["From"]</th>
+									<th class="min-w-125px">@sharedResource["To"]</th>
+									<th class="min-w-200px">@sharedResource["Point"]</th>
+									<th class="min-w-200px text-end rounded-end"></th>
+								</tr>
+							</thead>
+							<!--end::Table head-->
+							<!--begin::Table body-->
+							<tbody>
+								@{
+									foreach (var item in Model.affilateFeedbacks)
+									{
+										<tr>
+
+											<td class=" fw-bold">@item.TitleAr </td>
+											<td class=" fw-bold">@item.TitleEn</td>
+											<td class=" fw-bold">@item.UserOneFeedbackEn</td>
+											<td class=" fw-bold">@item.UserOneFeedbackAr</td>
+											@*<td class=" fw-bold">@item.UserTwoFeedbackAr</td>
+											<td class=" fw-bold">@item.UserTwoFeedbackEn</td>
+											<td class=" fw-bold">@item.UserThreeFeedbackAr</td>
+											<td class=" fw-bold">@item.UserThreeFeedbackEn</td>*@
+
+											<td class="text-end">
+												
+												<a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" href="javascript:void(0)" data-bs-toggle="modal">
+													<i class="ki-duotone ki-pencil fs-2" onclick="editButtonClick(@item.AffilateFeedbackId)">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</a>
+
+												
+											</td>
+										</tr>
+
+									}
+								}
+							</tbody>
+							<!--end::Table body-->
+						</table>
+						<!--end::Table-->
+					</div>
+					<!--end::Table container-->
+				</div>
+				<!--begin::Body-->
+			</div>
+			<!--end::Tables Widget 11-->
+			
+		</div>
+		<!--end::Content container-->
+	</div>
+	<!--end::Content-->
+</div>
+

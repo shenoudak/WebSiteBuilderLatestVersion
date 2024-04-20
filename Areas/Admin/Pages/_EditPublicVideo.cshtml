@@ -1,0 +1,118 @@
+﻿@{
+}
+@model iTech.Models.PublicVideo
+
+<div class="modal fade" id="showEditModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Edit Count Info"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <!--end::Form-->
+
+                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework" enctype="multipart/form-data" asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditPublicVideo">
+                            <div class="modal-body">
+                                <div class="row g-3">
+
+                                    <input asp-for="@Model.PublicVideoId" id="HiddenPublicVideoId" value="@Model.PublicVideoId" hidden>
+
+
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.TitleAr" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Arabic Title"]</label>
+                                            <input data-val-required="@sharedResource["Enter Arabic Title"]" id="TitleArId" type="text" asp-for="@Model.TitleAr" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Arabic Title"]" required />
+                                            <span asp-validation-for="@Model.TitleAr" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.TitleEn" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["English Title"]</label>
+                                            <input data-val-required="@sharedResource["Enter English Title"]" id="TitleEnId" type="text" asp-for="@Model.TitleEn" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter English Title"]" required />
+                                            <span asp-validation-for="@Model.TitleEn" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.BriefAr" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["Arabic Brief"]</label>
+                                            <textarea data-val-required="@sharedResource["Enter Arabic Brief"]" id="BriefArId" type="text" asp-for="@Model.BriefAr" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Arabic Brief"]" required></textarea>
+                                            <span asp-validation-for="@Model.BriefAr" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.BriefEn" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["English Brief"]</label>
+                                            <textarea data-val-required="@sharedResource["Enter English Brief"]" id="BriefEnId" type="text" asp-for="@Model.BriefEn" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter English Brief"]" required></textarea>
+                                            <span asp-validation-for="@Model.BriefEn" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label for="@Model.VideoUrl" class="form-label d-flex align-items-center fs-5 fw-semibold mb-2">@sharedResource["VideoUrl"]</label>
+                                            <input data-val-required="@sharedResource["Enter VideoUrl"]" id="VideoUrlId" type="text" asp-for="@Model.VideoUrl" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter VideoUrl"]" required />
+                                            <span asp-validation-for="@Model.VideoUrl" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div>
+                                            <label class="form-label d-flex align-items-center fs-5 fw-semibold mb-2"> @sharedResource["Background"]</label>
+
+                                            <div class="custom-file">
+                                                <input type="file" name="BackgroundEditfile" class="custom-file-input">
+                                                <label class="custom-file-label" for="BackgroundEditfile"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--end row-->
+                                </div>
+                           
+                            <div class="d-flex flex-stack pt-10 m-0">
+                                <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>@sharedResource["Close"]
+                                </button>
+                                <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                    @sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>
+                                </button>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>

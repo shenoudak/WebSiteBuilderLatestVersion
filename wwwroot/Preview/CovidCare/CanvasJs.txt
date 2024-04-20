@@ -1,0 +1,1 @@
+https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2/aea4879b33c060e79fe94621666317369993$@/External/CovidCareTemplate/js/jquery.js$@/External/CovidCareTemplate/js/plugins.min.js$@/External/CovidCareTemplate/js/functions.js

@@ -1,0 +1,2884 @@
+{
+  "assets": [
+  ],
+  "styles": [
+    {
+      "selectors": [
+        "c744"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/slider/1.jpg') center center",
+        "background-size": "cover"
+      }
+    },
+    {
+      "selectors": [
+        "c840"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/slider/2.jpg') center center",
+        "background-size": "cover"
+      }
+    },
+    {
+      "selectors": [
+        "c923"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/slider/3.jpg') center center",
+        "background-size": "cover"
+      }
+    },
+    {
+      "selectors": [
+        "c726"
+      ],
+      "style": {
+        "display": "block"
+      }
+    },
+    {
+      "selectors": [
+        "c1128"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/1.jpg') no-repeat center center",
+        "background-size": "cover",
+        "height": "278px"
+      }
+    },
+    {
+      "selectors": [
+        "c1407"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/2.jpg') no-repeat center center",
+        "background-size": "cover",
+        "height": "190px"
+      }
+    },
+    {
+      "selectors": [
+        "c1633"
+      ],
+      "style": {
+        "border": "0"
+      }
+    },
+    {
+      "selectors": [
+        "c1868"
+      ],
+      "style": {
+        "display": "block",
+        "width": "100%"
+      }
+    },
+    {
+      "selectors": [
+        "c2194"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/3.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "210px"
+      }
+    },
+    {
+      "selectors": [
+        "c2414"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/4-1.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "278px"
+      }
+    },
+    {
+      "selectors": [
+        "c2438"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/4-2.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "278px"
+      }
+    },
+    {
+      "selectors": [
+        "c2462"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/4-3.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "278px"
+      }
+    },
+    {
+      "selectors": [
+        "c2743"
+      ],
+      "style": {
+        "position": "absolute",
+        "left": "0",
+        "bottom": "0",
+        "width": "100%"
+      }
+    },
+    {
+      "selectors": [
+        "c2667"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/5.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "525px"
+      }
+    },
+    {
+      "selectors": [
+        "c2986"
+      ],
+      "style": {
+        "background": "url('../External/ModernBlogTemplate/demos/modern-blog/images/items/8.jpg') no-repeat center bottom",
+        "background-size": "cover",
+        "height": "160px"
+      }
+    },
+    {
+      "selectors": [
+        "c2978"
+      ],
+      "style": {
+        "padding-left": "20px",
+        "padding-right": "20px"
+      }
+    },
+    {
+      "selectors": [
+        "c3569"
+      ],
+      "style": {
+        "max-width": "20rem"
+      }
+    },
+    {
+      "selectors": [
+        "c3591"
+      ],
+      "style": {
+        "max-width": "20rem"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "frames": [
+        {
+          "component": {
+            "type": "wrapper",
+            "stylable": [
+              "background",
+              "background-color",
+              "background-image",
+              "background-repeat",
+              "background-attachment",
+              "background-position",
+              "background-size"
+            ],
+            "components": [
+              {
+                "classes": [
+                  "clearfix"
+                ],
+                "attributes": {
+                  "id": "wrapper"
+                },
+                "components": [
+                  {
+                    "tagName": "header",
+                    "classes": [
+                      "transparent-header",
+                      "header-size-md"
+                    ],
+                    "attributes": {
+                      "id": "header",
+                      "data-sticky-shrink": "false"
+                    },
+                    "components": [
+                      {
+                        "attributes": {
+                          "id": "header-wrap"
+                        },
+                        "components": [
+                          {
+                            "classes": [
+                              "container-fluid"
+                            ],
+                            "components": [
+                              {
+                                "classes": [
+                                  "header-row"
+                                ],
+                                "components": [
+                                  {
+                                    "attributes": {
+                                      "id": "logo"
+                                    },
+                                    "components": [
+                                      {
+                                        "type": "link",
+                                        "editable": false,
+                                        "classes": [
+                                          "standard-logo"
+                                        ],
+                                        "attributes": {
+                                          "href": "index.html",
+                                          "data-mobile-logo": "../External/ModernBlogTemplate/images/logo.png"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/ModernBlogTemplate/images/logo-dark.png",
+                                              "alt": "Site Logo"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "link",
+                                        "editable": false,
+                                        "classes": [
+                                          "retina-logo"
+                                        ],
+                                        "attributes": {
+                                          "href": "index.html",
+                                          "data-mobile-logo": "../External/ModernBlogTemplate/images/logo@2x.png"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/ModernBlogTemplate/images/logo-dark@2x.png",
+                                              "alt": "Site Logo"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "attributes": {
+                                      "id": "primary-menu-trigger"
+                                    },
+                                    "components": [
+                                      {
+                                        "type": "svg",
+                                        "resizable": {
+                                          "ratioDefault": true
+                                        },
+                                        "classes": [
+                                          "svg-trigger"
+                                        ],
+                                        "attributes": {
+                                          "viewBox": "0 0 100 100"
+                                        },
+                                        "components": [
+                                          {
+                                            "tagName": "path",
+                                            "type": "svg-in",
+                                            "resizable": {
+                                              "ratioDefault": true
+                                            },
+                                            "attributes": {
+                                              "d": "m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"
+                                            }
+                                          },
+                                          {
+                                            "tagName": "path",
+                                            "type": "svg-in",
+                                            "resizable": {
+                                              "ratioDefault": true
+                                            },
+                                            "attributes": {
+                                              "d": "m 30,50 h 40"
+                                            }
+                                          },
+                                          {
+                                            "tagName": "path",
+                                            "type": "svg-in",
+                                            "resizable": {
+                                              "ratioDefault": true
+                                            },
+                                            "attributes": {
+                                              "d": "m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "tagName": "nav",
+                                    "classes": [
+                                      "primary-menu",
+                                      "text-lg-center"
+                                    ],
+                                    "components": [
+                                      {
+                                        "tagName": "ul",
+                                        "classes": [
+                                          "menu-container"
+                                        ],
+                                        "components": [
+                                          {
+                                            "tagName": "li",
+                                            "classes": [
+                                              "menu-item",
+                                              "current"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "menu-link"
+                                                ],
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Home"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "li",
+                                            "classes": [
+                                              "menu-item"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "menu-link"
+                                                ],
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Articles"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "li",
+                                            "classes": [
+                                              "menu-item"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "menu-link"
+                                                ],
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Events"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "li",
+                                            "classes": [
+                                              "menu-item"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "menu-link"
+                                                ],
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Videos"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "tagName": "li",
+                                            "classes": [
+                                              "menu-item"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "menu-link"
+                                                ],
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Contact"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "classes": [
+                          "header-wrap-clone"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "section",
+                    "classes": [
+                      "slider-element",
+                      "min-vh-60",
+                      "min-vh-md-100"
+                    ],
+                    "attributes": {
+                      "id": "slider"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "fslider",
+                          "h-100",
+                          "position-absolute"
+                        ],
+                        "attributes": {
+                          "data-speed": "1800",
+                          "data-pause": "5000",
+                          "data-animation": "fade",
+                          "data-arrows": "true",
+                          "data-pagi": "false"
+                        },
+                        "components": [
+                          {
+                            "classes": [
+                              "flexslider",
+                              "c726"
+                            ],
+                            "attributes": {
+                              "id": "i7rmi"
+                            },
+                            "components": [
+                              {
+                                "classes": [
+                                  "slider-wrap"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "slide",
+                                      "text-center",
+                                      "c744"
+                                    ],
+                                    "attributes": {
+                                      "id": "io3v5"
+                                    },
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "bg-overlay"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "bg-overlay-content",
+                                              "align-items-end"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "slide-caption",
+                                                  "px-4",
+                                                  "pb-4",
+                                                  "dark"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h3",
+                                                    "classes": [
+                                                      "mb-2",
+                                                      "h1"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "classes": [
+                                                          "text-white"
+                                                        ],
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "Thing That Make You Love"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h5"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Credibly synthesize seamless"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "slide",
+                                      "text-center",
+                                      "c840"
+                                    ],
+                                    "attributes": {
+                                      "id": "i8k96"
+                                    },
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "bg-overlay"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "bg-overlay-content",
+                                              "align-items-end"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "slide-caption",
+                                                  "px-4",
+                                                  "pb-4",
+                                                  "dark"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h3",
+                                                    "classes": [
+                                                      "mb-2",
+                                                      "h1"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "classes": [
+                                                          "text-white"
+                                                        ],
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "The Ultimate Guide To Fashion"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h5"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Monotonectally foster cross"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "slide",
+                                      "text-center",
+                                      "c923"
+                                    ],
+                                    "attributes": {
+                                      "id": "isvi2"
+                                    },
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "bg-overlay"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "bg-overlay-content",
+                                              "align-items-end"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "slide-caption",
+                                                  "px-4",
+                                                  "pb-4",
+                                                  "dark"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h3",
+                                                    "classes": [
+                                                      "mb-2",
+                                                      "h1"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "classes": [
+                                                          "text-white"
+                                                        ],
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "Learn How We Made Fashion"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h5"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Intrinsicly embrace scalable"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "section",
+                    "classes": [
+                      "bg-light"
+                    ],
+                    "attributes": {
+                      "id": "content"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "content-wrap",
+                          "pt-lg-0",
+                          "pt-xl-0",
+                          "pb-0"
+                        ],
+                        "components": [
+                          {
+                            "classes": [
+                              "container",
+                              "clearfix"
+                            ],
+                            "components": [
+                              {
+                                "classes": [
+                                  "heading-block",
+                                  "border-bottom-0",
+                                  "center",
+                                  "pt-4",
+                                  "mb-3"
+                                ],
+                                "components": [
+                                  {
+                                    "tagName": "h3",
+                                    "type": "text",
+                                    "components": [
+                                      {
+                                        "type": "textnode",
+                                        "content": "Articles"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": [
+                                  "row",
+                                  "grid-container",
+                                  "infinity-wrapper",
+                                  "clearfix"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "mb-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "classes": [
+                                                  "c1128"
+                                                ],
+                                                "attributes": {
+                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/1.jpg",
+                                                  "data-lightbox": "image"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "How To Make More travel By Doing Less"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Distinctively unleash e-business testing procedures vis-a-vis future-proof leadership. Energistically synthesize leveraged e-business whereas proactive."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "MockUp"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-user"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "image",
+                                                "attributes": {
+                                                  "src": "../External/ModernBlogTemplate/demos/modern-blog/images/user/techsite-logo.png",
+                                                  "alt": "Image"
+                                                }
+                                              },
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "SemiColoWeb Tech."
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Themeforest.net"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "mb-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "c1407"
+                                                ],
+                                                "attributes": {
+                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/2.jpg",
+                                                  "data-lightbox": "image"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "\n"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with a Preview Image"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Article"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "mb-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "video",
+                                                    "resizable": {
+                                                      "ratioDefault": 1
+                                                    },
+                                                    "classes": [
+                                                      "c1868"
+                                                    ],
+                                                    "attributes": {
+                                                      "allowfullscreen": "allowfullscreen",
+                                                      "poster": "../External/ModernBlogTemplate/images/videos/explore-poster.jpg",
+                                                      "preload": "auto",
+                                                      "loop": true,
+                                                      "autoplay": true,
+                                                      "muted": true
+                                                    },
+                                                    "sources": [
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "tagName": "source",
+                                                        "void": true,
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/images/videos/explore.mp4",
+                                                          "type": "video/mp4"
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with a HTML5 Video"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, voluptatem, dolorem animi nisi autem blanditiis enim culpa reiciendis et explicabo tenetur."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Vimeo"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-user",
+                                              "pb-2",
+                                              "border-bottom"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "image",
+                                                "attributes": {
+                                                  "src": "../External/ModernBlogTemplate/demos/modern-blog/images/user/techsite-logo.png",
+                                                  "alt": "Image"
+                                                }
+                                              },
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "SemiColoWeb Tech."
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Themeforest.net"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title",
+                                              "pt-2"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with Author Name"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "mb-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "c2194"
+                                                ],
+                                                "attributes": {
+                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/3.jpg",
+                                                  "data-lightbox": "image"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "\n"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit ratione, voluptatem."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Nature"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "mb-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "fslider"
+                                                ],
+                                                "attributes": {
+                                                  "data-arrows": "false",
+                                                  "data-lightbox": "gallery"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "classes": [
+                                                      "flexslider"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "classes": [
+                                                          "slider-wrap"
+                                                        ],
+                                                        "components": [
+                                                          {
+                                                            "classes": [
+                                                              "slide"
+                                                            ],
+                                                            "components": [
+                                                              {
+                                                                "type": "link",
+                                                                "classes": [
+                                                                  "c2414"
+                                                                ],
+                                                                "attributes": {
+                                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/4-1.jpg",
+                                                                  "data-lightbox": "gallery-item"
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "classes": [
+                                                              "slide"
+                                                            ],
+                                                            "components": [
+                                                              {
+                                                                "type": "link",
+                                                                "classes": [
+                                                                  "c2438"
+                                                                ],
+                                                                "attributes": {
+                                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/4-2.jpg",
+                                                                  "data-lightbox": "gallery-item"
+                                                                }
+                                                              }
+                                                            ]
+                                                          },
+                                                          {
+                                                            "classes": [
+                                                              "slide"
+                                                            ],
+                                                            "components": [
+                                                              {
+                                                                "type": "link",
+                                                                "classes": [
+                                                                  "c2462"
+                                                                ],
+                                                                "attributes": {
+                                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/4-3.jpg",
+                                                                  "data-lightbox": "gallery-item"
+                                                                }
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with Gallery Image"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Magni velit facilis donec quasi quidem error animi, rutrum sequi mi officia possimus fames, corporis culpa minim mollis tempora fuga, sed ipsam fugiat dictumst, nascetur aptent inceptos taciti. Natoque. Praesentium."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Travel"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "dark",
+                                          "clearfix",
+                                          "c2667"
+                                        ],
+                                        "attributes": {
+                                          "id": "iufpmz"
+                                        },
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-title",
+                                              "pt-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "classes": [
+                                                      "text-light"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Standard Full Image"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "classes": [
+                                                  "fw-light"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Magni velit facilis donec quasi quidem error animi, rutrum sequi mi officia."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "c2743"
+                                            ],
+                                            "attributes": {
+                                              "id": "iv9e04"
+                                            },
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "entry-meta",
+                                                  "no-separator",
+                                                  "nohover"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "ul",
+                                                    "classes": [
+                                                      "justify-content-between",
+                                                      "mx-0"
+                                                    ],
+                                                    "components": [
+                                                      {
+                                                        "tagName": "li",
+                                                        "type": "text",
+                                                        "components": [
+                                                          {
+                                                            "tagName": "i",
+                                                            "classes": [
+                                                              "icon-calendar2"
+                                                            ]
+                                                          },
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": " 10th Feb 2021"
+                                                          }
+                                                        ]
+                                                      },
+                                                      {
+                                                        "tagName": "li",
+                                                        "type": "text",
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "Tools"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "entry-meta",
+                                                  "no-separator",
+                                                  "hover"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "ul",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "li",
+                                                        "components": [
+                                                          {
+                                                            "type": "link",
+                                                            "attributes": {
+                                                              "href": "#"
+                                                            },
+                                                            "components": [
+                                                              {
+                                                                "type": "textnode",
+                                                                "content": "View More →"
+                                                              }
+                                                            ]
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-user"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "image",
+                                                "attributes": {
+                                                  "src": "../External/ModernBlogTemplate/demos/modern-blog/images/user/3.jpg",
+                                                  "alt": "Image"
+                                                }
+                                              },
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Annie Spratt."
+                                                  },
+                                                  {
+                                                    "tagName": "span",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Apple Inc."
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with Image/Author"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-image",
+                                              "c2978"
+                                            ],
+                                            "attributes": {
+                                              "id": "ikgley"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "editable": false,
+                                                "classes": [
+                                                  "c2986"
+                                                ],
+                                                "attributes": {
+                                                  "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/8.jpg",
+                                                  "data-lightbox": "image"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "\n"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Food"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-md-6",
+                                      "p-3"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "entry",
+                                          "mb-1",
+                                          "clearfix"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "entry-title",
+                                              "pt-3"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "attributes": {
+                                                      "href": "#"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "This is a Standard post with Gallery Thumbs"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-image"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "masonry-thumbs",
+                                                  "grid-container"
+                                                ],
+                                                "attributes": {
+                                                  "data-big": "2",
+                                                  "data-lightbox": "gallery"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-1.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-1.jpg",
+                                                          "alt": "Gallery Thumb 1"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-2.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-2.jpg",
+                                                          "alt": "Gallery Thumb 2"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-3.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-3.jpg",
+                                                          "alt": "Gallery Thumb 3"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-4.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-4.jpg",
+                                                          "alt": "Gallery Thumb 4"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-5.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-5.jpg",
+                                                          "alt": "Gallery Thumb 5"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-6.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-6.jpg",
+                                                          "alt": "Gallery Thumb 6"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-7.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-7.jpg",
+                                                          "alt": "Gallery Thumb 7"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-8.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-8.jpg",
+                                                          "alt": "Gallery Thumb 9"
+                                                        }
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "link",
+                                                    "editable": false,
+                                                    "classes": [
+                                                      "grid-item"
+                                                    ],
+                                                    "attributes": {
+                                                      "href": "../External/ModernBlogTemplate/demos/modern-blog/images/items/lightbox/9-9.jpg",
+                                                      "data-lightbox": "gallery-item"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "image",
+                                                        "attributes": {
+                                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/items/9-9.jpg",
+                                                          "alt": "Gallery Thumb 10"
+                                                        }
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit ratione, voluptatem. Luctus montes. Voluptatem dolorem parturient, egestas lacus nemo tempus reiciendis! Nihil provident. Nibh placeat"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "nohover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "justify-content-between",
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "tagName": "i",
+                                                        "classes": [
+                                                          "icon-calendar2"
+                                                        ]
+                                                      },
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": " 10th Feb 2021"
+                                                      }
+                                                    ]
+                                                  },
+                                                  {
+                                                    "tagName": "li",
+                                                    "type": "text",
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Food"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "entry-meta",
+                                              "no-separator",
+                                              "hover"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "ul",
+                                                "classes": [
+                                                  "mx-0"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "li",
+                                                    "components": [
+                                                      {
+                                                        "type": "link",
+                                                        "attributes": {
+                                                          "href": "#"
+                                                        },
+                                                        "components": [
+                                                          {
+                                                            "type": "textnode",
+                                                            "content": "View More →"
+                                                          }
+                                                        ]
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": [
+                                  "text-center"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "page-load-status",
+                                      "hovering-load-status"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "css3-spinner",
+                                          "infinite-scroll-request"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "css3-spinner-ball-pulse-sync"
+                                            ],
+                                            "components": [
+                                              {
+                                              },
+                                              {
+                                              },
+                                              {
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          "alert",
+                                          "alert-warning",
+                                          "center",
+                                          "infinite-scroll-last",
+                                          "mx-auto",
+                                          "c3569"
+                                        ],
+                                        "attributes": {
+                                          "id": "is1wbf"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "End of content"
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          "alert",
+                                          "alert-warning",
+                                          "center",
+                                          "infinite-scroll-error",
+                                          "mx-auto",
+                                          "c3591"
+                                        ],
+                                        "attributes": {
+                                          "id": "iava4r"
+                                        },
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "No more pages to load"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": [
+                                  "center",
+                                  "d-none"
+                                ],
+                                "components": [
+                                  {
+                                    "type": "link",
+                                    "classes": [
+                                      "load-next-posts"
+                                    ],
+                                    "attributes": {
+                                      "href": "demo-modern-blog-2.html"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "section",
+                              "bg-white",
+                              "pt-4",
+                              "pb-0",
+                              "topmargin-sm",
+                              "mb-0"
+                            ],
+                            "components": [
+                              {
+                                "classes": [
+                                  "container"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "heading-block",
+                                      "d-flex",
+                                      "justify-content-center",
+                                      "center",
+                                      "border-bottom-0",
+                                      "mb-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "type": "image",
+                                        "classes": [
+                                          "align-self-center"
+                                        ],
+                                        "attributes": {
+                                          "src": "../External/ModernBlogTemplate/demos/modern-blog/images/instagram.png",
+                                          "alt": "Image",
+                                          "height": "28"
+                                        }
+                                      },
+                                      {
+                                        "tagName": "h3",
+                                        "type": "text",
+                                        "classes": [
+                                          "ms-2",
+                                          "text-capitalize",
+                                          "ls0",
+                                          "align-self-center"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "Instagram Feed"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": [
+                                  "instagram-button",
+                                  "position-relative"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "instagram-photos",
+                                      "masonry-thumbs",
+                                      "grid-container",
+                                      "grid-6"
+                                    ],
+                                    "attributes": {
+                                      "id": "instagram-photos",
+                                      "data-user": "blog.canvastemplate"
+                                    }
+                                  },
+                                  {
+                                    "type": "link",
+                                    "classes": [
+                                      "button",
+                                      "bg-white",
+                                      "button-light",
+                                      "button-rounded",
+                                      "text-dark",
+                                      "m-0",
+                                      "clearfix"
+                                    ],
+                                    "attributes": {
+                                      "href": "#"
+                                    },
+                                    "components": [
+                                      {
+                                        "type": "textnode",
+                                        "content": "Follow us on Instagram"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "tagName": "footer",
+                        "components": [
+                          {
+                            "classes": [
+                              "bg-dark",
+                              "dark"
+                            ],
+                            "attributes": {
+                              "id": "copyrights"
+                            },
+                            "components": [
+                              {
+                                "classes": [
+                                  "container",
+                                  "clearfix"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "row",
+                                      "col-mb-30"
+                                    ],
+                                    "components": [
+                                      {
+                                        "type": "text",
+                                        "classes": [
+                                          "col-12",
+                                          "text-center",
+                                          "text-muted"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "textnode",
+                                            "content": "\nCopyrights All Rights Reserved by TechSite."
+                                          },
+                                          {
+                                            "tagName": "br",
+                                            "void": true
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "col-12",
+                                          "text-center"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-facebook"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-facebook"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-facebook"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-twitter"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-twitter"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-twitter"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-gplus"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-gplus"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-gplus"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-pinterest"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-pinterest"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-pinterest"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-vimeo"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-vimeo"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-vimeo"
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "type": "link",
+                                            "classes": [
+                                              "social-icon",
+                                              "inline-block",
+                                              "si-small",
+                                              "si-rounded",
+                                              "si-colored",
+                                              "si-instagram"
+                                            ],
+                                            "attributes": {
+                                              "href": "#"
+                                            },
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-instagram"
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "icon-instagram"
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "classes": [
+                  "icon-angle-up",
+                  "rounded-circle"
+                ],
+                "attributes": {
+                  "id": "gotoTop"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "id": "index"
+    }
+  ]
+}

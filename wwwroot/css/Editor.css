@@ -1,0 +1,93 @@
+﻿body {
+}
+.gjs-editor-cont {
+    height: 100% !important;
+}
+
+.gjs-one-bg {
+    background-color: #2e2e47;
+}
+
+.app-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+[data-kt-app-footer-fixed=true] .app-wrapper {
+    margin-bottom: 0;
+}
+
+.gjs-two-color {
+    color: #c8c8e4 !important;
+}
+
+.gjs-four-color-h:hover {
+    color: #9393c9 !important;
+}
+
+.gjs-block-label {
+    color: #c8c8e4 !important;
+}
+
+.gjs-block {
+    width: 100% !important;
+    min-height: initial !important;
+}
+
+.gjs-devices-c {
+    padding: 0px !important;
+}
+
+.gjs-block-label{
+    display:none !important;
+}
+.gjs-four-color {
+    color: #009ef7 !important;
+}
+
+.gjs-block {
+    padding: 0px !important;
+    margin: 2px 2px 2px 2px;
+}
+/*.gjs-pn-panel#gjs-pn-views-container, .gjs-pn-panel.gjs-pn-views-container {
+    margin-top: 42px !important;
+}
+
+.gjs-blocks-cs {
+    margin-top: -42px !important;
+    margin-bottom: 43px !important;
+}*/
+.gjs-pn-commands {
+    box-shadow:initial !important;
+}
+.gjs-title {
+    font-size: 12px !important;
+}
+
+/*.gjs-blocks-cs {
+   
+    height: 12px;
+}
+
+.gjs-blocks-cs::-webkit-scrollbar {
+    width: 12px;
+}*/
+
+.gjs-blocks-cs::-webkit-scrollbar-thumb {
+    background-color: #f1faff;
+}
+
+
+.gjs-blocks-cs {
+    scrollbar-color: #f1faff transparent;
+}
+
+    .gjs-blocks-cs::-webkit-scrollbar-thumb {
+        background-color: #f1faff;
+    }
+
+
+
+

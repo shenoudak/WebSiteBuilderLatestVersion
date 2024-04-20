@@ -1,0 +1,1 @@
+https://code.jquery.com/jquery-3.4.1.min.js$@https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js$@/External/apex-1.0.0/lib/wow/wow.min.js$@/External/apex-1.0.0/lib/easing/easing.min.js$@/External/apex-1.0.0/lib/waypoints/waypoints.min.js$@/External/apex-1.0.0/lib/owlcarousel/owl.carousel.min.js$@/External/apex-1.0.0/js/main.js

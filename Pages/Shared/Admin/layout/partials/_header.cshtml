@@ -1,0 +1,102 @@
+﻿@using Microsoft.AspNetCore.Localization;
+
+<!--begin::Header-->
+<div id="kt_app_header" class="app-header "
+     >
+                        <!--begin::Header container-->
+            <div class="app-container  container-fluid d-flex align-items-stretch justify-content-between " id="kt_app_header_container">
+	<!--begin::Logo-->
+	<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0 me-lg-15">
+		<a href="?page=index">
+							<img alt="Logo" src="~/assets/media/logos/default-dark.svg" class="h-20px h-lg-30px app-sidebar-logo-default"/>
+					</a>
+	</div>
+	<!--end::Logo-->
+<!--begin::Header wrapper-->
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1" id="kt_app_header_wrapper">
+<!--layout-partial:layout/partials/header/_menu/_menu.html-->
+			<partial name="Admin/layout/partials/header/_menu/_menu"></partial>
+<!--layout-partial:layout/partials/header/_navbar.html-->
+			<partial name="Admin/layout/partials/header/_navbar"></partial>
+
+
+</div>
+<!--end::Header wrapper-->            </div>
+            <!--end::Header container-->
+    <div class="dropdown">
+        <a data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            @{
+                var locale1 = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+                var BrowserCulture1 = locale1.RequestCulture.UICulture.ToString();
+                if (BrowserCulture1 == "en-US")
+                {
+                    //<span><img id="header-lang-img" src="~/assets/images/flags/us.svg" alt="Header Language" height="10" class="rounded"></span>
+                    <span>EN</span>
+                }
+                else
+                {
+                    //<span><img id="header-lang" src="~/assets/images/flags/kw.svg" alt="Header Language" height="10"></span>
+                    <span>AR</span>
+                }
+            }
+
+        </a>
+
+        <div class="dropdown-box">
+            <!-- item-->
+            <a asp-controller="Setting" asp-action="ChangeLanguage" asp-route-culture="en-US" asp-route-url="@Context.Request.Path@Context.Request.QueryString.ToString()" class="dropdown-item dropdown-toggle" onclick="ChangeLang('en')">
+                @*<img src="~/assets/images/flags/us.svg" alt="user-image" class="me-2 rounded" height="8">*@
+                <span class="align-middle">English</span>
+                </a>
+
+
+                <!-- item-->
+                <a asp-controller="Setting" asp-action="ChangeLanguage" asp-route-culture="ar-EG" asp-route-url="@Context.Request.Path@Context.Request.QueryString.ToString()" class="dropdown-item dropdown-toggle" onclick="ChangeLang('ar')">
+                @*<img src="~/assets/images/flags/kw.svg" alt="user-image" class="me-2 rounded" height="8">*@
+                <span class="align-middle">اللغة العربية</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+<!--end::Header-->
+
+                <script>
+    function ChangeLang(lang) {
+
+        var anch1 = document.getElementById("ang1");
+        var anch2 = document.getElementById("ang2");
+        var masterPage = document.getElementById("masterPageId");
+        if (lang == "en") {
+            localStorage.setItem("lang", "en");
+
+        }
+        if (lang == "ar") {
+
+            localStorage.setItem("lang", "ar");
+
+        }
+
+    }
+    window.addEventListener('DOMContentLoaded', (event) => {
+        var masterPage = document.getElementById("masterPageId");
+        if (localStorage.getItem("lang") != "") {
+            if (localStorage.getItem("lang") == "en") {
+                masterPage.dir = "ltr";
+                //LangSelec.innerHTML = "En";
+
+                document.getElementById("masterbodyid").style.textAlign = "left"
+
+            }
+            else if (localStorage.getItem("lang") == "ar") {
+
+
+                masterPage.dir = "rtl"
+                //LangSelec.innerHTML = "AR";
+                document.getElementById("masterbodyid").style.textAlign = "right"
+
+
+            }
+        }
+    });
+</script>

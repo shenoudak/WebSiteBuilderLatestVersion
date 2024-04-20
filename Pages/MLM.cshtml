@@ -1,0 +1,74 @@
+﻿@page
+@model iTech.Pages.MLMModel
+@{
+    ViewData["Title"] = "Multi-level Marketing page";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+
+<div role="main" class="main">
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-10"> <strong>@sharedResource["Multi-level Marketing"]</strong></h1>
+                    <span class="sub-title">@sharedResource["Join Now!"]</span>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li>
+                            <a href="/Index">
+                                @sharedResource["Home"]
+                            </a>
+                        </li>
+                        <li class="active">@sharedResource["MLM Program"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container my-5 pt-4 pb-5">
+        <div class="row">
+            <div class="col-lg-12 order-lg-2 mb-5 mb-lg-0 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="animation-delay: 500ms;">
+                <p class="text-3-5">
+                    @{
+                        if (Model.BrowserCulture == "en-US")
+                        {
+                            @Html.Raw(@Model.ContentEn)
+                        }
+                        //Arabic
+                        else
+                        {
+                            @Html.Raw(@Model.ContentAr)
+                        }
+                    }
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <section class="call-to-action call-to-action-secondary content-align-center ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-lg-9">
+                    <div class="call-to-action-content">
+                        <h2 class="font-weight-normal text-6 mb-0">-	لا شئ أفضل من تك سايت </h2>
+                        <p class="mb-0">-	سجّل معنا كمسوق، واربح عمولات فورية </p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3">
+                    <div class="call-to-action-btn">
+                        <a href="/Register?isTrue=true" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3">انضم الآن</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</div>

@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model iTech.Models.Services
+@using iTech.Data
+@inject CRMDBContext _context
+@{
+     var locale = Context.Features.Get<IRequestCultureFeature>();
+   
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+    var legalServices = _context.Services.Where(e => e.ServicesId == 1).FirstOrDefault();
+    var Feasibilityservices = _context.Services.Where(e => e.ServicesId == 2).FirstOrDefault();
+    var Marketing = _context.Services.Where(e => e.ServicesId == 3).FirstOrDefault();
+}
+<div class="container py-5 my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 col-xl-8 text-center">
+            <div class="overflow-hidden">
+                <h2 class="font-weight-bold text-color-dark line-height-1 mb-0 appear-animation animated maskUp appear-animation-visible" data-appear-animation="maskUp" data-appear-animation-delay="250" style="animation-delay: 250ms;">Auto Services</h2>
+            </div>
+            <div class="d-inline-block custom-divider divider divider-primary divider-small my-3">
+                <hr class="my-0 appear-animation animated customLineProgressAnim appear-animation-visible" data-appear-animation="customLineProgressAnim" data-appear-animation-delay="600" style="animation-delay: 600ms;">
+            </div>
+            <p class="font-weight-light text-3-5 mb-5 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="500" style="animation-delay: 500ms;">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendrerit vehicula leo, vel efficitur felis ultrices non. Integer aliquet ullamcorper dolor, quis sollicitudin.</p>
+        </div>
+    </div>
+    <div class="row row-gutter-sm mb-5 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="750" style="animation-delay: 750ms;">
+
+        <div class="col-sm-6 col-lg-4 text-center mb-4 mb-lg-0">
+            <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
+                    <div class="thumb-info-wrapper">
+                        <img src="~/@legalServices.Pic" class="img-fluid" alt="">
+                    </div>
+                    @{
+                        if (@BrowserCulture == "en-US")
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@legalServices.TitleEn</h3>
+                        }
+                        else
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@legalServices.TitleAr</h3>
+                        }
+                    }
+
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-sm-6 col-lg-4 text-center mb-4 mb-lg-0">
+            <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
+                    <div class="thumb-info-wrapper">
+                        <img src="~/@Feasibilityservices.Pic" class="img-fluid" alt="">
+                    </div>
+                    @{
+                        if (@BrowserCulture == "en-US")
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@Feasibilityservices.TitleEn</h3>
+                        }
+                        else
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@Feasibilityservices.TitleAr</h3>
+                        }
+                    }
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 text-center mb-4 mb-sm-0">
+            <a href="demo-auto-services-services-detail.html" class="text-decoration-none">
+                <div class="custom-thumb-info-style-1 thumb-info thumb-info-no-borders thumb-info-no-borders-rounded thumb-info-lighten">
+                    <div class="thumb-info-wrapper">
+                        <img src="~/@Marketing.Pic" class="img-fluid" alt="">
+                    </div>
+                    @{
+                        if (@BrowserCulture == "en-US")
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@Marketing.TitleEn</h3>
+                        }
+                        else
+                        {
+                            <h3 class="text-transform-none font-weight-bold text-5 mt-2 mb-0">@Marketing.TitleAr</h3>
+                        }
+                    }
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,340 @@
+﻿@page
+@model iTech.Pages.AffilatesModel
+@{
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+}
+<div role="main" class="main">
+    @*    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-10"> <strong>@sharedResource["Our Services"]</strong></h1>
+                    <span class="sub-title">@sharedResource["We Are Here To Help You"]</span>
+                </div>
+                <div class="col-md-12 align-self-center order-1">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                    <ul class="breadcrumb breadcrumb-light d-block text-center">
+                        <li>
+                            <a href="/Index">
+                                @sharedResource["Home"]
+                            </a>
+                        </li>
+                        <li class="active">@sharedResource["Services"]</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+*@
+
+    <section class="page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7" style="background-image: url(public/img/page-header/page-header-services.jpg);margin-bottom: 0rem;">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-md-12 align-self-center p-static order-2 text-center">
+                    <h1 class="text-color-primary font-weight-bold fst-italic ls-0 text-9 custom-text-lg-1 line-height-2 mb-3 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="500" data-plugin-options="{'minWindowWidth': 0}">  @sharedResource["Earn through affiliate marketing"]</h1>
+                    <span class="anim-hover-scale-1-1 transition-3ms d-inline-block">
+                        <a asp-page="/RegisterAffiliate" class="btn btn-primary positive-ls-3 font-weight-normal btn-px-5 btn-py-3 text-uppercase appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="900" data-plugin-options="{'minWindowWidth': 0}"> @sharedResource["Join To Prgoram"]</a>
+                    </span>
+                    <span class="anim-hover-scale-1-1 transition-3ms d-inline-block">
+                        <a href="#AffiliateVedio" class="btn btn-light positive-ls-3 font-weight-normal btn-px-5 btn-py-3 text-uppercase ms-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="1100" data-plugin-options="{'minWindowWidth': 0}">@sharedResource["Show Video"]</a>
+                    </span>
+                </div>
+                @* <div class="col-md-12 align-self-center order-1">
+                <ul class="breadcrumb breadcrumb-light d-block text-center">
+                <li><a href="/Index">@sharedResource["Home"]</a></li>
+                <li class="active">@sharedResource["Templates"]</li>
+                </ul>
+                </div>*@
+            </div>
+        </div>
+    </section>
+
+
+    @{
+        if (@Model.affilateFeedback != null)
+        {
+                    <section id="services" class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
+                        <div class="container my-3">
+                            <div class="row mb-5">
+                                <div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                            @if (@Model.BrowserCulture == "en-US")
+                            {
+                                            <h2 class="font-weight-bold text-color-light mb-2">@Model.affilateFeedback.TitleEn</h2>
+
+                            }
+                            else
+                            {
+                                            <h2 class="font-weight-bold text-color-light mb-2">@Model.affilateFeedback.TitleAr</h2>
+
+
+
+                            }
+
+                                </div>
+                            </div>
+                            <div class="row mb-lg-4">
+                                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
+                                    <div class="feature-box feature-box-style-2">
+
+                                        <div class="feature-box-info">
+                                    @if (@Model.BrowserCulture == "en-US")
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserOneFeedbackEn</p>
+
+
+                                    }
+                                    else
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserOneFeedbackAr</p>
+
+
+
+
+                                    }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInUpShorter">
+                                    <div class="feature-box feature-box-style-2">
+
+                                        <div class="feature-box-info">
+                                    @if (@Model.BrowserCulture == "en-US")
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserTwoFeedbackEn</p>
+
+                                    }
+                                    else
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserTwoFeedbackAr</p>
+
+
+
+                                    }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
+                                    <div class="feature-box feature-box-style-2">
+
+                                        <div class="feature-box-info">
+                                    @if (@Model.BrowserCulture == "en-US")
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserThreeFeedbackEn</p>
+
+                                    }
+                                    else
+                                    {
+                                                    <p class="text-color-light opacity-7">@Model.affilateFeedback.UserThreeFeedbackAr</p>
+
+
+
+                                    }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+        }
+    }
+
+    <div id="examples" class="container py-2">
+
+        <div class="row">
+            <div class="col">
+
+                <div class="row">
+                    <div class="col pb-3">
+
+
+
+
+                        <hr class="solid my-5">
+
+                        <div class="row pt-4">
+                            <div class="col">
+                                <div class="overflow-hidden mb-3" style="text-align: center;">
+                                    <h2 class="font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
+                                        @sharedResource["Affiliate Program"]
+                                    </h2>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>
+                                        @sharedResource["Groups"]
+                                    </th>
+                                    <th>
+                                        @sharedResource["From"]
+                                    </th>
+                                    <th>
+                                        @sharedResource["To"]
+                                    </th>
+                                    <th>
+                                        @sharedResource["Number Of Points"]
+                                    </th>
+                                    <th>
+                                        @sharedResource["Amounts"]
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (@Model.affiliatePrices != null)
+                                {
+                                    foreach (var item in @Model.affiliatePrices)
+                                    {
+                                        var TotalPointAmountValue = @item.Point * @Model.PointValue;
+                                                <tr>
+
+                                                    <td>
+                                                @item.AffiliatePriceTitle
+                                                    </td>
+                                                    <td>
+                                                @item.From
+                                                    </td>
+                                                    <td>
+                                                @item.To
+                                                    </td>
+                                                    <td>
+                                                @item.Point
+                                                    </td>
+                                                    <td>
+                                                @TotalPointAmountValue KD
+                                                    </td>
+                                                </tr>
+                                    }
+
+                                }
+
+
+
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    @{
+        if (@Model.videoPublicSite != null)
+        {
+                    <section id="AffiliateVedio" class="section-custom-medical">
+                        <div class="container">
+
+                            <div class="row mt-5 mb-5 pt-3 pb-3">
+                                <div class="col-md-6" style="text-align: center;margin: auto;">
+                            @if (@Model.BrowserCulture == "en-US")
+                            {
+                                            <h2 class="font-weight-semibold mb-0" style="color:#df868b">@Model.videoPublicSite.VideoTitleEn</h2>
+                                            <p class="lead font-weight-normal">@Model.videoPublicSite.VideoMiniDescEn</p>
+
+                            }
+                            else
+                            {
+                                            <h2 class="font-weight-semibold mb-0" style="color:#df868b">@Model.videoPublicSite.VideoTitleAr</h2>
+                                            <p class="lead font-weight-normal">@Model.videoPublicSite.VideoMiniDescAr</p>
+
+
+
+                            }
+                                </div>
+                                <div class="col-md-6">
+                            @if (@Model.videoPublicSite.IsUrl == true)
+                            {
+                                            <video autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                                <source src="@Model.videoPublicSite.VideoUrl">
+                                                <source src="@Model.videoPublicSite.VideoUrl" data-wf-ignore="true">
+                                            </video>
+                            }
+                            else
+                            {
+                                            <video autoplay="" loop="" muted="" playsinline="" data-wf-ignore="true" data-object-fit="cover">
+                                                <source src="@Model.videoPublicSite.VideoMedia">
+                                                <source src="@Model.videoPublicSite.VideoMedia" data-wf-ignore="true">
+                                            </video>
+                            }
+
+
+                            @*<img src="frontsite/img/demos/medical/gallery/gallery-1.jpg" alt class="img-fluid box-shadow-custom" /> *@
+                                </div>
+                            </div>
+
+                             </div>
+                    </section>
+        }
+    }
+
+    <section id="Adv" class="section section-height-3 bg-primary border-0 m-0 appear-animation" data-appear-animation="fadeIn">
+        <div class="container my-3">
+            <div class="row mb-5">
+                <div class="col text-center appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200">
+                    <h2 class="font-weight-bold text-color-light mb-2">@sharedResource["Advantages of affiliate marketing program"]</h2>
+                </div>
+            </div>
+            <div class="row mb-lg-4">
+                <div class="col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
+                    <div class="feature-box feature-box-style-2">
+                        <div class="feature-box-icon">
+                            <i class="icons icon-support text-color-light"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-color-light text-4 mb-2">@sharedResource["Easy to use"]</h4>
+                            <p class="text-color-light opacity-7">@sharedResource["All you have to do is register on the site as a marketer, and through your control panel, you will get your personal identification number, which you will use in the marketing process."] </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 appear-animation" data-appear-animation="fadeInUpShorter">
+                    <div class="feature-box feature-box-style-2">
+                        <div class="feature-box-icon">
+                            <i class="icons icon-layers text-color-light"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-color-light text-4 mb-2">@sharedResource["Precision"]</h4>
+                            <p class="text-color-light opacity-7">@sharedResource["Accuracy in every purchase that comes through you is recorded and points are added to your balance"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="300">
+                    <div class="feature-box feature-box-style-2">
+                        <div class="feature-box-icon">
+                            <i class="icons icon-menu text-color-light"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-color-light text-4 mb-2">@sharedResource["Increase your income"] </h4>
+                            <p class="text-color-light opacity-7">@sharedResource["Where points are added to your balance for every purchase that comes through you, and these points are exchanged for huge sums of money"]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
+                    <div class="feature-box feature-box-style-2">
+                        <div class="feature-box-icon">
+                            <i class="icons icon-doc text-color-light"></i>
+                        </div>
+                        <div class="feature-box-info">
+                            <h4 class="font-weight-bold text-color-light text-4 mb-2">@sharedResource["Security"]</h4>
+                            <p class="text-color-light opacity-7">@sharedResource["Protect all your data and the data of customers who come through you and the process of withdrawing money from your balance"]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</div>

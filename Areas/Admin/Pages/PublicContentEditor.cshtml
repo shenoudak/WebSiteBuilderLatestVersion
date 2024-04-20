@@ -1,0 +1,2575 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.PublicContentEditorModel
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+}
+
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+<partial name="_EditPublicVideo" model="@Model.PublicVideoObj" view-data="ViewData" />
+<partial name="_EditPlan" model="@Model.PlanObj" view-data="ViewData" />
+<partial name="_EditCountInfo" model="@Model.CountInfoObj" view-data="ViewData" />
+<partial name="_EditBrandBrief" model="@Model.BrandBriefObj" view-data="ViewData" />
+<partial name="_DeleteUserMsg" model="@Model.contactUsObj" view-data="ViewData" />
+<partial name="_ShowUserMsg" model="@Model.contactUsObj" view-data="ViewData" />
+<partial name="_ViewAffVideo" model="@Model.affiliateVideo" view-data=" ViewData" />
+<partial name="_EditAffVideo" model="@Model.affiliateVideo" view-data=" ViewData" />
+<partial name="_ViewAffFeedback" model="@Model.affilateFeedbackObj" view-data=" ViewData" />
+<partial name="_EditAffFeedback" model="@Model.affilateFeedbackObj" view-data=" ViewData" />
+<partial name="_EditSlider" model="@Model.publicSlider" view-data=" ViewData" />
+<partial name="_AddSlider" model="@Model.publicSlider" view-data=" ViewData" />
+<partial name="_AddBrand" model="@Model.Brand" view-data=" ViewData" />
+<partial name="_DeleteBrand" model="@Model.Brand" view-data=" ViewData" />
+<partial name="_EditBrand" model="@Model.Brand" view-data=" ViewData" />
+<partial name="_AddFeature" model="@Model.Feature" view-data=" ViewData" />
+<partial name="_DeleteFeature" model="@Model.Feature" view-data=" ViewData" />
+<partial name="_DeleteSlider" model="@Model.publicSlider" view-data=" ViewData" />
+<partial name="_EditFeature" model="@Model.Feature" view-data=" ViewData" />
+<partial name="_EditCountDown" model="@Model.CountDown" view-data=" ViewData" />
+<partial name="_ViewPublicHomeContent" model="@Model.publicHomeContent" view-data=" ViewData" />
+<partial name="_EditPublicHomeContent" model="@Model.publicHomeContent" view-data=" ViewData" />
+
+<div class="d-flex flex-column flex-column-fluid">
+
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+
+
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                    @sharedResource["Public Content Editor"]
+                    </h1>
+                <!--end::Title-->
+
+            </div>
+            <!--end::Page title-->
+            <!--begin::Action group-->
+            <div class="d-flex align-items-center gap-2">
+                
+            </div>
+            <!--end::Action group-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-fluid ">
+            <!--begin::Layout Builder Notice-->
+            
+            <!--end::Layout Builder Notice-->
+            <!--begin::Layout Builder Modal-->
+            <div class="modal fade" id="kt_layout_builder_recaptcha_modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLabel">reCaptcha Verification</h3>
+
+                            <button class="btn btn-sm btn-icon btn-light btn-hover-primary" data-bs-dismiss="modal" aria-label="Close">
+                                <i class="ki ki-close fs-4 text-muted"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form">
+                                <div class="form-group">
+                                    <script src="https://www.google.com/recaptcha/api.js"></script>
+                                    <div class="g-recaptcha" data-sitekey="6Lf92jMUAAAAANk8wz68r73rA2uPGr4_e0gn96BL"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary  me-2" id="kt_layout_builder_verify">Submit</button>
+                            <button type="button" class="btn btn-hover-light btn-text-muted fw-semibold" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end::Layout Builder Modal-->
+            <!--begin::Card-->
+            <div class="card">
+                <!--begin::Header-->
+                <div class="card-header card-header-stretch overflow-auto" style="height: 5.5rem;">
+                    <!--begin::Tabs-->
+                    <ul class="nav nav-stretch nav-line-tabs fw-semibold border-transparent flex-nowrap" role="tablist" id="kt_layout_builder_tabs">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" data-bs-toggle="tab" href="#kt_layout_builder_main" role="tab">
+                                @sharedResource["Contact Info"]
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_layouts" role="tab">
+                                @sharedResource["Slider"]
+                            </a>
+                        </li>
+                        <!--Brand-->
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_Brand" role="tab">
+                                @sharedResource["Brand"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_feature" role="tab">
+                                @sharedResource["Feature"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_countDown" role="tab">
+                                @sharedResource["Count Down"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_pageContent" role="tab">
+                                @sharedResource["Page Content"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_Services" role="tab">
+                                @sharedResource["Services"]
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_PublicVideo" role="tab">
+                                @sharedResource["Public Video"]
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_Plan" role="tab">
+                                @sharedResource["Plans"]
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_CountInfo" role="tab">
+                                @sharedResource["Count Info"]
+                            </a>
+                        </li>
+                       <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_AffBrief" role="tab">
+                                @sharedResource["Affiliate Section"]
+                            </a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_homeContent" role="tab">
+                                @sharedResource["Public Home Content"]
+                            </a>
+                        </li>
+                          <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_AffVideo" role="tab">
+                                @sharedResource["Affiliate Video"]
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link " data-bs-toggle="tab" href="#kt_layout_builder_AffFBC" role="tab">
+                                @sharedResource["Affiliate Feedbacks"]
+                            </a>
+                        </li>
+                    </ul>
+                    <!--end::Tabs-->
+                </div>
+                <!--end::Header-->
+                <!--begin::Form-->
+                    <!--begin::Body-->
+                    <div class="card-body">
+                        <div class="tab-content pt-3">
+
+                            <!--begin::Tab pane-->
+                            <div class="tab-pane active" id="kt_layout_builder_main">
+                                @{
+                                    if(Model.contactInfo != null)
+                                    {
+                                        <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                                            <!--begin::Stepper-->
+
+                                                <!--begin::Content-->
+                                                <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                                                    <!--begin::Form-->
+                                                    <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="PublicContentEditor" asp-page-handler="UpdateContactInfo">
+                                                        <!--begin::Step 1-->
+                                                <input asp-for="@Model.contactInfo.SocialMediaLinkId" hidden />
+
+                                                    <div b-cpu6lo70wp="" class="d-flex gap-5">
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                                <!--begin::Input group-->
+                                                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                    <!--begin::Label-->
+                                                                    <label b-cpu6lo70wp="" for="@Model.contactInfo.ContactPhone1" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Contact Phone 1"]</span>
+                                                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Contact Phone 1"]" data-bs-original-title="@sharedResource["Contact Phone 1"]" data-kt-initialized="1">
+                                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                                                            </i>
+                                                                        </span>
+                                                                    </label>
+                                                                    <!--end::Label-->
+                                                                    <!--begin::Input-->
+                                                                    <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.ContactPhone1" class="form-control form-control-lg form-control-solid"  placeholder="@sharedResource["Enter Contact Phone 1"]" value="@Model.contactInfo.ContactPhone1" required>
+                                                                    <!--end::Input-->
+                                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                                        <span asp-validation-for="@Model.contactInfo.ContactPhone1" class="text-danger"></span>
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Input group-->
+                                                                
+                                                                
+                                                                <!--end::Input group-->
+                                                                <!--begin::Actions-->
+                                                            								<div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                       					<!--end::Actions-->
+                                                            </div>
+                                                        </div>
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                        <!--begin::Input group-->
+                                                        <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                            <!--begin::Label-->
+                                                            <label b-cpu6lo70wp="" for="@Model.contactInfo.ContactPhone2" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                <span b-cpu6lo70wp="" class="required">@sharedResource["Contact Phone 2"]</span>
+                                                                <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Contact Phone 2"]" data-bs-original-title="@sharedResource["Contact Phone 2"]" data-kt-initialized="1">
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                        <span b-cpu6lo70wp="" class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input b-cpu6lo70wp=""  type="text" asp-for="@Model.contactInfo.ContactPhone2" class="form-control form-control-lg form-control-solid"  placeholder="@sharedResource["Enter Contact Phone 2"]" value="@Model.contactInfo.ContactPhone2" required>
+                                                            <!--end::Input-->
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <span asp-validation-for="@Model.contactInfo.ContactPhone2" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <!--end::Input group-->
+                                                        <!--begin::Actions-->
+                                                        <div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                            <!--end::Actions-->
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                    <div b-cpu6lo70wp="" class="d-flex gap-5">
+
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.ContactMail" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Contact Mail"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Contact Mail"]" data-bs-original-title="@sharedResource["Contact Mail"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.ContactMail" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Contact Mail"]" value="@Model.contactInfo.ContactMail" required>
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.ContactMail" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                        </div>
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.WhatSapp" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Whats app"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Whats app"]" data-bs-original-title="@sharedResource["Whats app"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.WhatSapp" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Whats app"]" value="@Model.contactInfo.WhatSapp" required>
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.WhatSapp" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                                <!--end::Actions-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div b-cpu6lo70wp="" class="d-flex gap-5">
+
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.Facebook" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Facebook"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Facebook"]" data-bs-original-title="@sharedResource["Facebook"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.Facebook" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Facebook"]" value="@Model.contactInfo.Facebook" required>
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.Facebook" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                        </div>
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.LinkedIn" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["LinkedIn"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["LinkedIn"]" data-bs-original-title="@sharedResource["LinkedIn"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.LinkedIn" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter LinkedIn"]" value="@Model.contactInfo.LinkedIn" required>
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.LinkedIn" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                                <!--end::Actions-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div b-cpu6lo70wp="" class="d-flex gap-5">
+
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.Instgram" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Instgram"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Instgram"]" data-bs-original-title="@sharedResource["Instgram"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                            <input b-cpu6lo70wp=""  type="text" asp-for="@Model.contactInfo.Instgram" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Instgram"]" value="@Model.contactInfo.Instgram" required>
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.Instgram" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                        </div>
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.Twitter" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Twitter"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Twitter"]" data-bs-original-title="@sharedResource["Twitter"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.Twitter" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Twitter"]" value="@Model.contactInfo.Twitter">
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.Twitter" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                                <!--end::Actions-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div b-cpu6lo70wp="" class="d-flex gap-5">
+
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.Youtube" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Youtube"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Youtube"]" data-bs-original-title="@sharedResource["Youtube"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp="" type="text" asp-for="@Model.contactInfo.Youtube" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Youtube"]" value="@Model.contactInfo.Youtube" >
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.Youtube" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                        </div>
+                                                        <div b-cpu6lo70wp="" class="w-50">
+                                                            <!--begin::Input group-->
+                                                            <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                <!--begin::Label-->
+                                                                <label b-cpu6lo70wp="" for="@Model.contactInfo.Address" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                    <span b-cpu6lo70wp="" class="required">@sharedResource["Address"]</span>
+                                                                    <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Address"]" data-bs-original-title="@sharedResource["Address"]" data-kt-initialized="1">
+                                                                        <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                            <span b-cpu6lo70wp="" class="path1"></span>
+                                                                            <span b-cpu6lo70wp="" class="path2"></span>
+                                                                            <span b-cpu6lo70wp="" class="path3"></span>
+                                                                        </i>
+                                                                    </span>
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Input-->
+                                                                <input b-cpu6lo70wp=""type="text" asp-for="@Model.contactInfo.Address" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Address"]" value="@Model.contactInfo.Address" >
+                                                                <!--end::Input-->
+                                                                <div class="fv-plugins-message-container invalid-feedback">
+                                                                    <span asp-validation-for="@Model.contactInfo.Address" class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--end::Input group-->
+                                                            <!--begin::Actions-->
+                                                            <div b-cpu6lo70wp="" class="d-flex flex-stack pt-10 m-0">
+                                                                <!--end::Actions-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        <!--end::Step 1-->
+                                                    <div class="d-flex flex-stack pt-10 m-0">
+
+                                                        <button type="submit" class="btn btn-lg btn-primary">
+                                                            @sharedResource["Update Contact Info"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                            </i>
+                                                        </button>
+                                                    </div>
+                                                    </form>
+                                                    <!--end::Form-->
+                                                <!--end::Content-->
+                                            </div>
+                                            <!--end::Stepper-->
+                                        </div>
+
+                                    }
+                                }
+                                
+                            </div>
+                            <!--end::Tab pane-->
+                            <!--begin::Tab pane-->
+                            <div class="tab-pane " id="kt_layout_builder_layouts">
+                                <div class="card mb-5 mb-xl-8">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-5">
+
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Slider"]</span>
+                                        </h3>
+                                    <div class="card-toolbar">
+                                        <a class="btn btn-sm btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_AddSlider">
+                                            <i class="ki-duotone ki-plus fs-2"></i>      @sharedResource["Add New Slider"] 
+                                        </a>
+                                    </div>
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body py-3">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fw-bold text-muted bg-light">
+
+                                                        <th class="ps-4 min-w-325px rounded-start">@sharedResource["Background"]</th>
+                                                        <th class="min-w-125px">@sharedResource["Title Ar"]1</th>
+                                                        <th class="min-w-125px">@sharedResource["Title En"]1</th>
+                                                        <th class="min-w-200px">@sharedResource["Title Ar"]2</th>
+                                                    <th class="min-w-200px">@sharedResource["Title En"]2</th>
+                                                        <th class="min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                                    </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @{
+                                                        if(Model.publicSliders != null)
+                                                        {
+                                                            foreach (var item in Model.publicSliders)
+                                                            {
+                                                                if (item.IsImage)
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="symbol symbol-50px me-5">
+                                                                                <img src="/@item.Background" class="" alt="" width="200">
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1Ar</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1En</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title2Ar</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title2En</a>
+                                                                        </td>
+
+                                                                        <td class="text-end">
+                                                                        <!--begin::Primary button-->
+                                                                        <!--end::Primary button-->                            
+                                                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_SliderEdit">
+                                                                                <i class="ki-duotone ki-pencil fs-2" onclick="editButtonClickSlider(@item.PublicSliderId)">
+                                                                                    <span class="path1"></span>
+                                                                                    <span class="path2"></span>
+                                                                                </i>
+                                                                            </a>
+                                                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_DeleteSlider">
+                                                                            <i class="ki-duotone ki-trash fs-2" onclick="deleteSlider(@item.PublicSliderId)">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                                <span class="path3"></span>
+                                                                                <span class="path4"></span>
+                                                                                <span class="path5"></span>
+                                                                            </i>
+                                                                        </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    <tr>
+                                                                        <td>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="symbol symbol-50px me-5">
+                                                                                    <iframe src="/@item.Background" width="300" frameborder="0"> </iframe>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1Ar</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1En</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title2Ar</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title2En</a>
+                                                                        </td>
+
+                                                                        <td class="text-end">
+
+                                                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_SliderEdit">
+                                                                            <i class="ki-duotone ki-pencil fs-2" onclick="editButtonClickSlider(@item.PublicSliderId)">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                            </i>
+                                                                        </a>
+                                                                        <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_DeleteSlider">
+                                                                            <i class="ki-duotone ki-trash fs-2" onclick="deleteSlider(@item.PublicSliderId)">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                                <span class="path3"></span>
+                                                                                <span class="path4"></span>
+                                                                                <span class="path5"></span>
+                                                                            </i>
+                                                                        </a>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@sharedResource["There is no items"]</tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--begin::Body-->
+                                </div>
+                            </div>
+                            <!--end::Tab pane-->
+                            <!--begin::Tab pane-->
+                            <!--begin::Tab pane-->
+                        <div class="tab-pane " id="kt_layout_builder_Brand">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Edit Public Brand Info"]</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <!--begin::Stepper-->
+                                    <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                                        <!--begin::Content-->
+                                        <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                                            <!--begin::Form-->
+                                            <form class="form fv-plugins-bootstrap5 fv-plugins-framework py-3" asp-area="Admin" asp-page="PublicContentEditor" asp-page-handler="UpdateBrandBreif">
+                                                <!--begin::Step 1-->
+                                                <input asp-for="@Model.BrandBriefTitle.BrandsBriefId" hidden />
+                                                <input asp-for="@Model.BrandBriefCaption.BrandsBriefId" hidden />
+
+                                                <div b-cpu6lo70wp="" class="d-flex gap-5">
+                                                    <div b-cpu6lo70wp="" class="w-50">
+                                                        <!--begin::Input group-->
+                                                        <div b-cpu6lo70wp="" class="mb-10 fv-plugins-icon-container">
+                                                            <!--begin::Label-->
+                                                            <label b-cpu6lo70wp="" for="@Model.BrandBriefTitle.BriefEN=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                <span b-cpu6lo70wp="" class="required">@sharedResource["Brand Public Title En"]</span>
+                                                                <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Brand Public Title En"]" data-bs-original-title="@sharedResource["Brand Public Title En"]" data-kt-initialized="1">
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                        <span b-cpu6lo70wp="" class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input b-cpu6lo70wp="" type="text" asp-for="@Model.BrandBriefTitle.BriefEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Brand Public Title En"]" value="@Model.BrandBriefTitle.BriefEN" required>
+                                                            <!--end::Input-->
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <span asp-validation-for="@Model.BrandBriefTitle.BriefEN" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <!--begin::Input group-->
+                                                        <div b-cpu6lo70wp="" class="mb-10 fv-plugins-icon-container">
+                                                            <!--begin::Label-->
+                                                            <label b-cpu6lo70wp="" for="@Model.BrandBriefTitle.BriefAR=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                <span b-cpu6lo70wp="" class="required">@sharedResource["Brand Public Title Ar"]</span>
+                                                                <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Brand Public Title Ar"]" data-bs-original-title="@sharedResource["Brand Public Title Ar"]" data-kt-initialized="1">
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                        <span b-cpu6lo70wp="" class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input b-cpu6lo70wp="" type="text" asp-for="@Model.BrandBriefTitle.BriefAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Brand Public Title Ar"]" value="@Model.BrandBriefTitle.BriefAR" required>
+                                                            <!--end::Input-->
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <span asp-validation-for="@Model.BrandBriefTitle.BriefAR" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <!--begin::Input group-->
+                                                    </div>
+                                                    <div b-cpu6lo70wp="" class="w-50">
+                                                        <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                            <!--begin::Label-->
+                                                            <label b-cpu6lo70wp="" for="@Model.BrandBriefCaption.BriefEN=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                <span b-cpu6lo70wp="" class="required">@sharedResource["Brand Public Sub Title En"]</span>
+                                                                <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Brand Public Sub Title En"]" data-bs-original-title="@sharedResource["Brand Public Sub Title En"]" data-kt-initialized="1">
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                        <span b-cpu6lo70wp="" class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input b-cpu6lo70wp="" type="text" asp-for="@Model.BrandBriefCaption.BriefEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Brand Public Sub Title En"]" value="@Model.BrandBriefCaption.BriefEN" required>
+                                                            <!--end::Input-->
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <span asp-validation-for="@Model.BrandBriefCaption.BriefEN" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <!--begin::Input group-->
+                                                        <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                            <!--begin::Label-->
+                                                            <label b-cpu6lo70wp="" for="@Model.BrandBriefCaption.BriefAR=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                <span b-cpu6lo70wp="" class="required">@sharedResource["Brand Public Sub Title Ar"]</span>
+                                                                <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Brand Public Sub Title Ar"]" data-bs-original-title="@sharedResource["Brand Public Sub Title Ar"]" data-kt-initialized="1">
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                        <span b-cpu6lo70wp="" class="path3"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Input-->
+                                                            <input b-cpu6lo70wp="" type="text" asp-for="@Model.BrandBriefCaption.BriefAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Brand Public Sub Title Ar"]" value="@Model.BrandBriefCaption.BriefAR" required>
+                                                            <!--end::Input-->
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                                <span asp-validation-for="@Model.BrandBriefCaption.BriefAR" class="text-danger"></span>
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input group-->
+
+                                                    </div>
+                                                </div>
+                                                        
+                                                        <div class="d-flex flex-stack pt-10 m-0">
+
+                                                            <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                                                <span b-cpu6lo70wp="" class="indicator-label">
+                                                                    @sharedResource["Edit Public Brand Info"]
+                                                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                                                    </i>
+                                                                </span>
+                                                                <span b-cpu6lo70wp="" class="indicator-progress">
+                                                                    @sharedResource["Please wait..."]
+                                                                    <span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+
+                                            </form>
+                                            <!--end::Form-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Stepper-->
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                                <div class="card mb-5 mb-xl-8">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-5">
+
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Brand"]</span>
+                                        </h3>
+                                    <div class="card-toolbar">
+                                        <a class="btn btn-sm btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_AddBrand">
+                                            <i class="ki-duotone ki-plus fs-2"></i>                @sharedResource["Add Brand"]
+                                        </a>
+                                    </div>
+                                    </div>
+                                    <!--end::Header-->
+
+                                    <!--begin::Body-->
+                                    <div class="card-body py-3">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fw-bold text-muted bg-light">
+                                                <th class="ps-4 min-w-325px rounded-start">@sharedResource["Image"]</th>
+
+                                                    <th class="min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                                        </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @{
+                                                        if (Model.Brands != null)
+                                                        {
+                                                            foreach (var item in Model.Brands)
+                                                            {
+                                                                <tr>
+
+                                                                    <td class=" fw-bold">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="symbol symbol-50px me-5">
+                                                                                <img src="/@item.Images" class="" alt="">
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </td>
+                                                                   
+
+                                                                    <td class="text-end">
+
+                                                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_EditBrand">
+                                                                        <i class="ki-duotone ki-pencil fs-2" onclick="editButtonClickBrand(@item.BrandsId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_DeleteBrand">
+                                                                        <i class="ki-duotone ki-trash fs-2" onclick="deleteBrand(@item.BrandsId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                            <span class="path4"></span>
+                                                                            <span class="path5"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@sharedResource["There is no items"]</tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--begin::Body-->
+                                </div>
+                        </div>
+                        <!--end::Tab pane-->
+                        <!--begin::Tab pane-->
+                        <div class="tab-pane " id="kt_layout_builder_feature">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Features"]</span>
+                                    </h3>
+                                    <div class="card-toolbar">
+                                        <a class="btn btn-sm btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_AddFeature">
+                                            <i class="ki-duotone ki-plus fs-2"></i>                @sharedResource["Add Feature"]
+                                        </a>
+                                    </div>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <tr class="fw-bold text-muted bg-light">
+                                                    <th class="ps-4 min-w-325px rounded-start">@sharedResource["Image"]</th>
+
+                                                    <th class="ps-4 min-w-325px rounded-start">@sharedResource["Title Ar"]</th>
+                                                    <th class="ps-4 min-w-325px rounded-start">@sharedResource["Title En"]</th>
+                                                    <th class="min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                                </tr>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.Feature != null)
+                                                    {
+                                                        foreach (var item in Model.Features)
+                                                        {
+                                                            <tr>
+                                                                <td class=" fw-bold">
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="symbol symbol-50px me-5">
+                                                                            <img src="/@item.Image" class="" alt="">
+                                                                        </div>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class=" fw-bold">
+                                                                    <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.TitleAr</a>
+
+                                                                </td>
+                                                                 <td class=" fw-bold">
+                                                                    <a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.TitleEn</a>
+
+                                                                </td>
+                                                               
+
+                                                                <td class="text-end">
+
+                                                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_EditFeature">
+                                                                        <i class="ki-duotone ki-pencil fs-2" onclick="editButtonClickFeature(@item.FeatureId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                    <a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_DeleteFeature">
+                                                                        <i class="ki-duotone ki-trash fs-2" onclick="deleteFeature(@item.FeatureId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                            <span class="path4"></span>
+                                                                            <span class="path5"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <!--end::Tab pane-->
+                        
+                        <div class="tab-pane " id="kt_layout_builder_countDown">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Edit Count Down Section"]</span>
+                                    </h3>
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+
+                                                <!--begin::Stepper-->
+                                                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                                                    <!--begin::Content-->
+                                                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                                                        <!--begin::Form-->
+                                                        <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditCountDown">
+
+
+
+
+                                                            <!--begin::Step 1-->
+                                                            <input asp-for="@Model.CountDown.CountDownSectionId" id="HiddenIdCountDown" value="@Model.CountDown.CountDownSectionId" hidden>
+                                                            <div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+                                                                <div b-cpu6lo70wp="" class="w-100">
+                                                                    <!--begin::Input group-->
+                                                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                        <!--begin::Label-->
+                                                                        <label b-cpu6lo70wp="" for="TitleAr" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                            <span b-cpu6lo70wp="" class="required">@sharedResource["TitleAr"]</span>
+                                                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleAr"]" data-bs-original-title="@sharedResource["Enter Arabic Title"]" data-kt-initialized="1">
+                                                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                        </label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Input-->
+                                                                        <input b-cpu6lo70wp="" id="TextArID" data-val-required="TitleAr" type="text" asp-for="@Model.CountDown.TextAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter TitleAr"]">
+                                                                        <!--end::Input-->
+                                                                        <div class="fv-plugins-message-container invalid-feedback">
+                                                                            <span asp-validation-for="@Model.CountDown.TextAR" class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Input group-->
+                                                                    <!--begin::Input group-->
+                                                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                        <!--begin::Label-->
+                                                                        <label b-cpu6lo70wp="" for="TitleEn" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                            <span b-cpu6lo70wp="" class="required">@sharedResource["TitleEn"]</span>
+                                                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleEn"]" data-bs-original-title="@sharedResource["Enter Title En"]" data-kt-initialized="1">
+                                                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                        </label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Input-->
+                                                                        <input b-cpu6lo70wp="" id="TextEnID" data-val-required="TitleEn" type="text" asp-for="@Model.CountDown.TextEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter TitleEn"]">
+                                                                        <!--end::Input-->
+                                                                        <div class="fv-plugins-message-container invalid-feedback">
+                                                                            <span asp-validation-for="@Model.CountDown.TextEN" class="text-danger"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--end::Input group-->
+                                                                    <!--end::Input group-->
+                                                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                                        <!--begin::Label-->
+                                                                        <label b-cpu6lo70wp="" for="profileImage" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Set Count Down"]</span>
+                                                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Set Count Down"]" data-bs-original-title="@sharedResource["Set Count Down"]" data-kt-initialized="1">
+                                                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                        </label>
+                                                                        <!--end::Label-->
+                                                                        <div class="form-group row">
+                                                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                                                <div class="mb-0">
+                                                                                    <input class="form-control form-control-solid" placeholder="Pick date & time" id="kt_datepicker_3" asp-for="@Model.CountDown.CountDown"  />
+                                                                                </div>
+
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <!--begin::Input group-->
+
+
+                                                                    <div class="d-flex flex-stack pt-10 m-0">
+                                                                        
+                                                                        <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                                                            <span b-cpu6lo70wp="" class="indicator-label">
+                                                                                @sharedResource["Edit Count Down"]
+                                                                                <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                                                </i>
+                                                                            </span>
+                                                                            <span b-cpu6lo70wp="" class="indicator-progress">
+                                                                                @sharedResource["Please wait..."]
+                                                                                <span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                                            </span>
+                                                                        </button>
+                                                                    </div>
+                                                                    <!--end::Input group-->
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Step 1-->
+
+                                                        </form>
+                                                        <!--end::Form-->
+                                                    </div>
+                                                    <!--end::Content-->
+                                                </div>
+                                                <!--end::Stepper-->
+                                           
+
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+
+                            
+                            <div class="tab-pane " id="kt_layout_builder_pageContent">
+                                <div class="card mb-5 mb-xl-8">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-5">
+
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Page Content"]</span>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body py-3">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                <tr class="fw-bold text-muted bg-light">
+                                                <th class="ps-4 min-w-325px rounded-start">@sharedResource["Page Arabic Title"]</th>
+                                                <th class="min-w-125px">@sharedResource["Page English Title"]</th>
+                                                <th class="min-w-200px text-end rounded-end">@sharedResource["Edit"]</th>
+                                                </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @{
+                                                        if (Model.pageContents != null)
+                                                        {
+                                                            foreach (var item in Model.pageContents)
+                                                            {
+                                                                <tr>
+
+                                                                    
+                                                                    <td class=" fw-bold">@item.PageTitleAr</td>
+                                                                    <td class=" fw-bold">@item.PageTitleEn</td>
+
+                                                                    <td class="text-end">
+
+                                                                        <a asp-route-id="@item.PageContentId" asp-area="Admin" asp-page="EditPageContent" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                            <i class="ki-duotone ki-pencil fs-2">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                            </i>
+                                                                        </a>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@sharedResource["There is no items"]</tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--begin::Body-->
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane " id="kt_layout_builder_Services">
+                                <div class="card mb-5 mb-xl-8">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-5">
+
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Services"]</span>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body py-3">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                <th class="ps-4 min-w-325px rounded-start">@sharedResource["Image"]</th>
+                                                <th class="ps-4 min-w-325px rounded-start">@sharedResource["Page Arabic Title"]</th>
+                                                <th class="min-w-125px">@sharedResource["Page English Title"]</th>
+                                                <th class="min-w-200px text-end rounded-end">@sharedResource["Edit"]</th>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @{
+                                                        if (Model.Services != null)
+                                                        {
+                                                            foreach (var item in Model.Services)
+                                                            {
+                                                                <tr>
+                                                                <td>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="symbol symbol-50px me-5">
+                                                                                    <img src="/@item.Pic" class="" alt="">
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </td>
+
+                                                                    <td class=" fw-bold">@item.TitleAr</td>
+                                                                    <td class=" fw-bold">@item.TitleEn</td>
+
+                                                                    <td class="text-end">
+
+                                                                        <a asp-route-id="@item.ServicesId" asp-area="Admin" asp-page="EditService" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                            <i class="ki-duotone ki-pencil fs-2">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                            </i>
+                                                                        </a>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@sharedResource["There is no items"]</tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--begin::Body-->
+                                </div>
+                            </div>
+                        <div class="tab-pane " id="kt_layout_builder_PublicVideo">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Video"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Background"]</th>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Arabic Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["English Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Video URL"]</th>
+                                            <th class="ps-1 min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.PublicVideo != null)
+                                                    {
+                                                        foreach (var item in Model.PublicVideo)
+                                                        {
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="symbol symbol-50px me-5">
+                                                                            <img src="/@item.Background" class="" alt="">
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </td>
+
+                                                                <td class=" fw-bold">@item.TitleAr</td>
+                                                                <td class=" fw-bold">@item.TitleEn</td>
+                                                                <td class=" fw-bold">@item.VideoUrl</td>
+
+                                                                <td class="text-end">
+
+                                                                    <a onclick="EditPublicVideoFun(@item.PublicVideoId)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-pencil fs-2">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_AffVideo">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Affiliate Video"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                         
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Video"]</th>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Arabic Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["English Title"]</th>
+                                            @* <th class="ps-1 min-w-200px">@sharedResource["Mini Dec Ar"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Mini Dec En"]</th>*@
+                                            <th class="ps-1 min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.affiliateVideos != null)
+                                                    {
+                                                        foreach (var item in Model.affiliateVideos)
+                                                        {
+                                                            <tr>
+                                         
+                                                             <td>
+                                                                            <div class="d-flex align-items-center">
+                                                                                <div class="symbol symbol-50px me-5">
+                                                                                    <iframe src="/@item.VideoMedia" width="300" sandbox frameborder="0"> </iframe>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </td>
+                                                                <td class=" fw-bold">@item.VideoTitleAr</td>
+                                                                <td class=" fw-bold">@item.VideoTitleEn</td>
+                                                               
+                                                                <td class="text-end">
+                                                                    <a href="javascript:void(0)" data-bs-toggle="modal" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                       
+                                                                        <i class="ki-duotone ki-eye fs-2x"  onclick="ShowAffVideoViewPopUp(@item.AffiliateVideoId)">
+                                                                                    <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                            </i>
+                                                                    </a>
+                                                                    <a onclick="EditAffVideoFun(@item.AffiliateVideoId)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-pencil fs-2">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_AffFBC">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Affiliate Feedback"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                         
+                                            <th class="ps-1 min-w-300px rounded-start">@sharedResource["Arabic Title"]</th>
+                                            <th class="ps-1 min-w-300px">@sharedResource["English Title"]</th>
+         
+                                            <th class="ps-1 min-w-300px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.affilateFeedbacks != null)
+                                                    {
+                                                        foreach (var item in Model.affilateFeedbacks)
+                                                        {
+                                                            <tr>
+                                         
+                                                             
+                                                                <td class="fw-bold">@item.TitleAr</td>
+                                                                <td class="fw-bold">@item.TitleEn</td>
+                                                               
+
+                                                                
+                                                                <td class="text-end">
+                                                                    <a href="javascript:void(0)" data-bs-toggle="modal" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        
+                                                                         <i class="ki-duotone ki-eye fs-2x" onclick="ShowAffFBCViewPopUp(@item.AffilateFeedbackId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                        </i>
+                                                                    </a>
+                                                                    <a onclick="EditAffFBCFun(@item.AffilateFeedbackId)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-pencil fs-2">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_UserMessage">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["User Messages"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Full Name"]</th>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Email"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Message Date"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Message"]</th>
+                                            <th class="ps-1 min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.userMessages != null)
+                                                    {
+                                                        foreach (var item in Model.userMessages)
+                                                        {
+                                                            <tr>
+                            
+
+                                                                <td class=" fw-bold">@item.Name</td>
+                                                                <td class=" fw-bold">@item.Email</td>
+                                                                <td class=" fw-bold">@item.SendingDate</td>
+                                                                <td class=" fw-bold">@item.Message</td>
+
+                                                                <td class="text-end">
+                                                                <a href="javascript:void(0)" data-bs-toggle="modal" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+													<i class="ki-duotone ki-switch fs-2" onclick="ShowUserMessageViewPopUp(@item.ContactUsID)">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</a>
+												
+
+												<a href="#" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm" data-bs-toggle="modal" href="javascript:void(0)">
+													<i class="ki-duotone ki-trash fs-2" onclick="deleteMessage(@item.ContactUsID)">
+														<span class="path1"></span>
+														<span class="path2"></span>
+														<span class="path3"></span>
+														<span class="path4"></span>
+														<span class="path5"></span>
+													</i>
+												</a>
+                                                                   
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_Plan">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Plans"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Arabic Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["English Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Original Price"]</th>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Page Count"]</th>
+
+                                            <th class="ps-1 min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.plans != null)
+                                                    {
+                                                        foreach (var item in Model.plans)
+                                                        {
+                                                           
+                                                            <tr>
+                                                                <td class=" fw-bold">@item.TitleAr</td>
+                                                                <td class=" fw-bold">@item.TitleEn</td>
+                                                                <td class=" fw-bold">@item.Price</td>
+                                                                <td class=" fw-bold">@item.PagesCount</td>
+
+                                                                <td class="text-end">
+
+                                                                    <a onclick="EditPlanFun(@item.PlanId)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-pencil fs-2">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_CountInfo">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Count Info"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                            <th class="ps-1 min-w-200px rounded-start">@sharedResource["Arabic Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["English Title"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["Arabic Description"]</th>
+                                            <th class="ps-1 min-w-200px">@sharedResource["English Description"]</th>
+                                            <th class="ps-1 min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                @{
+                                                    if (Model.CountInfos != null)
+                                                    {
+                                                        foreach (var item in Model.CountInfos)
+                                                        {
+                                                            <tr>
+                        
+                                                                <td class=" fw-bold">@item.TitleAR</td>
+                                                                <td class=" fw-bold">@item.TitleEN</td>
+                                                                <td class=" fw-bold">@item.DescAR</td>
+                                                                <td class=" fw-bold">@item.DescEN</td>
+
+                                                                <td class="text-end">
+
+                                                                    <a onclick="EditCountInfoFun(@item.CountInfoId)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-pencil fs-2">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                    </a>
+                                                                    <a asp-route-id="@item.CountInfoId" asp-area="Admin" asp-page="CountList"  class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                        <i class="ki-duotone ki-eye fs-2x">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                        </i>
+                                                                    </a>
+
+                                                                </td>
+                                                            </tr>
+
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <tr>@sharedResource["There is no items"]</tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        <div class="tab-pane " id="kt_layout_builder_AffBrief">
+                            <div class="card mb-5 mb-xl-8">
+                                <!--begin::Header-->
+                                <div class="card-header border-0 pt-5">
+
+                                    <h3 class="card-title align-items-start flex-column">
+                                        <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Affiliate Public Info"]</span>
+                                    </h3>
+
+                                </div>
+                                <!--end::Header-->
+                                <!--begin::Body-->
+                                <div class="card-body py-3">
+                                    <form class="form fv-plugins-bootstrap5 fv-plugins-framework" asp-area="Admin" asp-page="PublicContentEditor" asp-page-handler="UpdateAffiliateBreif">
+                                        <!--begin::Step 1-->
+                                        <input asp-for="@Model.AffiliateCaption.BrandsBriefId" hidden />
+                                        <input asp-for="@Model.AffiliateTitle.BrandsBriefId" hidden />
+
+                                        <div b-cpu6lo70wp="" class="d-flex gap-5">
+                                            <div b-cpu6lo70wp="" class="w-50">
+                                                <!--begin::Input group-->
+                                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label b-cpu6lo70wp="" for="@Model.AffiliateTitle.BriefEN=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Affiliate Public Title En"]</span>
+                                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Affiliate Public Title En"]" data-bs-original-title="@sharedResource["Affiliate Public Title En"]" data-kt-initialized="1">
+                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input b-cpu6lo70wp="" type="text" asp-for="@Model.AffiliateTitle.BriefEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Affiliate Public Title En"]" value="@Model.AffiliateTitle.BriefEN" required>
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                        <span asp-validation-for="@Model.AffiliateTitle.BriefEN" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label b-cpu6lo70wp="" for="@Model.AffiliateTitle.BriefAR=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Affiliate Public Title Ar"]</span>
+                                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Affiliate Public Title Ar"]" data-bs-original-title="@sharedResource["Affiliate Public Title Ar"]" data-kt-initialized="1">
+                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input b-cpu6lo70wp="" type="text" asp-for="@Model.AffiliateTitle.BriefAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Affiliate Public Title Ar"]" value="@Model.AffiliateTitle.BriefAR" required>
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                        <span asp-validation-for="@Model.AffiliateTitle.BriefAR" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input group-->
+                                            </div>
+                                            <div b-cpu6lo70wp="" class="w-50">
+                                                <!--begin::Input group-->
+                                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label b-cpu6lo70wp="" for="@Model.AffiliateCaption.BriefEN=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Affiliate Public Sub Title En"]</span>
+                                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Affiliate Public Sub Title En"]" data-bs-original-title="@sharedResource["Affiliate Public Sub Title En"]" data-kt-initialized="1">
+                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input b-cpu6lo70wp="" type="text" asp-for="@Model.AffiliateCaption.BriefEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Affiliate Public Sub Title En"]" value="@Model.AffiliateCaption.BriefEN" required>
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                        <span asp-validation-for="@Model.AffiliateCaption.BriefEN" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label b-cpu6lo70wp="" for="@Model.AffiliateCaption.BriefAR=" d-flex align-items-center fs-5 fw-semibold mb-2">
+                                                        <span b-cpu6lo70wp="" class="required">@sharedResource["Affiliate Public Sub Title Ar"]</span>
+                                                        <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Affiliate Public Sub Title Ar"]" data-bs-original-title="@sharedResource["Affiliate Public Sub Title Ar"]" data-kt-initialized="1">
+                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                                <span b-cpu6lo70wp="" class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input b-cpu6lo70wp="" type="text" asp-for="@Model.AffiliateCaption.BriefAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Affiliate Public Sub Title Ar"]" value="@Model.AffiliateCaption.BriefAR" required>
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                        <span asp-validation-for="@Model.AffiliateCaption.BriefAR" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                </div>
+                                        </div>
+                                            
+                                                <div class="d-flex flex-stack pt-10 m-0">
+
+                                                    <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                                        <span b-cpu6lo70wp="" class="indicator-label">
+                                                            @sharedResource["Edit Public Affiliate Info"]
+                                                            <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                                            </i>
+                                                        </span>
+                                                        <span b-cpu6lo70wp="" class="indicator-progress">
+                                                            @sharedResource["Please wait..."]
+                                                            <span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                           
+                                    </form>
+
+                                </div>
+                                <!--begin::Body-->
+                            </div>
+                        </div>
+                        
+                        <!--begin::Tab pane-->
+                        <div class="tab-pane " id="kt_layout_builder_homeContent">
+                                <div class="card mb-5 mb-xl-8">
+                                    <!--begin::Header-->
+                                    <div class="card-header border-0 pt-5">
+
+                                        <h3 class="card-title align-items-start flex-column">
+                                            <span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Content Editor"]</span>
+                                        </h3>
+
+                                    </div>
+                                    <!--end::Header-->
+                                    <!--begin::Body-->
+                                    <div class="card-body py-3">
+                                        <!--begin::Table container-->
+                                        <div class="table-responsive">
+                                            <!--begin::Table-->
+                                            <table class="table align-middle gs-0 gy-4">
+                                                <!--begin::Table head-->
+                                                <thead>
+                                                    <tr class="fw-bold text-muted bg-light">
+                                                <th class="ps-4 min-w-325px rounded-start">@sharedResource["Image"]</th>
+                                                        <th class="min-w-125px">@sharedResource["About Arabic Title"]</th>
+                                                        <th class="min-w-125px">@sharedResource["About English Title"]</th>
+                                                    <th class="min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+                                                        </tr>
+                                                </thead>
+                                                <!--end::Table head-->
+                                                <!--begin::Table body-->
+                                                <tbody>
+                                                    @{
+                                                        if (Model.publicHomeContentList != null)
+                                                        {
+                                                            foreach (var item in Model.publicHomeContentList)
+                                                            {
+                                                                <tr>
+
+                                                                    <td class=" fw-bold">
+                                                                        <div class="d-flex align-items-center">
+                                                                            <div class="symbol symbol-50px me-5">
+                                                                                <img src="/@item.Pic" class="" alt="">
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </td>
+                                                                    <td class=" fw-bold">@item.AboutSectionTitleAr</td>
+                                                                    <td class=" fw-bold">@item.AboutSectionTitleEn</td>
+
+                                                                    <td class="text-end">
+                                                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ViewPublicHomeContent">
+                                                                        <i class="ki-duotone ki-eye fs-2x" onclick="ShowHomeContent(@item.PublicHomeContentId)">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                            <span class="path3"></span>
+                                                                        </i>
+                                                                        </a>
+                                                                    <a class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_EditPublicHomeContent">
+                                                                        <i class="ki-duotone ki-pencil fs-2" onclick="editButtonClickHomeContent(@item.PublicHomeContentId)">
+                                                                                <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                            </i>
+                                                                        </a>
+
+                                                                    </td>
+                                                                </tr>
+
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            <tr>@sharedResource["There is no items"]</tr>
+                                                        }
+                                                    }
+                                                </tbody>
+                                                <!--end::Table body-->
+                                            </table>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Table container-->
+                                    </div>
+                                    <!--begin::Body-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Body-->
+                <!--end::Form-->
+            </div>
+            <!--end::Card-->
+        </div>
+        <!--end::Content container-->
+    </div>
+    <!--end::Content-->
+</div>
+
+
+
+<script>
+
+    $(document).ready(function () {
+        // Get the selected datetime value when the datepicker value changes
+        $('#kt_datetimepicker_8').on('change.datetimepicker', function (e) {
+            var selectedDatetime = e.date.format('YYYY-MM-DD HH:mm:ss');
+
+            // Update the Model.CountDownSections.CountDown property
+            // Replace '#CountDownInput' with the actual ID or class of your input element
+            $('#CountDown').val(selectedDatetime);
+        });
+    });
+
+    function editButtonClickSlider(PublicSliderId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleSliderForEdit",
+
+            data: { "PublicSliderId": PublicSliderId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                
+                document.getElementById("HiddenIdSlider").value = response.PublicSliderId
+                document.getElementById("BackgroundId").value = response.Background
+                document.getElementById("Title1ArID").value = response.Title1Ar
+                document.getElementById("TitleEn1ID").value = response.Title1En
+                document.getElementById("Title2ArID").value = response.Title2Ar
+                document.getElementById("Title2EnID").value = response.Title2En
+                document.getElementById("DescriptionArID").value = response.DescriptionAr
+                document.getElementById("DescriptionEnID").value = response.DescriptionEn
+                document.getElementById("EIsActiveId").checked = response.IsImage
+                $('#showEditModal').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    
+    function EditPublicVideoFun(PublicVideoId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SinglePublicVideoForEdit",
+
+            data: { "PublicVideoId": PublicVideoId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+           
+                document.getElementById("HiddenPublicVideoId").value = response.PublicVideoId
+                //document.getElementById("BackgroundId").value = response.Background
+                document.getElementById("TitleArId").value = response.TitleAr
+                document.getElementById("TitleEnId").value = response.TitleEn
+                document.getElementById("BriefArId").value = response.BriefAr
+                document.getElementById("BriefEnId").value = response.BriefEn
+                document.getElementById("VideoUrlId").value = response.VideoUrl
+               
+                $('#showEditModal').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    
+    function EditBrandsBriefFun(BrandsBriefId) {
+      
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleBrandsBriefForEdit",
+
+            data: { "BrandsBriefId": BrandsBriefId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+           
+                document.getElementById("HiddenBrandsBriefId").value = response.BrandsBriefId
+                document.getElementById("BrandsBriefTitleArId").value = response.BriefAR
+                document.getElementById("BrandsBriefTitleEnId").value = response.BriefEN
+               
+               
+                $('#showBrandBriefEditModal').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    function EditCountInfoFun(CountInfoId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleCountInfoForEdit",
+
+            data: { "CountInfoId": CountInfoId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+           
+                document.getElementById("HiddenCountInfoId").value = response.CountInfoId
+                document.getElementById("CountTitleArId").value = response.TitleAR
+                document.getElementById("CountTitleEnId").value = response.TitleEN
+                document.getElementById("CountBriefArId").value = response.DescAR
+                document.getElementById("CountBriefEnId").value = response.DescEN
+               
+                $('#showCountEditModal').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    function EditPlanFun(PlanId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SinglePlanForEdit",
+
+            data: { "PlanId": PlanId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+           
+                document.getElementById("HiddenPlanId").value = response.PlanId
+                document.getElementById("PlanTitleArId").value = response.TitleAr
+                document.getElementById("PlanTitleEnId").value = response.TitleEn
+                document.getElementById("PlanPriceId").value = response.Price
+                document.getElementById("PriceAfterDiscountId").value = response.PriceAfterDiscount
+                
+                document.getElementById("PlanPageCountId").value = response.PagesCount
+               
+               
+                $('#showPlanEditModal').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    function ShowUserMessageViewPopUp(ContactId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleMessageForView",
+            data: { "ContactId": ContactId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+
+                document.getElementById("FullNameId").innerHTML = response.Name
+                document.getElementById("EmailId").innerHTML = response.Email
+
+                document.getElementById("DateId").innerHTML = response.SendingDate
+                document.getElementById("MessageId").innerHTML = response.Message
+                $('#ShowUserMsgViewPoup').modal('show');
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+
+    }
+    function deleteMessage(ContactId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleMessageForDelete",
+            data: { "ContactId": ContactId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("DeleteMessageId").value = response.ContactUsID
+                $('#deleteUserMsgRecordModal').modal('show');
+
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+    function EditAffVideoFun(AffiliateVideoId) {
+
+
+    $.ajax({
+         type: "GET",
+                 beforeSend: function (xhr) {
+                     xhr.setRequestHeader("XSRF-TOKEN",
+                         $('input:hidden[name="__RequestVerificationToken"]').val());
+                 }
+                 ,
+         url: "/Admin/PublicContentEditor?handler=SingleAfVideoForEdit",
+
+         data: { "AffiliateVideoId": AffiliateVideoId },
+         contentType: "application/json",
+         dataType: "json",
+         success: function (response) {
+             if(response.IsUrl==false)
+             {
+                  document.getElementsByClassName('AfVideoMedia')[0].src= "/"+response.VideoMedia
+                  //document.getElementsByClassName('AfVideoMedia')[1].src= "/"+response.VideoMedia
+                  // document.getElementById("UrlId").style.display = 'none';
+
+             }
+             else
+             {
+                  document.getElementsByClassName('AfVideoMedia')[0].src= "/"+response.VideoUrl
+                 // document.getElementsByClassName('AfVideoMedia')[1].src= "/"+response.VideoUrl
+                  //document.getElementById("BrowseId").style.display = 'none';
+             }
+
+
+                     document.getElementById("AfVHiddenId").value = response.AffiliateVideoId
+                     document.getElementById("VideoMediaHiddenId").value = response.VideoMedia
+                    document.getElementById("VideoTitleArId").value = response.VideoTitleAr
+                     document.getElementById("VideoTitleEnId").value = response.VideoTitleEn
+                     document.getElementById("VideoMiniDescArId").value = response.VideoMiniDescAr
+                     document.getElementById("VideoMiniDescEnId").value = response.VideoMiniDescEn
+                     document.getElementById("VideoUrlId").value = response.VideoUrl
+                     if(response.IsUrl){
+                         document.getElementById("IsUrlId").checked=true;
+                     }
+                     else{
+                      document.getElementById("IsUrlId").checked=false;
+
+                     }
+
+
+
+                $('#showEditAffVideoModal').modal('show');
+
+
+         },
+
+         failure: function (response) {
+             alert(response);
+         }
+     });
+     }
+
+
+    function ShowAffVideoViewPopUp(AffiliateVideoId)
+             {
+
+     $.ajax({
+         type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleAfVideoView",
+         data: { "AffiliateVideoId": AffiliateVideoId},
+         contentType: "application/json",
+         dataType: "json",
+         success: function (response) {
+
+                    if(response.IsUrl==false){
+                        document.getElementById("DVideoMediaId1").src = "/"+response.VideoMedia
+                        //document.getElementById("DVideoMediaId2").src = "/"+response.VideoMedia
+                       
+                       
+                    }
+                    else{
+                        document.getElementById("DVideoMediaId1").src = "/"+response.VideoUrl
+                       // document.getElementById("DVideoMediaId2").src = "/"+response.VideoUrl
+                         
+
+                    }
+
+                     document.getElementById("DTitleArId").innerHTML = response.VideoTitleAr
+                     document.getElementById("DTitleEnId").innerHTML = response.VideoTitleEn
+                     document.getElementById("DMiniDescArId").innerHTML = response.VideoMiniDescAr
+                     document.getElementById("DMiniDescEnId").innerHTML = response.VideoMiniDescEn
+
+                     document.getElementById("DIsUrlId").innerHTML = response.IsUrl
+                     if (response.IsUrl == true) {
+                    document.getElementById("DIsUrlId").innerHTML = "True"
+
+                     }
+                     else{
+                          document.getElementById("DIsUrlId").innerHTML = "No"
+                     }
+
+                     $('#QuickViewAffVideoPoup').modal('show');
+
+         },
+         failure: function (response) {
+             alert(response);
+         }
+     });
+
+     }
+    function EditAffFBCFun(AffilateFeedbackId) {
+
+
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleAfFBCForEdit",
+
+            data: { "AffilateFeedbackId": AffilateFeedbackId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+               
+                
+
+                document.getElementById("AfFBCHiddenId").value = response.AffilateFeedbackId
+               
+                document.getElementById("FBCTitleArId").value = response.TitleAr
+                document.getElementById("FBCTitleEnId").value = response.TitleEn
+                document.getElementById("UserOneFeedbackArId").value = response.UserOneFeedbackAr
+                document.getElementById("UserOneFeedbackEnId").value = response.UserOneFeedbackEn
+                document.getElementById("UserTwoFeedbackArId").value = response.UserTwoFeedbackAr
+                document.getElementById("UserTwoFeedbackEnId").value = response.UserTwoFeedbackEn
+                document.getElementById("UserThreeFeedbackArId").value = response.UserThreeFeedbackAr
+                document.getElementById("UserThreeFeedbackEnId").value = response.UserThreeFeedbackEn
+                
+               
+
+
+                $('#showEditAffFBCModal').modal('show');
+
+
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+
+    function ShowAffFBCViewPopUp(AffilateFeedbackId) {
+
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleAfFBCView",
+            data: { "AffilateFeedbackId": AffilateFeedbackId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+
+               
+                
+                document.getElementById("DFBCTitleArId").innerHTML = response.TitleAr
+                document.getElementById("DFBCTitleEnId").innerHTML = response.TitleEn
+                document.getElementById("DUserOneFeedbackArId").innerHTML = response.UserOneFeedbackAr
+                document.getElementById("DUserOneFeedbackEnId").innerHTML = response.UserOneFeedbackEn
+                document.getElementById("DUserTwoFeedbackArId").innerHTML = response.UserTwoFeedbackAr
+                document.getElementById("DUserTwoFeedbackEnId").innerHTML = response.UserTwoFeedbackEn
+                document.getElementById("DUserThreeFeedbackArId").innerHTML = response.UserThreeFeedbackAr
+                document.getElementById("DUserThreeFeedbackEnId").innerHTML = response.UserThreeFeedbackEn
+
+                
+
+                $('#QuickViewAffFBCPoup').modal('show');
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+
+    }
+
+    function editButtonClickBrand(BrandsId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleBrandForEdit",
+
+            data: { "BrandsId": BrandsId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+
+                document.getElementById("HiddenIdBrand").value = response.BrandsId
+                document.getElementById("PicIdBrand").value = response.Images
+                $('#kt_modal_EditBrand').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+
+    function deleteBrand(BrandsId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleBrandForDelete",
+            data: { "BrandsId": BrandsId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("DeleteBrandId").value = response.BrandsId
+                $('#kt_modal_DeleteBrand').modal('show');
+
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+    function editButtonClickFeature(FeatureId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleFeatureForEdit",
+
+            data: { "FeatureId": FeatureId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("HiddenIdFeature").value = response.FeatureId
+                document.getElementById("PicId").value = response.Image
+                document.getElementById("TitleArID").value = response.TitleAr
+                document.getElementById("TitleEnID").value = response.TitleEn
+                $('#kt_modal_EditFeature').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+    
+    function deleteSlider(PublicSliderId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleSliderForDelete",
+            data: { "PublicSliderId": PublicSliderId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("DeleteSliderId").value = response.PublicSliderId
+                $('#kt_modal_DeleteSlider').modal('show');
+
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+
+    function deleteFeature(FeatureId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SingleFeatureForDelete",
+            data: { "FeatureId": FeatureId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("DeleteFeatureId").value = response.FeatureId
+                $('#kt_modal_DeleteFeature').modal('show');
+
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    
+    function editButtonClickCountDown(CountDownSectionId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SingleCountDownForEdit",
+
+            data: { "CountDownSectionId": CountDownSectionId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                document.getElementById("HiddenIdCountDown").value = response.CountDownSectionId
+                document.getElementById("TextArID").value = response.TextAR
+                document.getElementById("TextEnID").value = response.TextEN
+                document.getElementById("kt_datepicker_3").value = response.CountDown
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+    function ShowHomeContent(PublicHomeContentId) {
+        $.ajax({
+            type: "GET",
+            url: "/Admin/PublicContentEditor?handler=SinglePublicHomeContentForView",
+            data: { "PublicHomeContentId": PublicHomeContentId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+
+                document.getElementById("PublicHomeContenttAr").innerHTML = response.AboutSectionTitleAr
+                document.getElementById("PublicHomeContenttEn").innerHTML = response.AboutSectionTitleEn
+
+                document.getElementById("PublicHomeContentdescAr").innerHTML = response.AboutSectionDescAr
+                document.getElementById("PublicHomeContentdescEn").innerHTML = response.AboutSectionDescEn
+                $('#ViewPublicHomeContent').modal('show');
+
+            },
+            failure: function (response) {
+                alert(response);
+            }
+        });
+
+    }
+    function editButtonClickHomeContent(PublicHomeContentId) {
+        $.ajax({
+            type: "GET",
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("XSRF-TOKEN",
+                    $('input:hidden[name="__RequestVerificationToken"]').val());
+            }
+            ,
+            url: "/Admin/PublicContentEditor?handler=SinglePublicHomeContentForEdit",
+
+            data: { "PublicHomeContentId": PublicHomeContentId },
+            contentType: "application/json",
+            dataType: "json",
+            success: function (response) {
+                
+                document.getElementById("PublicHomeContentId").value = response.PublicHomeContentId
+                document.getElementById("PublicHomeContentPicId").value = response.Pic
+                document.getElementById("Title2ArIDhome").value = response.AboutSectionTitleAr
+                document.getElementById("Title2EnIDhome").value = response.AboutSectionTitleEn
+                document.getElementById("DescriptionArIDhome").value = response.AboutSectionDescAr
+                document.getElementById("DescriptionEnIDhome").value = response.AboutSectionDescEn
+                $('#kt_modal_EditPublicHomeContent').modal('show');
+            },
+
+            failure: function (response) {
+                alert(response);
+            }
+        });
+    }
+
+</script>
+
+

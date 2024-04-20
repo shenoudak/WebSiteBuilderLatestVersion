@@ -1,0 +1,1 @@
+https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200$@/External/jobTemplate/vendors/popperjs/popper.min.js$@/External/jobTemplate/vendors/bootstrap/bootstrap.min.js$@/External/jobTemplate/vendors/is/is.min.js$@https://polyfill.io/v3/polyfill.min.js?features=window.scroll$@/External/jobTemplate/assets/js/theme.js

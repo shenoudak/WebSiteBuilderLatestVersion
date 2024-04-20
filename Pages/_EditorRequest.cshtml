@@ -1,0 +1,46 @@
+﻿
+<div class="modal fade" id="showEditor" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Editor Request"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+      
+                <div class="modal-body">
+
+                <form asp-page="/UserSites" asp-page-handler="EditorReq">
+                    <input name="siteId" id="EditorId" hidden>
+                    <input name="UserID" id="UserID" hidden>
+                    <div class="col-lg-12">
+                        <div>
+                            @* <label class="form-label">@sharedResource["Editor Request"]</label> *@
+
+                            @* <input type="text" id="EditorId" name="Editor"
+                                   class="form-control"
+                                   placeholder="Enter Editor" required /> *@
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label class="form-label mb-1 text-2">@sharedResource["Description"]</label>
+                                    <textarea maxlength="5000" data-msg-required="@sharedResource["Enter you Request for editing your website"]" rows="8" class="form-control text-3 h-auto py-2" name="message" required=""></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <button class="btn btn-danger mt-3" type="submit" id="delete-record">
+                        @sharedResource["Add Request"]
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+      

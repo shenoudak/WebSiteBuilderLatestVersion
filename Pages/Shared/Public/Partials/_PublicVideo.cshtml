@@ -1,0 +1,54 @@
+﻿@inject CRMDBContext _context
+@model iTech.ViewModel.PublicVideo
+@{
+    var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+
+@{
+    if (Model != null)
+    {
+        <section class="section section-text-light m-0 section-background section-center section-overlay-opacity section-overlay-opacity-gradient" style="background-image: url(public/img/custom-header-bg.jpg);">
+            <div class="container">
+                <div class="row">
+                    <div class="col py-4">
+                        @if (@BrowserCulture == "en-US")
+                        {
+                            <h2 class="text-color-light font-weight-bold text-8 line-height-2">@Model.TitleEn</h2>
+                            <p>
+                                @Model.BriefEn
+
+                            </p>
+
+                        }
+                        else
+                        {
+                            <h2 class="text-color-light font-weight-bold text-8 line-height-2">@Model.TitleAr</h2>
+                            <p>
+                                @Model.BriefAr
+
+                            </p>
+
+                        }
+
+                        <div class="row justify-content-center">
+                            <div class="col-lg-11 col-xl-9">
+                                <div class="featured-boxes featured-boxes-modern-style-1 custom-box-shadow-1 mb-5 mb-md-4">
+                                    <div class="featured-box py-md-5">
+                                        <div class="featured-box-background" style="background-image: url(@Model.Background); background-size: cover; background-position: center;"></div>
+                                        <div class="box-content py-md-5 my-md-5">
+                                            <a class="d-block text-decoration-none lightbox py-5 my-5" href="@Model.VideoUrl" data-plugin-options="{'type':'iframe'}">
+                                                <i class="fas fa-play featured-icon custom-featured-icon-style-1 featured-icon-hover-effect-1 bg-color-light text-color-grey right-4 top-0 m-0" style="width: 115px; height: 115px;border-radius: 100% !important;"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+}
+

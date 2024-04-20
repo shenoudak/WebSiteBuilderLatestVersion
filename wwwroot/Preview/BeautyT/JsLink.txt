@@ -1,0 +1,9 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/functions.js"></script>
+<script src="js/components/event.move.js"></script>
+<script src="js/components/image-changer.js"></script>
+<script>
+      jQuery(window).on('load', function () {
+          jQuery(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({ default_offset_pct: 0.5 });
+      });
+</script>

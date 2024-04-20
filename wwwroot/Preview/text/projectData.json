@@ -1,0 +1,1079 @@
+{
+  "assets": [],
+  "styles": [
+    {
+      "selectors": [
+        "c1365"
+      ],
+      "style": {
+        "max-width": "700px"
+      }
+    },
+    {
+      "selectors": [
+        "c1445"
+      ],
+      "style": {
+        "background-image": "url('../External/MedicalTemplate/demos/medical/images/slider/1.jpg')"
+      }
+    },
+    {
+      "selectors": [
+        "c1558"
+      ],
+      "style": {
+        "background-image": "url('../External/MedicalTemplate/demos/medical/images/slider/2.jpg')"
+      }
+    },
+    {
+      "selectors": [
+        "c2190"
+      ],
+      "style": {
+        "background": "url('../External/MedicalTemplate/demos/medical/images/section-bg.jpg') center center no-repeat",
+        "background-size": "cover",
+        "min-height": "250px"
+      }
+    },
+    {
+      "selectors": [
+        "c5671"
+      ],
+      "style": {
+        "display": "block",
+        "margin-top": "3px"
+      }
+    },
+    {
+      "selectors": [
+        "c5627"
+      ],
+      "style": {
+        "margin-right": "10px"
+      }
+    },
+    {
+      "selectors": [
+        "c5775"
+      ],
+      "style": {
+        "display": "block",
+        "margin-top": "3px"
+      }
+    },
+    {
+      "selectors": [
+        "c5734"
+      ],
+      "style": {
+        "margin-right": "10px"
+      }
+    },
+    {
+      "selectors": [
+        "c4680"
+      ],
+      "style": {
+        "border-bottom": "1px solid rgba(0,0,0,0.06)"
+      }
+    },
+    {
+      "selectors": [
+        "c4672"
+      ],
+      "style": {
+        "background-color": "#F5F5F5",
+        "border-top": "2px solid rgba(0,0,0,0.06)"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "frames": [
+        {
+          "component": {
+            "type": "wrapper",
+            "stylable": [
+              "background",
+              "background-color",
+              "background-image",
+              "background-repeat",
+              "background-attachment",
+              "background-position",
+              "background-size"
+            ],
+            "components": [
+              {
+                "classes": [
+                  "clearfix"
+                ],
+                "attributes": {
+                  "id": "wrapper"
+                },
+                "components": [
+                  {
+                    "attributes": {
+                      "id": "top-bar"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "container",
+                          "clearfix"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "header",
+                    "attributes": {
+                      "id": "header",
+                      "data-menu-padding": "28",
+                      "data-sticky-menu-padding": "8"
+                    },
+                    "components": [
+                      {
+                        "attributes": {
+                          "id": "header-wrap"
+                        },
+                        "components": [
+                          {
+                            "classes": [
+                              "container"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "section",
+                    "attributes": {
+                      "id": "content"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "content-wrap"
+                        ],
+                        "components": [
+                          {
+                            "classes": [
+                              "container",
+                              "clearfix"
+                            ],
+                            "components": [
+                              {
+                                "classes": [
+                                  "row",
+                                  "col-mb-50",
+                                  "mb-0"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-cardiology"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Intensive Care"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Powerful Layout with Responsive functionality that can be adapted to any screen size. Resize browser to view."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn",
+                                              "data-delay": "200"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-social-services"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Family Planning"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Looks beautiful & ultra-sharp on Retina Screen Displays. Retina Icons, Fonts & all others graphics are optimized."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn",
+                                              "data-delay": "400"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-neurology"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Expert Consultation"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "TechSite includes tons of optimized code that are completely customizable and deliver unmatched fast performance."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-dental"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dental Sciences"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Powerful Layout with Responsive functionality that can be adapted to any screen size. Resize browser to view."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn",
+                                              "data-delay": "200"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-imaging-root-category"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "X-Ray Services"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Looks beautiful & ultra-sharp on Retina Screen Displays. Retina Icons, Fonts & all others graphics are optimized."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-sm-6",
+                                      "col-md-4"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon"
+                                            ],
+                                            "attributes": {
+                                              "data-animate": "bounceIn",
+                                              "data-delay": "400"
+                                            },
+                                            "components": [
+                                              {
+                                                "type": "link",
+                                                "attributes": {
+                                                  "href": "#"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "icon-medical-i-ambulance"
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "24x7 Emergency"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "p",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "TechSite includes tons of optimized code that are completely customizable and deliver unmatched fast performance."
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "container",
+                              "clearfix"
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "container",
+                              "clearfix"
+                            ],
+                            "components": [
+                              {
+                                "classes": [
+                                  "owl-carousel",
+                                  "team-carousel",
+                                  "carousel-widget"
+                                ],
+                                "attributes": {
+                                  "id": "oc-team",
+                                  "data-margin": "30",
+                                  "data-nav": "true",
+                                  "data-pagi": "true",
+                                  "data-items-xs": "1",
+                                  "data-items-sm": "2",
+                                  "data-items-lg": "3",
+                                  "data-items-xl": "4"
+                                },
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/1.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. John Doe"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Cardiologist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/2.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Bryan Mcguire"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Orthopedist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/3.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Mary Jane"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Neurologist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/4.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Silvia Bush"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dentist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/6.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Hugh Baldwin"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Cardiologist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/7.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Erika Todd"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Neurologist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/8.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Randy Adams"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dentist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "team"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "team-image"
+                                        ],
+                                        "components": [
+                                          {
+                                            "type": "image",
+                                            "attributes": {
+                                              "src": "../External/MedicalTemplate/demos/medical/images/doctors/9.jpg",
+                                              "alt": "Dr. John Doe"
+                                            }
+                                          }
+                                        ]
+                                      },
+                                      {
+                                        "classes": [
+                                          "team-desc"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "team-title"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "h4",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Dr. Alan Freeman"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "span",
+                                                "type": "text",
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "Eye Specialist"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "classes": [
+                  "icon-angle-up",
+                  "rounded-circle"
+                ],
+                "attributes": {
+                  "id": "gotoTop"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "id": "index",
+      "name": "index"
+    }
+  ]
+}

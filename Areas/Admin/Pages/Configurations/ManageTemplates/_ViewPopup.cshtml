@@ -1,0 +1,114 @@
+﻿@{
+}
+
+
+@model iTech.Models.Template
+
+<div class="modal fade" id="QuickViewPoup" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@(sharedResource["Template details"])</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <div class="table-card">
+                            <table class="table mb-0">
+                                <tbody>
+                                    <div class="py-4">
+
+                                        <!--begin::Card body-->
+                                        <div class="card-body text-center pt-0">
+                                            <!--begin::Image input-->
+                                            <!--begin::Image input-->
+                                            <div class="image-input image-input-empty image-input-outline image-input-placeholder mb-3" data-kt-image-input="true">
+                                                <!--begin::Preview existing avatar-->
+                                                <div class="image-input-wrapper w-150px h-150px"><img id="TemplatePicSrcId" style="height: 13rem;width: 20rem;" src="/assets/images/bg-d.png" /></div>
+                                                <!--end::Preview existing avatar-->
+                                                <!--begin::Label-->
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Image input-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["TitleAr"]</td>
+                                        <td id="vTitleAr"></td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["TitleEn"]</td>
+                                        <td id="vTitleEn"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["Template Category"]</td>
+
+                                        <td id="vSiteCategory"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["Template Price"]</td>
+
+                                        <td id="vTemplatePrice"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["Sort Order"]</td>
+                                        <td id="vSortOrder"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-medium">@sharedResource["IsActive"]</td>
+
+                                        <td id="vIsActive"></td>
+
+                                    </tr>
+
+
+
+                                </tbody>
+                            </table><!--end table-->
+                            <div class="d-flex flex-stack pt-10 m-0">
+                                <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                    <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                        <span b-cpu6lo70wp="" class="path1"></span>
+                                        <span b-cpu6lo70wp="" class="path2"></span>
+                                    </i>@sharedResource["Close"]
+                                </button>
+                            </div>
+
+                            <!--end::Form-->
+                        </div>
+                        <!--end::Content-->
+                    </div>
+                    <!--end::Stepper-->
+                </div>
+                <!--end::Modal body-->
+            </div>
+            <!--end::Modal content-->
+        </div>
+        <!--end::Modal dialog-->
+    </div>
+</div>

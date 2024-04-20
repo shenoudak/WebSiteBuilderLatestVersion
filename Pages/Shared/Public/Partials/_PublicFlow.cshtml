@@ -1,0 +1,140 @@
+﻿@inject CRMDBContext _context
+@model iTech.ViewModel.PublicFlowVM
+
+@{
+   
+    var locale = Context.Request.HttpContext.Features.Get<IRequestCultureFeature>();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+}
+
+<style>
+    strong{
+        font-family: 'Tajawal Regular',Arial,sans-serif !important;
+    }
+</style>
+
+<div class="container">
+
+    <div class="row text-center pt-3">
+        <div class="col-md-11 mx-md-auto">
+            @{
+                if (Model.publicFlow != null)
+                {
+                    if (@BrowserCulture == "en-US")
+                    {
+                        <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" style="animation-delay: 100ms;">
+                            
+
+                            <span>@Model.publicFlow.AboutSectionTitleEn</span>
+                        </h1>
+                        <p class="lead appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+                            @Model.publicFlow.AboutSectionDescEn
+                        </p>
+                    }
+                    else
+                    {
+                        <h1 class="word-rotator slide font-weight-bold text-8 mb-3 appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" style="animation-delay: 100ms;">
+                          
+
+                            <span>@Model.publicFlow.AboutSectionTitleAr</span>
+                        </h1>
+                        <p class="lead appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="300" style="animation-delay: 300ms;">
+                            @Model.publicFlow.AboutSectionDescAr
+                        </p>
+                    }
+                }
+            }
+        </div>
+    </div>
+
+</div>
+<div class="appear-animation animated fadeInUpShorter appear-animation-visible" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+    <div class="home-concept mt-5">
+        <div class="container">
+            @{
+                if (Model.publicFlow != null)
+                {
+                    if (@BrowserCulture == "en-US")
+                    {
+                        <div class="row text-center">
+                            <span class="sun"></span>
+                            <span class="cloud" style="top: 49.76px;"></span>
+                            <div class="col-lg-2 ms-lg-auto">
+                                <div class="process-image">
+                                    <img src="/@Model.StepOne.Pic" alt="">
+                                    <strong>@Model.StepOne.AboutSectionDescEn</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="process-image process-image-on-middle">
+                                    <img src="/@Model.StepTwo.Pic" alt="">
+                                    <strong>@Model.StepTwo.AboutSectionDescEn</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="process-image">
+                                    <img src="/@Model.StepThree.Pic" alt="">
+                                    <strong>@Model.StepThree.AboutSectionDescEn</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 ms-lg-auto">
+                                <div class="project-image">
+                                    <div id="fcSlideshow" class="fc-slideshow">
+                                        <ul class="fc-slides">
+                                            <li style="display: list-item;"><a href="/" aria-label=""><img class="img-fluid" src="/@Model.StepFour.Pic" alt=""></a></li>
+                                        </ul>
+                                        <nav><div class="fc-left"><span></span><span></span><span></span><i class="fa fa-arrow-left"></i></div><div class="fc-right"><span></span><span></span><span></span><i class="fa fa-arrow-right"></i></div></nav><div class="fc-flip" style="transition: none 0s ease 0s; transform: none; display: none;"><div class="fc-front"><div><a href="portfolio-single-wide-slider.html" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-3.jpg" alt=""></a></div><div class="fc-overlay-light" style="transition: opacity 538.462ms ease 0s; opacity: 1;"></div></div><div class="fc-back" style="transform: rotate3d(1, 1, 0, 180deg);"><div><a href="portfolio-single-wide-slider.html" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-1.jpg" alt=""></a></div><div class="fc-overlay-dark" style="opacity: 0; transition: opacity 538.462ms ease 0s;"></div></div></div>
+                                    </div>
+                                    <strong>@Model.StepFour.AboutSectionDescEn</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                    else
+                    {
+                        <div class="row text-center">
+                            <span class="sun"></span>
+                            <span class="cloud" style="top: 49.76px;"></span>
+                            <div class="col-lg-2 ms-lg-auto">
+                                <div class="process-image">
+                                    <img src="/@Model.StepOne.Pic" alt="">
+                                    <strong>@Model.StepOne.AboutSectionDescAr</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="process-image process-image-on-middle">
+                                    <img src="/@Model.StepTwo.Pic" alt="">
+                                    <strong>@Model.StepTwo.AboutSectionDescAr</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <div class="process-image">
+                                    <img src="/@Model.StepThree.Pic" alt="">
+                                    <strong>@Model.StepThree.AboutSectionDescAr</strong>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 ms-lg-auto">
+                                <div class="project-image">
+                                    <div id="fcSlideshow" class="fc-slideshow">
+                                        <ul class="fc-slides">
+                                            <li style="display: list-item;"><a href="/" aria-label=""><img class="img-fluid" src="/@Model.StepFour.Pic" alt=""></a></li>
+
+                                            <li style="display: none;"><a href="/" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-2.jpg" alt=""></a></li>
+                                            <li style="display: none;"><a href="/" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-3.jpg" alt=""></a></li>
+                                        </ul>
+                                        <nav><div class="fc-left"><span></span><span></span><span></span><i class="fa fa-arrow-left"></i></div><div class="fc-right"><span></span><span></span><span></span><i class="fa fa-arrow-right"></i></div></nav><div class="fc-flip" style="transition: none 0s ease 0s; transform: none; display: none;"><div class="fc-front"><div><a href="portfolio-single-wide-slider.html" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-3.jpg" alt=""></a></div><div class="fc-overlay-light" style="transition: opacity 538.462ms ease 0s; opacity: 1;"></div></div><div class="fc-back" style="transform: rotate3d(1, 1, 0, 180deg);"><div><a href="portfolio-single-wide-slider.html" aria-label=""><img class="img-fluid" src="~/public/img/projects/project-home-1.jpg" alt=""></a></div><div class="fc-overlay-dark" style="opacity: 0; transition: opacity 538.462ms ease 0s;"></div></div></div>
+                                    </div>
+                                    <strong>@Model.StepFour.AboutSectionDescAr</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                    }
+                }
+            }
+
+        </div>
+    </div>
+</div>
+

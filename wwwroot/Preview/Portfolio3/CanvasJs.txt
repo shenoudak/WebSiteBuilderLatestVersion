@@ -1,0 +1,1 @@
+/External/portfolio3Template/js/jquery.js$@/External/portfolio3Template/js/plugins.min.js$@/External/portfolio3Template/js/functions.js

@@ -1,0 +1,1 @@
+/External/portfolio1Template/js/jquery.js$@/External/portfolio1Template/js/plugins.min.js$@/External/portfolio1Template/js/functions.js$@/External/portfolio1Template/js/swiper.js

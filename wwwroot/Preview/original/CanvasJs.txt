@@ -1,0 +1,1 @@
+/External/originalTemplatejs/jquery/jquery-2.2.4.min.js$@/External/originalTemplatejs/popper.min.js$@/External/originalTemplatejs/bootstrap.min.js$@/External/originalTemplatejs/plugins.js$@/External/originalTemplatejs/active.js

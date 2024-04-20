@@ -1,0 +1,264 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.Configurations.ManageAffiliate.IndexModel
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    ViewBag.Title = "Affiliate List";
+    ViewBag.pTitle = "Affiliate List";
+    ViewBag.pageTitle = "Affiliate List";
+}
+
+
+<div class="d-flex flex-column flex-column-fluid">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                    @sharedResource["Affiliates"]
+                </h1>
+                <!--end::Title-->
+            </div>
+            <!--end::Page title-->
+            
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+        <div id="kt_app_content_container" class="app-container container-xxl">
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-fluid ">
+        
+            <div class="row g-5 g-xl-10">
+                <!--begin::Col-->
+                <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 mb-md-5 ">
+                    <!--begin::Card widget 4-->
+                    <div class="card card-flush  mb-5 pb-xl-10">
+                        <!--begin::Header-->
+                        <div class="card-header pt-5">
+                            <!--begin::Title-->
+                            <div class="card-title d-flex flex-column">
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                    <!--begin::Currency-->
+                                    <!--end::Currency-->
+                                    <!--begin::Amount-->
+                                    <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.AffliateCount</span>
+                                    <!--end::Amount-->
+                                    <!--begin::Badge-->
+                                    <!--end::Badge-->
+                                </div>
+                                <!--end::Info-->
+                                <!--begin::Subtitle-->
+                                <span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Affliate Count"]</span>
+                                <!--end::Subtitle-->
+                            </div>
+                            <!--end::Title-->
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Card body-->
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Card widget 4-->
+                    <!--begin::Card widget 5-->
+                    <!--end::Card widget 5-->
+                </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 mb-md-5 ">
+                        <!--begin::Card widget 4-->
+                        <!--end::Card widget 4-->
+                        <!--begin::Card widget 5-->
+                        <div class="card card-flush  pb-xl-10">
+                            <!--begin::Header-->
+                            <div class="card-header pt-5">
+                                <!--begin::Title-->
+                                <div class="card-title d-flex flex-column">
+                                    <!--begin::Info-->
+                                    <div class="d-flex align-items-center">
+                                        <!--begin::Amount-->
+                                        <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.SitesCount</span>
+                                        <!--end::Amount-->
+                                        <!--begin::Badge-->
+                                        <!--end::Badge-->
+                                    </div>
+                                    <!--end::Info-->
+                                    <!--begin::Subtitle-->
+                                    <span class="text-gray-400 pt-1 fw-semibold fs-6"> @sharedResource["Sites Count"]</span>
+                                    <!--end::Subtitle-->
+                                </div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Card body-->
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Card widget 5-->
+                    </div>
+
+                <!--end::Col-->
+                <!--begin::Col-->
+                <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 mb-md-5 ">
+                    <!--begin::Card widget 6-->
+                    <div class="card card-flush mb-5 pb-xl-10">
+                        <!--begin::Header-->
+                        <div class="card-header pt-5">
+                            <!--begin::Title-->
+                            <div class="card-title d-flex flex-column">
+                                <!--begin::Info-->
+                                <div class="d-flex align-items-center">
+                                    <!--begin::Currency-->
+                                    <!--end::Currency-->
+                                    <!--begin::Amount-->
+                                    <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.PointsCount</span>
+                                    <!--end::Amount-->
+                                    <!--begin::Badge-->
+                                    <!--end::Badge-->
+                                </div>
+                                <!--end::Info-->
+                                <!--begin::Subtitle-->
+                                <span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Points"]</span>
+                                <!--end::Subtitle-->
+                            </div>
+                            <!--end::Title-->
+                        </div>
+                        <!--end::Header-->
+                        <!--begin::Card body-->
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Card widget 6-->
+                    <!--begin::Card widget 7-->
+
+                    <!--end::Card widget 7-->
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3 col-xxl-3 mb-md-5 ">
+                        <!--begin::Card widget 6-->
+
+                        <!--end::Card widget 6-->
+                        <!--begin::Card widget 7-->
+                        <div class="card card-flush  pb-xl-10">
+                            <!--begin::Header-->
+                            <div class="card-header pt-5">
+                                <!--begin::Title-->
+                                <div class="card-title d-flex flex-column">
+                                    <!--begin::Amount-->
+                                    <span class="fs-2hx fw-bold text-dark me-2 lh-1 ls-n2">@Model.SitesReveuve</span>
+                                    <!--end::Amount-->
+                                    <!--begin::Subtitle-->
+                                    <span class="text-gray-400 pt-1 fw-semibold fs-6">@sharedResource["Sites Amount"]</span>
+                                    <!--end::Subtitle-->
+                                </div>
+                                <!--end::Title-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Card body-->
+                            <!--end::Card body-->
+                        </div>
+                        <!--end::Card widget 7-->
+                    </div>
+                <!--end::Col-->
+               
+
+            </div>
+            <!--end::Row-->
+            </div>
+            <div class="card">
+
+              <div class="card-body">
+                    <table id="tblList" class="table table-striped table-row-bordered gy-5 gs-7 border rounded">
+                        <thead>
+                            <tr class="fw-bold fs-6 text-gray-800 px-7">
+                                <th>@sharedResource["Id"]</th>
+                                <th class="min-w-150px">@sharedResource["Affiliate Full Name"]</th>
+                                <th class="min-w-125px">@sharedResource["Point"]</th>
+                                <th class="min-w-125px">@sharedResource["Register Date"]</th>
+                                <th class="min-w-200px text-end">@sharedResource["Action"]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<script src="~/Other/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#tblList").DataTable({
+            "proccessing": true,
+            "serverSide": true,
+            "ajax": {
+                url: "/admin/Configurations/ManageAffiliate/Index",
+                type: 'POST',
+                headers: { 'XSRF-TOKEN': $('@Html.AntiForgeryToken()').val() }
+            },
+            "columnDefs": [
+                {
+                    "targets": -1,
+                    "data": null,
+                    "render": function (data, type, row, meta) {
+                        return `<a href="/Admin/Configurations/ManageAffiliate/Details?id=${row.Id}"  class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                             <i class="ki-duotone ki-eye fs-2x">
+                                                                                        <span class="path1"></span>
+                                                                                <span class="path2"></span>
+                                                                                <span class="path3"></span>
+                                                                                </i>
+
+                                                    </a>`;
+                    },
+                    "sortable": false
+                },
+                { "name": "Id", "data": "Id", "targets": 0, "visible": false },
+                { "name": "FullName", "data": "FullName", "targets": 1, "visible": true },
+                { "name": "Point", "data": "Point", "targets": 2 },
+                {
+                    "name": "RegisterdData", "data": "RegisterdData", "targets": 3, 
+                    "render": function (data, type, row, meta) {
+                        if (type === "display" && data) {
+                            return moment(data).format("MM/DD/YYYY");
+                        }
+                        return data;
+                    }
+                }
+
+
+
+            ],
+            "order": [[3, "desc"]],
+            "language": {
+                "lengthMenu": "Show _MENU_",
+            },
+            "dom":
+                "<'row'" +
+                "<'col-sm-6 d-flex align-items-center justify-conten-start'l>" +
+                "<'col-sm-6 d-flex align-items-center justify-content-end'f>" +
+                ">" +
+
+                "<'table-responsive'tr>" +
+
+                "<'row'" +
+                "<'col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start'i>" +
+                "<'col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end'p>" +
+                ">",
+            "createdRow": function (row, data, dataIndex) {
+                var tdElements = $(row).find('td');
+                $(tdElements[tdElements.length - 1]).addClass('text-end');
+            }
+        });
+    });
+
+   
+
+</script>

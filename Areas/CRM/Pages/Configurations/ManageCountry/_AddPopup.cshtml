@@ -1,0 +1,64 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@model iTech.Models.Country
+
+
+<div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@(sharedResource["Add Country"])</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
+            </div>
+
+            <form asp-area="CRM" asp-page="/Configurations/ManageCountry/Index" asp-page-handler="AddCountry">
+                <div class="modal-body">
+                    <input type="hidden" id="id-field" />
+                    <div class="row g-3">
+                      
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="@Model.TitleAr" class="form-label">@sharedResource["TitleAr"]</label>
+                                <input data-val-required="@sharedResource["Enter ArTitle"]" type="text" asp-for="@Model.TitleAr" class="form-control" placeholder="@sharedResource["Enter TitleAr"]" required />
+                                <span asp-validation-for="@Model.TitleAr" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="@Model.TitleEn" class="form-label">@sharedResource["TitleEn"]</label>
+                                <input value="" type="text" data-val-required="@sharedResource["Enter TitleEn"]" type="text" asp-for="@Model.TitleEn" class="form-control" placeholder="@sharedResource["Enter TitleEn"]" required />
+                                <span asp-validation-for="@Model.TitleEn" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        
+                        <div class="col-lg-6">
+                            <div>
+                                <label for="@Model.SortOrder" class="form-label">@(sharedResource["SortOrder"])</label>
+                                <input type="number" min="1" value="" asp-for="@Model.SortOrder" class="form-control" placeholder="@sharedResource["Enter SortOrder"]" />
+                                <span asp-validation-for="@Model.SortOrder" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                         <div class="col-lg-6">
+                            <div class="form-check">
+                                <input asp-for="@Model.IsActive" class="form-check-input" type="checkbox" id="default">
+                                <label for="@Model.IsActive" class="form-check-label">@sharedResource["IsActive"]</label>
+                                <span asp-validation-for="@Model.IsActive" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">@sharedResource["Close"]</button>
+                        <button type="submit" class="btn btn-success" id="add-btn">@sharedResource["Add Country"]</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

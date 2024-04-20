@@ -1,0 +1,42 @@
+﻿@model iTech.ViewModel.PublicCustomerVM
+
+@{
+    var locale = Context.Features.Get<IRequestCultureFeature>();
+
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+    
+
+}
+
+<section class="call-to-action call-to-action-secondary content-align-center ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-lg-9">
+                <div class="call-to-action-content">
+                    @if (Model.BrandBriefTitle != null && Model.BrandsBrief != null)
+                    {
+                        if (@BrowserCulture == "en-US")
+                        {
+
+                            <h2 class="font-weight-normal text-6 mb-0">@Model.BrandBriefTitle.BriefEN</h2>
+                            <p class="mb-0">@Model.BrandsBrief.BriefEN</p>
+
+                        }
+                        else
+                        {
+                            <h2 class="font-weight-normal text-6 mb-0">@Model.BrandBriefTitle.BriefAR</h2>
+                            <p class="mb-0">@Model.BrandsBrief.BriefAR</p>
+
+                        }
+                    }
+                </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+                <div class="call-to-action-btn">
+                    <a href="/RegisterAffiliate" target="_blank" class="btn btn-dark btn-lg text-3 font-weight-semibold px-4 py-3">@sharedResource["Join Now!"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -1,0 +1,872 @@
+{
+  "assets": [],
+  "styles": [
+    {
+      "selectors": [
+        "c1032"
+      ],
+      "style": {
+        "top": "auto",
+        "bottom": "20px",
+        "right": "20px"
+      }
+    },
+    {
+      "selectors": [
+        "c1603"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/demos/therapy/images/about/about.jpg') no-repeat center center / cover"
+      }
+    },
+    {
+      "selectors": [
+        "c2375"
+      ],
+      "style": {
+        "transform": "translateY(70px)"
+      }
+    },
+    {
+      "selectors": [
+        "c3313"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/demos/therapy/images/price/cosmetic-1.jpg') no-repeat center center / cover"
+      }
+    },
+    {
+      "selectors": [
+        "c3423"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/demos/therapy/images/price/cosmetic-2.jpg') no-repeat right center / cover"
+      }
+    },
+    {
+      "selectors": [
+        "c4148"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/demos/therapy/images/rating.svg') no-repeat center center / 300px"
+      }
+    },
+    {
+      "selectors": [
+        "c4754"
+      ],
+      "style": {
+        "background": "url('https://source.unsplash.com/TU6ztds5LGg') no-repeat center center / cover"
+      }
+    },
+    {
+      "selectors": [
+        "c2357"
+      ],
+      "style": {
+        "background": "linear-gradient(rgba(0,0,0,.3), transparent), url('../External/therapyTemplate/demos/therapy/images/1.jpg') no-repeat center center / cover"
+      }
+    },
+    {
+      "selectors": [
+        "c4980"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/images/world-map.png') no-repeat center center",
+        "background-size": "100% auto"
+      }
+    },
+    {
+      "selectors": [
+        "c837"
+      ],
+      "style": {
+        "background": "url('../External/therapyTemplate/demos/therapy/images/hero-right.png') no-repeat top right",
+        "background-size": "auto 100%"
+      }
+    }
+  ],
+  "pages": [
+    {
+      "frames": [
+        {
+          "component": {
+            "type": "wrapper",
+            "stylable": [
+              "background",
+              "background-color",
+              "background-image",
+              "background-repeat",
+              "background-attachment",
+              "background-position",
+              "background-size"
+            ],
+            "components": [
+              {
+                "classes": [
+                  "clearfix"
+                ],
+                "attributes": {
+                  "id": "wrapper"
+                },
+                "components": [
+                  {
+                    "tagName": "header",
+                    "classes": [
+                      "transparent-header",
+                      "floating-header",
+                      "dark",
+                      "custom-header-size"
+                    ],
+                    "attributes": {
+                      "id": "header",
+                      "data-sticky-shrink": "false"
+                    }
+                  },
+                  {
+                    "tagName": "section",
+                    "attributes": {
+                      "id": "content"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "content-wrap"
+                        ],
+                        "components": [
+                          {
+                            "classes": [
+                              "clear"
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "section",
+                              "page-section",
+                              "dark",
+                              "bg-transparent",
+                              "m-0",
+                              "pb-0"
+                            ],
+                            "attributes": {
+                              "id": "section-services"
+                            },
+                            "components": [
+                              {
+                                "classes": [
+                                  "container"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "row",
+                                      "justify-content-center",
+                                      "text-center"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "col-12"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "type": "text",
+                                                "classes": [
+                                                  "text-white-50",
+                                                  "mb-2",
+                                                  "text-uppercase",
+                                                  "ls3"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall",
+                                                  "data-delay": "10"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": "What We Do"
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "tagName": "h3",
+                                                "type": "text",
+                                                "classes": [
+                                                  "display-4",
+                                                  "color",
+                                                  "mb-0"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                },
+                                                "components": [
+                                                  {
+                                                    "tagName": "i",
+                                                    "classes": [
+                                                      "spa-ointment2",
+                                                      "color"
+                                                    ]
+                                                  },
+                                                  {
+                                                    "type": "textnode",
+                                                    "content": " Our Services"
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              {
+                                "classes": [
+                                  "row",
+                                  "dark",
+                                  "align-content-stretch",
+                                  "grid-border",
+                                  "topmargin"
+                                ],
+                                "components": [
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-towel"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Shower Available"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas omnis nam molestias minus ipsa, placeat!"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-sandals"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Foot Treatments"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Facere aliquam itaque quia recusandae, corporis fugit fugiat eaque, accusamus officiis reprehenderit."
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-cup-flower"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Internal Beautification"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Velit id facilis odit aliquid laudantium. Tempore, sequi. Harum nesciunt, magni aperiam est?"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-meditation"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Yoga & Meditation"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Voluptatum distinctio laboriosam, excepturi delectus nam fugit obcaecati reiciendis neque iste!"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-comb"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Hair Dressing"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Quis, tenetur. Nam explicabo modi pariatur, blanditiis distinctio sapiente fugiat accusantium."
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "classes": [
+                                      "col-lg-4",
+                                      "col-md-6",
+                                      "col-padding"
+                                    ],
+                                    "components": [
+                                      {
+                                        "classes": [
+                                          "feature-box",
+                                          "flex-column",
+                                          "fbox-plain"
+                                        ],
+                                        "components": [
+                                          {
+                                            "classes": [
+                                              "fbox-icon",
+                                              "mb-3",
+                                              "overflow-hidden"
+                                            ],
+                                            "components": [
+                                              {
+                                                "tagName": "i",
+                                                "classes": [
+                                                  "spa-flowers-feet"
+                                                ],
+                                                "attributes": {
+                                                  "data-animate": "fadeInUpSmall fast"
+                                                }
+                                              }
+                                            ]
+                                          },
+                                          {
+                                            "classes": [
+                                              "fbox-content"
+                                            ],
+                                            "components": [
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "h2",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "h3",
+                                                      "text-white",
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "100"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Herbal Pedicure"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              },
+                                              {
+                                                "classes": [
+                                                  "overflow-hidden",
+                                                  "mb-3"
+                                                ],
+                                                "components": [
+                                                  {
+                                                    "tagName": "p",
+                                                    "type": "text",
+                                                    "classes": [
+                                                      "mb-0"
+                                                    ],
+                                                    "attributes": {
+                                                      "data-animate": "fadeInUpSmall fast",
+                                                      "data-delay": "200"
+                                                    },
+                                                    "components": [
+                                                      {
+                                                        "type": "textnode",
+                                                        "content": "Veniam atque corporis commodi. Quidem odit, necessitatibus quo tenetur! Harum similique illo eligendi!"
+                                                      }
+                                                    ]
+                                                  }
+                                                ]
+                                              }
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "clear"
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "clear"
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "clear"
+                            ]
+                          },
+                          {
+                            "classes": [
+                              "clear"
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "tagName": "footer",
+                    "classes": [
+                      "bg-transparent",
+                      "border-width-1",
+                      "border-light",
+                      "dark"
+                    ],
+                    "attributes": {
+                      "id": "footer"
+                    },
+                    "components": [
+                      {
+                        "classes": [
+                          "container"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "classes": [
+                  "icon-angle-up"
+                ],
+                "attributes": {
+                  "id": "gotoTop"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "id": "index",
+      "name": "index"
+    }
+  ]
+}

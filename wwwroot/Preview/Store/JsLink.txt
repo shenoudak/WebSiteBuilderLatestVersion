@@ -1,0 +1,107 @@
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/components/rangeslider.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+		$(document).ready(changeHeaderColor);
+		$(window).on('resize',changeHeaderColor);
+
+		function changeHeaderColor(){
+			if (jQuery(window).width() > 991.98) {
+				jQuery( "#header" ).hover(
+					function() {
+						if (!$(this).hasClass("sticky-header")) {
+							$( this ).addClass( "hover-light" ).removeClass( "dark" );
+							SEMICOLON.header.logo();
+						}
+						$( "#wrapper" ).addClass( "header-overlay" );
+					}, function() {
+						if (!$(this).hasClass("sticky-header")) {
+							$( this ).removeClass( "hover-light" ).addClass( "dark" );
+							SEMICOLON.header.logo();
+						}
+						$( "#wrapper" ).removeClass( "header-overlay" );
+					}
+				);
+			}
+		};
+
+		$(window).scroll(function() {
+			if ($(document).scrollTop() > 2000 && $("#modal-subscribe").attr("displayed") === "false") {
+				$('#modal-subscribe').modal('show');
+				$("#modal-subscribe").attr("displayed", "true");
+			}
+		});
+
+		jQuery('#modal-subscribe-form').on( 'formSubmitSuccess', function(){
+			$("#modal-subscribe").addClass("fadeOutDown");
+			setTimeout(function() { $('#modal-subscribe').modal('hide'); }, 400);
+			$("#modal-subscribe").attr("displayed", "false");
+		});
+
+		var priceRangefrom = 0,
+			priceRangeto = 0,
+			$container = null;
+
+		jQuery(window).on( 'load', function(){
+
+			$container = $('#shop');
+
+			$container.isotope({ transitionDuration: '0.65s' });
+
+			$('.shop-filter a').click(function(){
+				$('.shop-filter li').removeClass('activeFilter');
+				$(this).parent('li').addClass('activeFilter');
+				var selector = $(this).attr('data-filter');
+				$container.isotope({ filter: selector });
+				return false;
+			});
+
+			$(window).resize(function() {
+				$container.isotope('layout');
+			});
+
+		});
+
+		jQuery(document).ready( function($){
+
+			$(".range_23").ionRangeSlider({
+				type: "double",
+				min: 9.99,
+				max: 99.99,
+				from: 9.99,
+				to: 99.99,
+				prefix: '$',
+				hide_min_max: true,
+				hide_from_to: false,
+				grid: false,
+				onStart: function (data) {
+					priceRangefrom = data.from;
+					priceRangeto = data.to;
+				},
+				onFinish: function (data) {
+					priceRangefrom = data.from;
+					priceRangeto = data.to;
+
+					$container.isotope({
+						filter: function() {
+
+							if( $(this).find('.product-price').find('ins').length > 0 ) {
+								var price = $(this).find('.product-price ins').text();
+							} else {
+								var price = $(this).find('.product-price').text();
+							}
+
+							priceNum = price.split("$");
+
+							return ( priceRangefrom <= priceNum[1] && priceRangeto >= priceNum[1] );
+						}
+					});
+
+				}
+			});
+
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a088e255c840db3","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>

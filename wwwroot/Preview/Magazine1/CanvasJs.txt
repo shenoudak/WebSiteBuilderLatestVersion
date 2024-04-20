@@ -1,0 +1,1 @@
+/External/magazine1Template/js/jquery.js$@/External/magazine1Template/js/plugins.min.js$@/External/magazine1Template/js/functions.js

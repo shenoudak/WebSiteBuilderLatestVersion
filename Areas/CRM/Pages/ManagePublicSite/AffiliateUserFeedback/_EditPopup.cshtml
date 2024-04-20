@@ -1,0 +1,72 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@model iTech.Models.AffiliatePrice
+@{
+}
+
+<div class="modal fade" id="showEditModal" tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-light p-3">
+                <h5 class="modal-title" id="exampleModalLabel">@sharedResource["Edit Video Material"]</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close" id="close-modal"></button>
+            </div>
+
+            <form asp-area="CRM" asp-page="/Configurations/AffiliatePrices/Index" asp-page-handler="EditAffiliatePrices">
+                <div class="modal-body">
+                    <div class="row g-3">
+              
+                        <input asp-for="@Model.AffiliatePriceId" id="HiddenId" value="@Model.AffiliatePriceId" hidden>
+                        
+                        
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.AffiliatePriceTitle" class="form-label">@sharedResource["Affiliate Price Title"]</label>
+                                <input data-val-required="@sharedResource["Enter Affiliate Price Title"]" id="AffiliatePriceTitleID" type="text" asp-for="@Model.AffiliatePriceTitle" class="form-control" placeholder="@sharedResource["Enter Affiliate Price Title"]" required />
+                                <span asp-validation-for="@Model.AffiliatePriceTitle" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.From" class="form-label">@sharedResource["From"]</label>
+                                <input data-val-required="@sharedResource["Enter From"]" id="FromID" type="text" asp-for="@Model.From" class="form-control" placeholder="@sharedResource["Enter From"]" required />
+                                <span asp-validation-for="@Model.From" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.To" class="form-label">@sharedResource["To"]</label>
+                                <input data-val-required="@sharedResource["Enter From"]" id="ToID" type="text" asp-for="@Model.To" class="form-control" placeholder="@sharedResource["Enter To"]" required />
+                                <span asp-validation-for="@Model.To" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div>
+                                <label for="@Model.Point" class="form-label">@sharedResource["Point"]</label>
+                                <input data-val-required="@sharedResource["Enter Point"]" id="PointID" type="text" asp-for="@Model.Point" class="form-control" placeholder="@sharedResource["Enter Point"]" required />
+                                <span asp-validation-for="@Model.Point" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end row-->
+                </div>
+                <div class="modal-footer">
+                    <div class="hstack gap-2 justify-content-end">
+                        <button type="button" class="btn btn-light"
+                                data-bs-dismiss="modal">
+                            @sharedResource["Close"]
+                        </button>
+                        <button type="submit" class="btn btn-success"
+                                id="add-btn">
+                            @sharedResource["Edit"]
+                        </button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

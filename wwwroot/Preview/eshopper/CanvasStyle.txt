@@ -1,0 +1,1 @@
+/External/eshopperTemplate/img/favicon.ico$@https://fonts.gstatic.com$@https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap$@https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css$@/External/eshopperTemplate/lib/owlcarousel/assets/owl.carousel.min.css$@/External/eshopperTemplate/css/style.css

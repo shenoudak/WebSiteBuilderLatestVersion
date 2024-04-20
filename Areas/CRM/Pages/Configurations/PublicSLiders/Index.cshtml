@@ -1,0 +1,206 @@
+﻿@page
+@model iTech.Areas.CRM.Pages.Configurations.PublicSLiders.IndexModel
+@{
+}
+
+@Html.AntiForgeryToken()
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@{
+    ViewBag.Title = @sharedResource["Affiliate Prices"];
+    ViewBag.pTitle = @sharedResource["Affiliate Prices"];
+    ViewBag.pageTitle = @sharedResource["Affiliate Prices"];
+    ViewData["Title"] = @sharedResource["Affiliate Prices"];
+}
+
+
+<div class="d-flex flex-column flex-column-fluid">
+	<!--begin::Toolbar-->
+	<div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+		<!--begin::Toolbar container-->
+		<div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+			<!--begin::Page title-->
+			<div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+				<!--begin::Title-->
+				<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">@sharedResource["Public Slider"]</h1>
+				<!--end::Title-->
+				<!--begin::Breadcrumb-->
+				<ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">
+						<a href="CRM/index" class="text-muted text-hover-primary">@sharedResource["Home"]</a>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item">
+						<span class="bullet bg-gray-400 w-5px h-2px"></span>
+					</li>
+					<!--end::Item-->
+					<!--begin::Item-->
+					<li class="breadcrumb-item text-muted">@sharedResource["Public Slider"]</li>
+					<!--end::Item-->
+				</ul>
+				<!--end::Breadcrumb-->
+			</div>
+			<!--end::Page title-->
+			
+		</div>
+		<!--end::Toolbar container-->
+	</div>
+	<!--end::Toolbar-->
+	<!--begin::Content-->
+	<div id="kt_app_content" class="app-content flex-column-fluid">
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container container-xxl">
+			
+			<!--begin::Tables Widget 11-->
+			<div class="card mb-5 mb-xl-8">
+				<!--begin::Header-->
+				<div class="card-header border-0 pt-5">
+
+					<h3 class="card-title align-items-start flex-column">
+						<span class="card-label fw-bold fs-3 mb-1">@sharedResource["Public Slider"]</span>
+					</h3>
+					
+				</div>
+				<!--end::Header-->
+				<!--begin::Body-->
+				<div class="card-body py-3">
+					<!--begin::Table container-->
+					<div class="table-responsive">
+						<!--begin::Table-->
+						<table class="table align-middle gs-0 gy-4">
+							<!--begin::Table head-->
+							<thead>
+								<tr class="fw-bold text-muted bg-light">
+
+									<th class="ps-4 min-w-325px rounded-start">@sharedResource["Background"]</th>
+									<th class="min-w-125px">@sharedResource["Title1Ar"]</th>
+									<th class="min-w-125px">@sharedResource["Title1En"]</th>
+									<th class="min-w-200px">@sharedResource["Title2Ar"]</th>
+									<th class="min-w-200px">@sharedResource["Title2EN"]</th>
+									<th class="min-w-200px text-end rounded-end">@sharedResource["Actions"]</th>
+								</tr>
+							</thead>
+							<!--end::Table head-->
+							<!--begin::Table body-->
+							<tbody>
+								@{
+									foreach (var item in Model.publicSliders)
+									{
+										<tr>
+											<td>
+											 @{
+                                                if(@item.IsImage){
+
+														<div class="d-flex align-items-center">
+															<div class="symbol symbol-50px me-5">
+																<img src="~/@item.Background" class="" alt="">
+															</div>
+
+														</div>
+                                                        
+                                                    }
+                                                    else
+                                                    {
+														<div class="d-flex align-items-center">
+															<div class="symbol symbol-50px me-5">
+																<iframe src="~/@item.Background" width="300" frameborder="0"> </iframe>
+															</div>
+
+														</div>
+                                                    }
+                                                }
+												
+											</td>
+											<td>
+												<a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1Ar</a>
+											</td>
+											<td>
+												<a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title1En</a>
+											</td>
+											<td>
+												<a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6">@item.Title2Ar</a>
+											</td>
+											<td>
+												<a class="text-dark fw-bold text-hover-primary d-block mb-1 fs-6"> @item.Title2En</a>
+											</td>
+
+											<td class="text-end">
+												
+												<a href="javascript:void(0)" data-bs-toggle="modal" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+													<i class="ki-duotone ki-pencil fs-2" onclick="editButtonClick(@item.PublicSliderId)">
+														<span class="path1"></span>
+														<span class="path2"></span>
+													</i>
+												</a>
+											</td>
+										</tr>
+
+									}
+								}
+							</tbody>
+							<!--end::Table body-->
+						</table>
+						<!--end::Table-->
+					</div>
+					<!--end::Table container-->
+				</div>
+				<!--begin::Body-->
+			</div>
+			<!--end::Tables Widget 11-->
+			
+		</div>
+		<!--end::Content container-->
+	</div>
+	<!--end::Content-->
+</div>
+
+
+
+
+
+<partial name="_EditPopup" model="@Model.publicSlider" view-data="ViewData" />
+
+
+
+
+<script>
+
+
+
+	function editButtonClick(PublicSliderId) {
+		$.ajax({
+			type: "GET",
+			beforeSend: function (xhr) {
+				xhr.setRequestHeader("XSRF-TOKEN",
+					$('input:hidden[name="__RequestVerificationToken"]').val());
+			}
+			,
+			url: "/CRM/Configurations/PublicSlider/Index?handler=SingleSliderForEdit",
+
+			data: { "PublicSliderId": PublicSliderId },
+			contentType: "application/json",
+			dataType: "json",
+			success: function (response) {
+
+				document.getElementById("HiddenId").value = response.PublicSliderId
+				document.getElementById("BackgroundId").value = response.Background
+				document.getElementById("Title1ArID").value = response.Title1Ar
+				document.getElementById("TitleEn1ID").value = response.Title1En
+				document.getElementById("Title2ArID").value = response.Title2Ar
+				document.getElementById("Title2EnID").value = response.Title2En
+				document.getElementById("DescriptionArID").value = response.DescriptionAr
+				document.getElementById("DescriptionEnID").value = response.DescriptionEn
+				document.getElementById("EIsActiveId").checked = response.IsImage
+				$('#showEditModal').modal('show');
+			},
+
+			failure: function (response) {
+				alert(response);
+			}
+		});
+	}
+	// === VIEW ===//
+  
+    
+</script>      

@@ -1,0 +1,442 @@
+﻿@page
+@model iTech.Pages.EditorDarkModel
+@{
+    ViewData["Title"] = "Editor";
+    Layout = "/Areas/Admin/Pages/Shared/_LayoutEditor.cshtml";
+    var siteName = @Model.SiteName;
+}
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet">
+<link href="~/css/grapes.min.css" rel="stylesheet" />
+<link href="~/css/grapesjs-preset-webpage.min.css" rel="stylesheet" />
+<link href="~/css/grapick.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--Grapes JS-->
+<script src="~/js/grapes.min.js"></script>
+<script src="~/js/grapesjs-blocks-basic.js"></script>
+<script src="~/js/grapesjs-plugin-forms.js"></script>
+<script src="~/js/ckeditor/ckeditor.js"></script>
+<script src="~/js/grapesjs-plugin-ckeditor.min.js"></script>
+<link href="~/css/editor.css" rel="stylesheet" />
+
+<partial name="_AddPage" view-data=" ViewData" />
+<partial name="_DeletePage" view-data=" ViewData" />
+<partial name="_EditPage" view-data=" ViewData" />
+
+<div class="app-wrapper  flex-column flex-row-fluid " id="kt_app_wrapper">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+                <div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+                    <div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+                        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+                            @Model.SiteName
+                        </h1>
+
+                    </div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="d-flex align-items-center">
+                            <span class="fs-7 fw-bold text-gray-700 pe-4 text-nowrap d-none d-md-block">@sharedResource["Page:"]</span>
+                            <select onchange="getPage(this.value)" id="PagesDrowpDown" class="form-select form-select-sm form-select-solid w-100px w-xxl-125px" data-control="select2" data-placeholder="No Page" data-hide-search="true">
+                            </select>
+                            <div data-bs-toggle="tooltip" data-bs-placement="top" data-bs-trigger="hover" title="@sharedResource["Add Page"]">
+                                <a class="btn btn-sm btn-icon  btn-active-icon-primary">
+                                    <i onclick="AddPage()" class="ki-duotone ki-plus-square fs-2hx"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="bullet bg-secondary h-35px w-1px mx-5"></div>
+                        <div class="d-flex align-items-center flex-shrink-0">
+                            <div class="flex-shrink-0 ">
+                                <ul class="nav" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <a id="btnDeviceMobile" class="nav-link btn btn-icon btn-color-muted btn-active-color-primary btn-active-light fw-semibold fs-7 px-4 me-1 active" data-bs-toggle="tab" href="#" aria-selected="true" role="tab">
+                                            <i class="ki-duotone ki-phone fs-2qx"><span class="path1"></span><span class="path2"></span></i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a id="btnDeviceTablet" class="nav-link btn btn-icon  btn-color-muted btn-active-color-primary btn-active-light fw-semibold fs-7 px-4 me-1 " data-bs-toggle="tab" href="#" aria-selected="true" role="tab">
+                                            <i class="ki-duotone ki-tablet  fs-2qx">
+                                                <i class="path1"></i>
+                                                <i class="path2"></i>
+                                                <i class="path3"></i>
+                                            </i>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <a id="btnDeviceDesktop" class="nav-link btn btn-icon  btn-color-muted btn-active-color-primary btn-active-light fw-semibold fs-7 px-4 me-1 " data-bs-toggle="tab" href="#" aria-selected="true" role="tab">
+                                            <i class="ki-duotone ki-screen  fs-2qx">
+                                                <i class="path1"></i>
+                                                <i class="path2"></i>
+                                                <i class="path3"></i>
+                                                <i class="path4"></i>
+                                            </i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="bullet bg-secondary h-35px w-1px mx-5"></div>
+                            <span class="fs-7 text-gray-700 fw-bold">@sharedResource["Zoom:"]</span>
+                            <div class="d-flex align-items-center ps-4">
+                                <div id="kt_app_toolbar_slider" class="noUi-target noUi-target-primary w-75px w-xxl-150px noUi-sm"></div>
+
+                                <span id="kt_app_toolbar_slider_value" class="d-flex flex-center bg-light-primary rounded-circle w-35px h-35px ms-4 fs-7 fw-bold text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Set Zoom level">
+                                </span>
+                            </div>
+                            <div class="bullet bg-secondary h-35px w-1px mx-5"></div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <span class="fs-7 text-gray-700 fw-bold pe-3 d-none d-md-block">@sharedResource["Quick Tools:"]</span>
+                            <div class="d-flex gap-2">
+                                <a id="Visibility" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["View Components"]">
+                                    <i class="ki-duotone ki-abstract-9   fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                    </i>
+                                </a>
+                                <a id="preview" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["Preview"]">
+                                    <i class="ki-duotone ki-eye  fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                        <i class="path3"></i>
+                                    </i>
+                                </a>
+                                <a id="fullScreen" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["Full Screen"]">
+                                    <i class="ki-duotone ki-maximize fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                        <i class="path3"></i>
+                                        <i class="path4"></i>
+                                        <i class="path5"></i>
+                                    </i>
+                                </a>
+                                <a id="undo" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["Undo"]">
+                                    <i class="ki-duotone ki-double-left-arrow  fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                    </i>
+                                </a>
+                                <a id="redo" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["Redo"]">
+                                    <i class="ki-duotone ki-double-right-arrow  fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                    </i>
+                                </a>
+                                <a id="Clear" class="btn btn-sm btn-icon btn-icon-muted btn-active-icon-primary" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="@sharedResource["Clear"]">
+                                    <i class="ki-duotone ki-trash-square fs-2qx">
+                                        <i class="path1"></i>
+                                        <i class="path2"></i>
+                                        <i class="path3"></i>
+                                        <i class="path4"></i>
+                                    </i>
+                                </a>
+                                <a onclick="SavePage()" class="btn btn-sm fw-bold btn-secondary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+                                    @sharedResource["Save"]
+                                </a>
+                                <a onclick="RedirectToSitePublish()" target="_blank" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_createNew_app">
+                                    @sharedResource["Publish"]
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="kt_app_content" class="app-content  flex-column-fluid ">
+                <!--begin::Content container-->
+                <div id="kt_app_content_container" class="app-container  container-fluid ">
+                    <div class="d-flex flex-column flex-lg-row">
+                        <!--begin::Sidebar-->
+                        <!--end::Sidebar-->
+                        <!--begin::Content-->
+                        <div class="flex-lg-row-fluid ms-lg-7 ms-xl-10">
+                            <!--begin::Messenger-->
+                            <div class="card" id="kt_chat_messenger" style="height: 100vh !important;">
+                                <!--begin::Card header-->
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body" id="kt_chat_messenger_body" style="height: 100% !important;">
+                                    <!--begin::Messages-->
+                                    <div id="editorCanvas" class="scroll-y me-n5 pe-5 h-300px h-lg-auto" data-kt-element="messages" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_header, #kt_app_header, #kt_app_toolbar, #kt_toolbar, #kt_footer, #kt_app_footer, #kt_chat_messenger_header, #kt_chat_messenger_footer" data-kt-scroll-wrappers="#kt_content, #kt_app_content, #kt_chat_messenger_body" data-kt-scroll-offset="5px" style="height: 100% !important;">
+                                        <div id="gjs" style="height:100%;width:100%">
+                                            <h1>Hello World Component!</h1>
+                                        </div>
+
+                                        <!--end::Message(template for in)-->
+                                    </div>
+                                    <!--end::Messages-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Messenger-->
+                        </div>
+                        <!--end::Content-->
+                        <div id="kt_app_aside" class="app-aside flex-column mt-7" data-kt-drawer="true" data-kt-drawer-name="app-aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="auto" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_app_aside_toggle">
+
+                            <!--begin::Aside wrapper-->
+                            <div id="kt_app_aside_wrapper" class="hover-scroll-y  mx-5 my-5" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_header" data-kt-scroll-wrappers="#kt_app_aside" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true" style="height: 435px;">
+
+                                <!--begin::Aside2-->
+                                <div class="card card-reset card-p-0">
+                                    <!--begin::Header-->
+                                    <h3 class="card-title text-gray-900 fs-3 fw-bold mb-5">@sharedResource["Pages"]</h3>
+                                    <div class="card-header min-h-auto mb-5">
+
+                                        <!--begin::Search-->
+                                        <div id="Pages" class="row col-12">
+                                            <!--end::Search-->
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Body-->
+                                        <div class="card-body">
+                                            <!--begin::Nav-->
+                                            <ul class="nav nav-pills nav-pills-custom position-relative mb-4 gap-12" role="tablist">
+                                                <!--begin::Item-->
+                                                <li class="nav-item" role="presentation" title="@sharedResource["Blocks"]">
+                                                    <!--begin::Link-->
+                                                    <a class="nav-link btn bnt-color-gray-600 btn-active-color-primary d-flex active justify-content-center w-100 border-0 h-100 px-0" data-bs-toggle="pill" href="#kt_aside_tab_1" aria-selected="true" role="tab">
+                                                        <i class="ki-duotone ki-frame fs-2">
+                                                            <i class="path1"></i>
+                                                            <i class="path2"></i>
+                                                            <i class="path3"></i>
+                                                            <i class="path4"></i>
+                                                        </i>
+                                                    </a>
+                                                    <!--end::Link-->
+                                                </li>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <li class="nav-item" role="presentation" title="@sharedResource["Styles"]">
+                                                    <!--begin::Link-->
+                                                    <a class="nav-link btn btn-color-600 btn-active-color-primary d-flex justify-content-center px-0 w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_aside_tab_2" aria-selected="false" tabindex="-1" role="tab">
+                                                        <i class="ki-duotone ki-bucket fs-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></i>
+                                                    </a>
+                                                    <!--end::Link-->
+                                                </li>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <li class="nav-item" role="presentation" title="@sharedResource["Layers"]">
+                                                    <!--begin::Link-->
+                                                    <a class="nav-link btn btn-color-600 btn-active-color-primary d-flex justify-content-center px-0 w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_aside_tab_3" aria-selected="false" tabindex="-1" role="tab">
+                                                        <i class="ki-duotone ki-abstract-26 fs-2"><span class="path1"></span><span class="path2"></span></i>
+
+                                                    </a>
+                                                    <!--end::Link-->
+                                                </li>
+                                                <!--end::Item-->
+                                                <!--begin::Item-->
+                                                <li class="nav-item" role="presentation" title="@sharedResource["Traits"]">
+                                                    <!--begin::Link-->
+                                                    <a class="nav-link btn btn-color-600 btn-active-color-primary d-flex justify-content-center px-0 w-100 border-0 h-100" data-bs-toggle="pill" href="#kt_aside_tab_4" aria-selected="false" tabindex="-1" role="tab">
+                                                        <i class="ki-duotone ki-element-7 fs-2"><span class="path1"></span><span class="path2"></span></i>
+                                                    </a>
+                                                    <!--end::Link-->
+                                                </li>
+                                                <!--end::Item-->
+                                                <!--begin::Bullet-->
+                                                <span class="position-absolute z-index-1 bottom-0 w-100 h-1px bg-gray-300 rounded"></span>
+                                                <!--end::Bullet-->
+                                            </ul>
+                                            <!--end::Nav-->
+                                            <!--begin::Tab Content-->
+                                            <div class="tab-content">
+
+
+                                                <!--begin::Tap pane-->
+                                                <div class="tab-pane fade show active" id="kt_aside_tab_1" role="tabpanel">
+
+
+                                                    <div id="blocks">
+                                                    </div>
+                                                </div>
+                                                <!--end::Tap pane-->
+                                                <!--begin::Tap pane-->
+                                                <div class="tab-pane fade " id="kt_aside_tab_2" role="tabpanel">
+
+                                                    <div id="styles-container"></div>
+                                                 
+                                                </div>
+                                                <!--end::Tap pane-->
+                                                <div class="tab-pane fade " id="kt_aside_tab_3" role="tabpanel">
+
+                                                    <div id="layers-container"></div>
+                                                  
+
+                                                </div>
+                                                <!--end::Tap pane-->
+
+                                                <div class="tab-pane fade " id="kt_aside_tab_4" role="tabpanel">
+
+                                                    <div id="trait-container"></div>
+                                                 
+
+                                                </div>
+                                                <!--end::Tap pane-->
+
+
+
+                                            </div>
+                                            <!--end::Tab Content-->
+                                            <!--begin::Action-->
+                                            <!--end::Action-->
+                                        </div>
+                                        <!--end::Body-->
+                                    </div>
+                                    <!--end::Aside2-->
+                                </div>
+                                <!--end::Aside wrapper-->
+                            </div>
+                            <!--end::Contacts-->
+
+                        </div>
+
+                    </div>
+                    <!--begin::Layout Builder Notice-->
+                  
+                    <!--end::Layout Builder Notice-->
+                    <!--begin::Layout Builder Modal-->
+                    <div class="modal fade" id="kt_layout_builder_recaptcha_modal" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h3 class="modal-title" id="exampleModalLabel">reCaptcha Verification</h3>
+
+                                    <button class="btn btn-sm btn-icon btn-light btn-hover-primary" data-bs-dismiss="modal" aria-label="Close">
+                                        <i class="ki ki-close fs-4 text-muted"></i>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form">
+                                        <div class="form-group">
+                                            <script src="https://www.google.com/recaptcha/api.js"></script>
+                                            <div class="g-recaptcha" data-sitekey="6Lf92jMUAAAAANk8wz68r73rA2uPGr4_e0gn96BL"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary  me-2" id="kt_layout_builder_verify">Submit</button>
+                                    <button type="button" class="btn btn-hover-light btn-text-muted fw-semibold" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--end::Layout Builder Modal-->
+                    <!--begin::Card-->
+                    <!--end::Card-->
+                </div>
+                <!--end::Content container-->
+            </div>
+        </div>
+    </div>
+    <input value="@Model.SiteName" id="SiteNId" hidden />
+    <input value="@Model.DomainName" id="SiteDId" hidden />
+    <input value="@Model.url" id="UrlId" hidden />
+
+    <style>
+        /* Let's highlight canvas boundaries */
+        /*   #gjs {
+                                                                                            border: 3px solid #444;
+                                                                                        } */
+
+        /* Reset some default styling */
+        .gjs-cv-canvas {
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gjs-block {
+            width: auto;
+            height: auto;
+            min-height: auto;
+        }
+
+
+        /* #styles-container, #layers-container, #trait-container, {
+                                    width: 17rem ;
+                                }*/
+
+
+
+        /*  .gjs-blocks-c {
+                                    justify-content: center !important;
+
+                                }*/
+        .gjs-block {
+            /* width: 8rem; */
+            width: 100% !important;
+        }
+
+        gjs-block-category {
+            color: #c8c8e4 !important;
+            background-color: #181C32;
+        }
+
+        .gjs-field {
+            background-color: #E1E3EA !important;
+            color: #181C32 !important;
+        }
+
+        .gjs-fields {
+            background-color: transparent !important;
+            color: white !important;
+            border-radius: 5px !important;
+        }
+
+        .gjs-title, .gjs-block {
+            background-color: #181C32 !important;
+            color: #E1E3EA !important;
+        }
+
+        .gjs-blocks-cs, .gjs-sm-sectors, .gjs-clm-tags, .gjs-layer, .gjs-layer-title-c, .gjs-sm-sector-title, .gjs-layer-title, .gjs-trt-trait {
+            background-color: #181C32 !important;
+            color: #E1E3EA !important;
+            font-weight: 600 !important;
+            font-family: Inter, Helvetica, "sans-serif" !important;
+        }
+
+        .gjs-title, .gjs-block {
+            background-color: #181C32 !important;
+            color: #E1E3EA !important;
+            font-weight: 600 !important;
+            font-family: Inter, Helvetica, "sans-serif" !important;
+        }
+
+        .gjs-block {
+            /*color: #181C32 !important;
+                                            color: #212124 !important;*/
+            color: #3E97FF !important;
+        }
+
+        .fa-eye-slash {
+            font-size: x-large !important;
+        }
+
+        .gjs-block-label {
+            font-size: .95rem !important;
+            color: black !important;
+        }
+        /* .scroll{
+                                    color: red !important;
+                                }*/
+
+        @@media (min-width: 992px) {
+            pre,
+            div {
+                scrollbar-width: auto !important;
+                scrollbar-color: var(--bs-scrollbar-color) transparent;
+            }
+
+            #editorCanvas {
+                max-height: 100% !important;
+            }
+    </style>
+    <script src="~/js/Editor.js"></script>
+    <script src="~/js/blocks.js"></script>
+</div>

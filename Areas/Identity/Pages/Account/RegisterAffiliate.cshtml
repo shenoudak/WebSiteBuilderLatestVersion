@@ -1,0 +1,339 @@
+﻿@page
+@model iTech.Areas.Identity.Pages.Account.RegisterAffiliateModel
+
+@{
+    ViewData["Title"] = "Register";
+    //Layout = null;
+}
+
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Localization
+@using iTech;
+@inject IStringLocalizer<SharedResource> sharedResource
+
+<!doctype html>
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="ladylip" data-sidebar-size="lg">
+<head>
+   @* @Html.Partial("~/Pages/Shared/_title_meta.cshtml")
+    @Html.Partial("~/Pages/Shared/_head_css.cshtml")*@
+</head>
+<body>
+
+    <!-- auth-page wrapper -->
+    <div class="auth-page-wrapper auth-bg-cover py-5 d-flex justify-content-center align-items-center min-vh-100">
+        <div class="bg-overlay"></div>
+        <!-- auth-page content -->
+        <div class="auth-page-content overflow-hidden pt-lg-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card overflow-hidden m-0">
+                            <div class="row justify-content-center g-0">
+                                <div class="col-lg-6">
+                                    <div class="p-lg-5 p-4 auth-one-bg h-100">
+                                        <div class="bg-overlay"></div>
+                                        <div class="position-relative h-100 d-flex flex-column">
+                                            <div class="mb-4">
+                                                <a href="@Url.Action("Index", "Dashboard")" class="d-block">
+                                                    <img src="~/assets/images/logo-light.png" alt="" height="18">
+                                                </a>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <div class="mb-3">
+                                                    <i class="ri-double-quotes-l display-4 text-success"></i>
+                                                </div>
+
+                                                <div id="qoutescarouselIndicators" class="carousel slide" data-bs-ride="carousel">
+                                                    <div class="carousel-indicators">
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="0" class="active"
+                                                                aria-current="true" aria-label="Slide 1"></button>
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="1"
+                                                                aria-label="Slide 2"></button>
+                                                        <button type="button" data-bs-target="#qoutescarouselIndicators" data-bs-slide-to="2"
+                                                                aria-label="Slide 3"></button>
+                                                    </div>
+                                                    <div class="carousel-inner text-center text-white-50 pb-5">
+                                                        <div class="carousel-item active">
+                                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <p class="fs-15 fst-italic">" The theme is really great with an amazing customer support."</p>
+                                                        </div>
+                                                        <div class="carousel-item">
+                                                            <p class="fs-15 fst-italic">" Great! Clean code, clean design, easy for customization. Thanks very much! "</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- end carousel -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="p-lg-5 p-4">
+                                        <div>
+                                            <h5 class="text-primary">@sharedResource["Register Account"]</h5>
+                                            <p class="text-muted">@sharedResource["Get your Free account now."]</p>
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <form class="needs-validation" novalidate asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                                                <input asp-for="Input.AffiliateToken" type="text" class="form-control" id="Address" placeholder="Enter Address" hidden>
+
+                                                <div class="mb-3">
+                                                    <label for="FullName" class="form-label">@sharedResource["First Name"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.FullName" type="text" class="form-control" id="FullName" placeholder=@sharedResource["Enter First Name"] required>
+                                                    <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter First Name"]
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label for="LastName" class="form-label">@sharedResource["Last Name"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.LastName" type="text" class="form-control" id="Last Name" placeholder=@sharedResource["Enter Last Name"] required>
+                                                    <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Last Name"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="Legalname" class="form-label">@sharedResource["Legal name"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.Legalname" type="text" class="form-control" id="Legalname" placeholder=@sharedResource["Enter Legal name Business"] required>
+                                                    <span asp-validation-for="Input.Legalname" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Legal name of Business"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="TypeofBusiness" class="form-label">@sharedResource["Type of Business"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.TypeofBusiness" type="text" class="form-control" id="TypeofBusiness" placeholder=@sharedResource["Enter Type of Business"] required>
+                                                    <span asp-validation-for="Input.TypeofBusiness" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Type of Business"]
+                                                    </div>
+                                                </div>
+                                               
+                                               
+                                                 
+                                                <div class="mb-3">
+                                                    <label for="BrandName" class="form-label">@sharedResource["Brand Name"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.BrandName" type="text" class="form-control" id="licensednumber" placeholder="Enter Brand Name" required>
+                                                    <span asp-validation-for="Input.BrandName" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Brand Name"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="useremail" class="form-label">@sharedResource["Email"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.Email" type="email" class="form-control" id="useremail" placeholder="Enter email address" required>
+                                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter email"]
+                                                    </div>
+                                                </div>
+
+                                                 <div class="mb-3">
+                                                    <label for="PhoneNumber" class="form-label">@sharedResource["PhoneNumber"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.PhoneNumber" type="text" class="form-control" id="useremail" placeholder="Enter PhoneNumber" required>
+                                                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter PhoneNumber"]
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="mb-3">
+                                                    <label for="AccountNumber" class="form-label">@sharedResource["Account Number"] <span class="text-danger">*</span></label>
+                                                    <input oninput="formatAccountNumber()" asp-for="Input.AccountNumber" type="text" class="form-control" id="accountNumber" placeholder="Enter AccountNumber" required>
+                                                    <span asp-validation-for="Input.AccountNumber" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Account Number"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="BankName" class="form-label">@sharedResource["Bank Name"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.BankName" type="text" class="form-control" id="BankName" placeholder="Enter BankName" required>
+                                                    <span asp-validation-for="Input.BankName" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Bank Name"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="IPan" class="form-label">@sharedResource["IBAN"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.IPan" type="text" class="form-control" id="useremail" placeholder="Enter IBAN" required>
+                                                    <span asp-validation-for="Input.IPan" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter IPan"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="Address" class="form-label">@sharedResource["Address"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.Address" type="text" class="form-control" id="Address" placeholder="Enter Address" required>
+                                                    <span asp-validation-for="Input.Address" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Address"]
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="CountryId" class="form-label">@sharedResource["Country"] <span class="text-danger">*</span></label>
+                                                    <select required id="CountryId" name="CountryId" class="form-select mb-3" aria-label="Default select example">
+                                                        <option value="" selected>Select your Status </option>
+                                                        @{
+
+                                                            @foreach (var country in Model.countries)
+                                                            {
+                                                                <option value="@country.CountryId">@country.TitleEn</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                    <span asp-validation-for="Input.CountryId" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter Country"]
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="password-input">@sharedResource["Password"]</label>
+                                                    <div class="position-relative auth-pass-inputgroup">
+                                                        <input asp-for="Input.Password" type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                                        <div class="invalid-feedback">
+                                                            @sharedResource["Please enter password"]
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label" for="password-input">@sharedResource["Confirm Password"]</label>
+                                                    <div class="position-relative auth-pass-inputgroup">
+                                                        <input asp-for="Input.ConfirmPassword" type="password" class="form-control pe-5 password-input" onpaste="return false" placeholder="Enter password" id="password-input" aria-describedby="passwordInput" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                                                        <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                                        <button class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon" type="button" id="password-addon"><i class="ri-eye-fill align-middle"></i></button>
+                                                        <div class="invalid-feedback">
+                                                            @sharedResource["Please enter password"]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <div class="form-check form-check-secondary mb-3">
+                                                    <input asp-for="Input.is_licensed" onclick="CheckLicensed()" class="form-check-input" type="checkbox" id="is_licensed">
+                                                    <label class="form-check-label" for="is_licensed">
+                                                        is_licensed
+                                                    </label>
+                                                </div>
+                                                <div style="display:none" id="licensedtypeID" class="mb-3">
+                                                    <label for="licensedtype" class="form-label">@sharedResource["licensed type"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.licensedtype" type="text" class="form-control" id="licensedtype" placeholder="Enter licensed type" required>
+                                                    <span asp-validation-for="Input.licensedtype" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter licensed type"]
+                                                    </div>
+                                                </div>
+
+                                                <div style="display:none" id="licensednumberID" class="mb-3">
+                                                    <label for="licensednumber" class="form-label">@sharedResource["licensed number"] <span class="text-danger">*</span></label>
+                                                    <input asp-for="Input.licensednumber" type="number" class="form-control" id="licensednumber" placeholder="Enter licensed Number" required>
+                                                    <span asp-validation-for="Input.licensednumber" class="text-danger"></span>
+                                                    <div class="invalid-feedback">
+                                                        @sharedResource["Please enter licensed Number"]
+                                                    </div>
+                                                </div>
+                                               
+                                                <div id="password-contain" class="p-3 bg-light mb-2 rounded">
+                                                    <h5 class="fs-13">@sharedResource["Password must contain:"]</h5>
+                                                    <p id="pass-length" class="invalid fs-12 mb-2">Minimum <b>8 characters</b></p>
+                                                    <p id="pass-lower" class="invalid fs-12 mb-2">At <b>lowercase</b> letter (a-z)</p>
+                                                    <p id="pass-upper" class="invalid fs-12 mb-2">At least <b>uppercase</b> letter (A-Z)</p>
+                                                    <p id="pass-number" class="invalid fs-12 mb-0">A least <b>number</b> (0-9)</p>
+                                                </div>
+                                               
+                                                <div class="mt-4">
+                                                    <button class="btn btn-success w-100" type="submit">@sharedResource["Sign Up"]</button>
+                                                </div>
+
+                                     
+                                            </form>
+                                        </div>
+
+                                        <div class="mt-5 text-center">
+                                            <p class="mb-0">@sharedResource["Already have an account ?"] <a href="~/Identity/Account/Login" class="fw-semibold text-primary text-decoration-underline">@sharedResource["Signin"] </a> </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end card -->
+                    </div>
+                    <!-- end col -->
+
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </div>
+        <!-- end auth page content -->
+        <!-- footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center">
+                            <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> iTech. Crafted with <i class="mdi mdi-heart text-danger"></i> by CodeWare</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end Footer -->
+    </div>
+    <!-- end auth-page-wrapper -->
+    @*@Html.Partial("~/Pages/Shared/_vendor_scripts.cshtml")*@
+
+    <!-- validation init -->
+    <script src="~/assets/js/pages/form-validation.init.js"></script>
+    <!-- password create init -->
+    <script src="~/assets/js/pages/passowrd-create.init.js"></script>
+
+</body>
+</html>
+
+@*
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+   
+
+}*@
+
+<script>
+   function CheckLicensed(){
+       
+       var islicensed = document.getElementById("is_licensed")
+       const licensedtype = document.getElementById("licensedtypeID")
+        const licensednumber = document.getElementById("licensednumberID")
+        if (islicensed.checked == true) {
+            // 👇 this SHOWS the requiredInputs
+            licensedtype.style.display = 'block';
+            licensednumber.style.display = 'block';
+        }
+        else {
+            licensedtype.style.display = 'none';
+            licensednumber.style.display = 'none';
+        }
+   }
+    function formatAccountNumber() {
+        var input = document.getElementById("accountNumber").value.replace(/[^0-9]/g, ""); // Remove non-digit characters
+        var formattedInput = "";
+
+        for (var i = 0; i < input.length; i++) {
+            if (i > 0 && i % 4 == 0) {
+                formattedInput += "-";
+            }
+            formattedInput += input.charAt(i);
+        }
+
+        document.getElementById("accountNumber").value = formattedInput;
+    }
+</script>

@@ -1,0 +1,162 @@
+﻿@using iTech.Data
+@inject CRMDBContext _context
+@model iTech.Models.CountDownSection
+@{
+}
+
+
+<div class="modal fade" id="kt_modal_EditCountDown" tabindex="-1" aria-labelledby="AddModalLabel" aria-hidden="true" role="dialog">
+                <!--begin::Modal dialog-->
+                <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+                    <!--begin::Modal content-->
+                    <div b-cpu6lo70wp="" class="modal-content">
+                        <!--begin::Modal header-->
+                        <div b-cpu6lo70wp="" class="modal-header">
+                            <!--begin::Modal title-->
+                            <h2 b-cpu6lo70wp="">@(sharedResource["Edit Count Down Section"])</h2>
+                            <!--end::Modal title-->
+                            <!--begin::Close-->
+                            <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                                <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                </i>
+                            </div>
+                            <!--end::Close-->
+                        </div>
+                        <!--end::Modal header-->
+                        <!--begin::Modal body-->
+                        <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                            <!--begin::Stepper-->
+                            <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                                <!--begin::Content-->
+                                <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                                    <!--begin::Form-->
+						<form class="form fv-plugins-bootstrap5 fv-plugins-framework"  asp-area="Admin" asp-page="/PublicContentEditor" asp-page-handler="EditCountDown">
+              
+                     
+                      
+
+							<!--begin::Step 1-->
+							<input asp-for="@Model.CountDownSectionId" id="HiddenIdCountDown" value="@Model.CountDownSectionId" hidden>
+							<div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+								<div b-cpu6lo70wp="" class="w-100">
+									<!--begin::Input group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="TitleAr" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["TitleAr"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleAr"]" data-bs-original-title="@sharedResource["Enter Arabic Title"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" id="TextArID" data-val-required="TitleAr" type="text" asp-for="@Model.TextAR" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter TitleAr"]">
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+											<span asp-validation-for="@Model.TextAR" class="text-danger"></span>
+										</div>
+									</div>
+									<!--end::Input group-->
+									<!--begin::Input group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="TitleEn" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["TitleEn"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["TitleEn"]" data-bs-original-title="@sharedResource["Enter Title En"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<!--begin::Input-->
+										<input b-cpu6lo70wp="" id="TextEnID" data-val-required="TitleEn" type="text" asp-for="@Model.TextEN" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter TitleEn"]">
+										<!--end::Input-->
+										<div class="fv-plugins-message-container invalid-feedback">
+								<span asp-validation-for="@Model.TextEN" class="text-danger"></span>
+										</div>
+									</div>
+									<!--end::Input group-->
+									<!--end::Input group-->
+									<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+										<!--begin::Label-->
+										<label b-cpu6lo70wp="" for="profileImage" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+											<span b-cpu6lo70wp="" class="required">@sharedResource["Set Count Down Ends On"]</span>
+											<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Set Count Down"]" data-bs-original-title="@sharedResource["Set Count Down"]" data-kt-initialized="1">
+												<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+													<span b-cpu6lo70wp="" class="path3"></span>
+												</i>
+											</span>
+										</label>
+										<!--end::Label-->
+										<div class="form-group row">
+											<div class="col-lg-12 col-md-12 col-sm-12">
+												<div class="mb-0">
+													<input class="form-control form-control-solid" placeholder="Pick date & time" id="kt_datepicker_3" asp-for="@Model.CountDown" value="@Model.CountDown" />
+												</div>
+
+											</div>
+										</div>
+
+									</div>
+
+									<!--begin::Input group-->
+
+								
+									<div class="d-flex flex-stack pt-10 m-0">
+										<button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+											<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+												<span b-cpu6lo70wp="" class="path1"></span>
+												<span b-cpu6lo70wp="" class="path2"></span>
+											</i>@sharedResource["Close"]
+										</button>
+										<button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+											<span b-cpu6lo70wp="" class="indicator-label">
+												@sharedResource["Edit Count Down"]
+												<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+													<span b-cpu6lo70wp="" class="path1"></span>
+													<span b-cpu6lo70wp="" class="path2"></span>
+												</i>
+											</span>
+											<span b-cpu6lo70wp="" class="indicator-progress">
+												@sharedResource["Please wait..."]
+												<span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+											</span>
+										</button>
+									</div>
+									<!--end::Input group-->
+								</div>
+							</div>
+							<!--end::Step 1-->
+
+						</form>
+						<!--end::Form-->
+					</div>
+					<!--end::Content-->
+				</div>
+				<!--end::Stepper-->
+			</div>
+			<!--end::Modal body-->
+		</div>
+		<!--end::Modal content-->
+	</div>
+	<!--end::Modal dialog-->
+</div>
+
+<script>
+	$("#kt_datepicker_3").flatpickr({
+		enableTime: true,
+		dateFormat: "Y-m-d H:i",
+	});
+</script>

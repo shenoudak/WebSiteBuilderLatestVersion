@@ -1,0 +1,1 @@
+/External/photographyTemplate/js/jquery.js$@/External/photographyTemplate/js/plugins.min.js$@/External/photographyTemplate/demos/photography/js/photography-addons.js$@/External/photographyTemplate/js/transition.js$@/External/photographyTemplate/js/functions.js                                   

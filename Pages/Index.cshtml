@@ -1,0 +1,29 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    Layout = "Shared/Public/_PublicLayout.cshtml";
+}
+<div role="main" class="main">
+
+    <partial name="Public/Partials/_PublicSlider" model="@Model.publicSliders" view-data=" ViewData" />
+
+
+    @Html.Partial("Public/Partials/_PublicIntro")
+
+    <partial name="Public/Partials/_PublicFlow" model="@Model.publicFlowVM" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicVideo" model="@Model.publicVideo" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicFeatures" model="@Model.featuresVM" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicPricePlans" model="@Model.plansVMs" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicCountDown" model="@Model.CountDownVM" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicCounts" model="@Model.PublicCountVM" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicCustomers" model="@Model.customerVM" view-data=" ViewData" />
+    <partial name="Public/Partials/_PublicAffiliate" model="@Model.publicAffiliate" view-data=" ViewData" />
+
+
+
+
+
+    @Html.Partial("Public/Partials/_PublicContact")
+      
+</div>

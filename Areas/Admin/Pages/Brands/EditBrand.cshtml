@@ -1,0 +1,125 @@
+﻿@page
+@model iTech.Areas.Admin.Pages.Brands.EditBrandModel
+@{
+}
+<div class="d-flex flex-column flex-column-fluid">
+
+	<!--begin::Toolbar-->
+	<div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
+
+		<!--begin::Toolbar container-->
+		<div id="kt_app_toolbar_container" class="app-container  container-fluid d-flex flex-stack ">
+
+
+			<!--begin::Page title-->
+			<div data-kt-swapper="true" data-kt-swapper-mode="{default: 'prepend', lg: 'prepend'}" data-kt-swapper-parent="{default: '#kt_app_content_container', lg: '#kt_app_toolbar_container'}" class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5 mb-lg-0">
+				<!--begin::Title-->
+				<h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">
+					@sharedResource["Service Details Editor"]
+				</h1>
+				<!--end::Title-->
+
+			</div>
+			<!--end::Page title-->
+			<!--begin::Action group-->
+			<div class="d-flex align-items-center gap-2">
+			</div>
+			<!--end::Action group-->
+		</div>
+		<!--end::Toolbar container-->
+	</div>
+	<!--end::Toolbar-->
+	<!--begin::Content-->
+	<div id="kt_app_content" class="app-content  flex-column-fluid ">
+
+
+		<!--begin::Content container-->
+		<div id="kt_app_content_container" class="app-container  container-fluid ">
+
+			<!--end::Layout Builder Notice-->
+			<!--begin::Card-->
+			<div class="card">
+				<!--begin::Header-->
+				<div class="card-header card-header-stretch overflow-auto" style="height: 5.5rem;">
+					<h1 style="padding-top: 2rem;">
+						@sharedResource["Edit Brand"]
+					</h1>
+				</div>
+				<!--end::Header-->
+				<!--begin::Form-->
+				<!--begin::Body-->
+				<div class="card-body">
+
+					<!-- begin row  Arabic content -->
+					<form method="post" enctype="multipart/form-data">
+						<input type="hidden" asp-for="@Model.Brand.BrandsId" />
+					
+						<!--PIC-->
+						<div class="row mt-2">
+	
+<div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+								<!--begin::Label-->
+								<label b-cpu6lo70wp="" for="Editfile" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+									<span b-cpu6lo70wp="" class="required">@sharedResource["Upload Brand Image"]</span>
+									<span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Image"]" data-bs-original-title="@sharedResource["Image"]" data-kt-initialized="1">
+										<i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+											<span b-cpu6lo70wp="" class="path1"></span>
+											<span b-cpu6lo70wp="" class="path2"></span>
+											<span b-cpu6lo70wp="" class="path3"></span>
+										</i>
+									</span>
+								</label>
+								<!--end::Label-->
+								<!--begin::Input-->
+								<div class="col-lg-12 fv-row fv-plugins-icon-container">
+									<div class="uppy" id="kt_uppy_5">
+										<div class="uppy-wrapper">
+											<div class="uppy-Root uppy-FileInput-container">
+												<input type="file" name="Editfile" id="Editfile" class="form-control form-control-lg form-control-solid" >
+											</div>
+											<div class="uppy-status">
+												<div class="uppy-Root uppy-StatusBar is-waiting" aria-hidden="true" dir="ltr">
+													<div class="uppy-StatusBar-progress
+                           " role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" style="width: 0%;"></div><div class="uppy-StatusBar-actions"></div>
+												</div>
+											</div>
+											<div class="uppy-informer uppy-informer-min">
+												<div class="uppy uppy-Informer" aria-hidden="true"><p role="alert"> </p></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!--end::Input-->
+
+							</div>
+
+
+						</div>
+						<!--EndPIC-->
+
+						<div class="d-flex flex-stack pt-10 m-0">
+							<a asp-page="./PublicContentEditor" type="button" class="btn btn-lg btn-light-primary me-3">
+								<i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+									<span b-cpu6lo70wp="" class="path1"></span>
+									<span b-cpu6lo70wp="" class="path2"></span>
+								</i>@sharedResource["Close"]
+							</a>
+							<button class="btn btn-lg btn-primary">
+								@sharedResource["Edit"] <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+									<span b-cpu6lo70wp="" class="path1"></span>
+									<span b-cpu6lo70wp="" class="path2"></span>
+								</i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<!--end::Body-->
+				<!--end::Form-->
+			</div>
+			<!--end::Card-->
+		</div>
+		<!--end::Content container-->
+	</div>
+	<!--end::Content-->
+</div>

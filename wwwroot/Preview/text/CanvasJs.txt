@@ -1,0 +1,4 @@
+             "https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" ,
+                "https://localhost:7203/External/MedicalTemplate/js/jquery.js",
+                "https://localhost:7203/External/MedicalTemplate/js/plugins.min.js",
+                "https://localhost:7203/External/MedicalTemplate/js/functions.js",

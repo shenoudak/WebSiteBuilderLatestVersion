@@ -1,0 +1,473 @@
+﻿@page 
+@model iTech.Areas.Admin.Pages.Configurations.ManagePaymentRequest.PaymentRequestDetailsModel
+@{
+}
+
+@using Microsoft.AspNetCore.Localization
+
+   
+@{
+    ViewBag.Title = "Request Details";
+    ViewBag.pTitle = "Request Details";
+    ViewBag.pageTitle = "Request";
+
+    var locale = Request.HttpContext.Features.Get<IRequestCultureFeature>
+           ();
+    var BrowserCulture = locale.RequestCulture.UICulture.ToString();
+
+}
+
+<div class="d-flex flex-column flex-column-fluid">
+    <!--begin::Toolbar-->
+    <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+        <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+            <!--begin::Page title-->
+            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                <!--begin::Title-->
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">@sharedResource["Payment Request"]</h1>
+                <!--end::Title-->
+                <!--begin::Breadcrumb-->
+                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item text-muted">
+                        <a href="/admin/index" class="text-muted text-hover-primary">@sharedResource["Dashboard"]</a>
+                    </li>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                    </li>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <a href="admin/ManagePaymentRequests/Index" class="text-muted text-hover-primary">@sharedResource["Payment Requests"]</a>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                    </li>
+                    <!--end::Item-->
+                    <!--begin::Item-->
+                    <li class="breadcrumb-item text-muted">@sharedResource["Payment Request Details"]</li>
+                    <!--end::Item-->
+                </ul>
+                <!--end::Breadcrumb-->
+            </div>
+            <!--end::Page title-->
+
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+    <!--end::Toolbar-->
+    <!--begin::Content-->
+    <div id="kt_app_content" class="app-content flex-column-fluid">
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container container-xxl">
+            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                <!--begin::Card header-->
+                <div class="card-header cursor-pointer">
+                    <!--begin::Card title-->
+                    <div class="card-title m-0">
+                        <h3 class="fw-bold m-0">@sharedResource["Payment Request Details"]</h3>
+                    </div>
+                    <!--end::Card title-->
+                    <!--begin::Action-->
+                    <a asp-area="admin" asp-page="Index"  class="btn btn-sm btn-primary align-self-center">@sharedResource["Back"]</a>
+                    <!--end::Action-->
+                </div>
+                <!--begin::Card header-->
+                <!--begin::Card body-->
+                <div class="card-body p-9">
+                    <!--begin::Row-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["FullName"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <span class="fw-bold fs-6 text-gray-800">@Model.AffiliateUsers?.FullName</span>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Row-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Sites"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8 fv-row">
+                            <span class="fw-semibold text-gray-800 fs-6">@Model.SiteCount</span>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Points"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.AffiliateUsers?.Point</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Points Amount"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.PointsAmount</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Bank Name"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.AffiliateUsers?.BankName</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["IBAN"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.AffiliateUsers?.IPan</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Account Number"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.AffiliateUsers?.AccountNumber</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                    <!--begin::Input group-->
+                    <div class="row mb-7">
+                        <!--begin::Label-->
+                        <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Request Date"]</label>
+                        <!--end::Label-->
+                        <!--begin::Col-->
+                        <div class="col-lg-8">
+                            <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">@Model.PaymentRequest?.RequestData.ToShortDateString()</a>
+                        </div>
+                        <!--end::Col-->
+                    </div>
+                    <!--end::Input group-->
+                </div>
+                <!--end::Card body-->
+            </div>
+            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                <!--begin::Card header-->
+                <div class="card-header cursor-pointer">
+                    <!--begin::Card title-->
+                    <div class="card-title m-0">
+                        <h3 class="fw-bold m-0">@sharedResource["Payment Request"]</h3>
+                    </div>
+                    <!--end::Card title-->
+                    <!--begin::Action-->
+                    @if (!Model.PaymentRequest.IsPaid)
+                    {                   
+                        <button type="button" class="btn btn-sm btn-primary align-self-center" data-bs-toggle="modal" data-bs-target="#inviteMembersModal" fdprocessedid="9b1vpd"><i class="ri-share-line me-1 align-bottom"></i>@sharedResource["Confirm Payment"]</button>
+                    }
+
+                    <!--end::Action-->
+                </div>
+                <!--begin::Card header-->
+                @if (!Model.PaymentRequest.IsPaid)
+                {
+                    <!--begin::Card body-->
+                    <div class="card-body p-9">
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Request Date"]</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8">
+                                <span class="fw-bold fs-6 text-gray-800">@Model.PaymentRequest?.RequestData.ToShortDateString()</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Input group-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-4 fw-semibold text-muted">@sharedResource["Current Balance"]</label>
+                            <!--end::Label-->
+                            <!--begin::Col-->
+                            <div class="col-lg-8 fv-row">
+                                <span class="fw-semibold text-gray-800 fs-6">@Model.PaymentRequest?.CurrentBalance</span>
+                            </div>
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                }
+                else
+                {
+                    <!--begin::Card body-->
+                    <div class="card-body p-9">
+                        <!--begin::Row-->
+                        <div class="row mb-7">
+                            <!--begin::Label-->
+                            <label class="col-lg-12 fw-semibold text-muted">@sharedResource["This request is Paid"]</label>
+                           
+                        </div>
+                    </div>
+                    <!--end::Card body-->
+                }
+               
+            </div>
+
+        </div>
+        <!--end::Content container-->
+    </div>
+    <!--end::Content-->
+</div>
+
+
+<!-- end modal -->
+<div class="modal fade" id="inviteMembersModal" tabindex="-1" aria-labelledby="inviteMembersModalLabel" aria-hidden="true">
+    <!--begin::Modal dialog-->
+    <div b-cpu6lo70wp="" class="modal-dialog modal-dialog-centered mw-900px">
+        <!--begin::Modal content-->
+        <div b-cpu6lo70wp="" class="modal-content">
+            <!--begin::Modal header-->
+            <div b-cpu6lo70wp="" class="modal-header">
+                <!--begin::Modal title-->
+                <h2 b-cpu6lo70wp="">@sharedResource["Payment Request"]</h2>
+                <!--end::Modal title-->
+                <!--begin::Close-->
+                <div b-cpu6lo70wp="" class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
+                    <i b-cpu6lo70wp="" class="ki-duotone ki-cross fs-1">
+                        <span b-cpu6lo70wp="" class="path1"></span>
+                        <span b-cpu6lo70wp="" class="path2"></span>
+                    </i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!--end::Modal header-->
+            <!--begin::Modal body-->
+            <div b-cpu6lo70wp="" class="modal-body py-lg-10 px-lg-10">
+                <!--begin::Stepper-->
+                <div b-cpu6lo70wp="" class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_app_stepper" data-kt-stepper="true">
+
+                    <!--begin::Content-->
+                    <div b-cpu6lo70wp="" class="flex-row-fluid py-lg-5 px-lg-15">
+                        <!--begin::Form-->
+                        <form method="post">
+                            <input asp-for="@Model.affliateId" type="hidden" class="form-control" />
+
+                            <!--begin::Step 1-->
+                            <div b-cpu6lo70wp="" class="current" data-kt-stepper-element="content">
+                                <div b-cpu6lo70wp="" class="w-100">
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.PaymentRequest.RequestPoints" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Request Point"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource[" Request Point"]" data-bs-original-title="@sharedResource["Enter Request Point"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" id="RequestPointID" data-val-required="@Model.PaymentRequest.RequestPoints" type="text" asp-for="@Model.PaymentRequest.RequestPoints" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Request Point"]">
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.PaymentRequest.RequestPoints" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.PaymentRequest?.ConfirmAmount" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Request Amount"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Request Amount"]" data-bs-original-title="@sharedResource["Enter Request Amount"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" data-val-required="@Model.PaymentRequest.ConfirmAmount" type="text" name="RequestAmount" readonly value="@Model.PaymentRequest?.CurrentBalance KD" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Request Amount"]">
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.PaymentRequest" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" for="@Model.PaymentRequest?.ConfirmPoints" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@(sharedResource["Confirm Points"])</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@(sharedResource["Confirm Points"])" data-bs-original-title="@sharedResource["Enter Confirm Points"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" onchange="UpdateConfirmAmount(this.value)" data-val-required="@Model.PaymentRequest.ConfirmPoints" type="text" pattern="\d+(\.\d{1,2})?" title="Please enter a valid decimal value." name="CConfirmPointsID" asp-for="@Model.PaymentRequest.ConfirmPoints" min="0" step="any" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Confirm Points"]">
+
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.PaymentRequest.ConfirmPoints" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div b-cpu6lo70wp="" class="fv-row mb-10 fv-plugins-icon-container">
+                                        <!--begin::Label-->
+                                        <label b-cpu6lo70wp="" asp-for="@Model.ConfirmAmount" class="d-flex align-items-center fs-5 fw-semibold mb-2">
+                                            <span b-cpu6lo70wp="" class="required">@sharedResource["Confirm Amount"]</span>
+                                            <span b-cpu6lo70wp="" class="ms-1" data-bs-toggle="tooltip" aria-label="@sharedResource["Confirm Amount"]" data-bs-original-title="@sharedResource["Enter Amount"]" data-kt-initialized="1">
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                    <span b-cpu6lo70wp="" class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </label>
+                                        <!--end::Label-->
+                                        <!--begin::Input-->
+                                        <input b-cpu6lo70wp="" data-val-required="@Model.ConfirmAmount" id="ConfirmAmountId" type="text" name="ConfirmAmount" readonly value="@Model.PaymentRequest?.ConfirmAmount" class="form-control form-control-lg form-control-solid" placeholder="@sharedResource["Enter Confirm Amount"]" required>
+
+                                        <!--end::Input-->
+                                        <div class="fv-plugins-message-container invalid-feedback">
+                                            <span asp-validation-for="@Model.ConfirmAmount" class="text-danger"></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        @{
+                                            foreach (var item in Model.PaymentType)
+                                            {
+                                                if (BrowserCulture == "en-US")
+                                                {
+                                                    
+                                                    <label class="form-check-image active">
+
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio"  value="@item.PaymentTypeId" name="option2" />
+                                                            <div class="form-check-label">
+                                                                @item.TitleEn
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                }
+                                                else
+                                                {
+                                                    <label class="form-check-image active">
+
+                                                        <div class="form-check form-check-custom form-check-solid">
+                                                            <input class="form-check-input" type="radio" value="@item.PaymentTypeId" name="option2" />
+                                                            <div class="form-check-label">
+                                                                @item.TitleAr
+                                                            </div>
+                                                        </div>
+                                                    </label>
+                                                }
+                                                
+                                                       
+                                                   
+
+                                            }
+                                        }
+
+                                    </div>
+
+                                    <div class="d-flex flex-stack pt-10 m-0">
+                                        <button type="button" class="btn btn-lg btn-light-primary me-3" data-bs-dismiss="modal">
+                                            <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-left fs-3 me-1">
+                                                <span b-cpu6lo70wp="" class="path1"></span>
+                                                <span b-cpu6lo70wp="" class="path2"></span>
+                                            </i>@sharedResource["Close"]
+                                        </button>
+                                        <button type="submit" class="btn btn-lg btn-primary" id="add-btn">
+                                            <span b-cpu6lo70wp="" class="indicator-label">
+                                                @sharedResource["Confirm Payment Request"]
+                                                <i b-cpu6lo70wp="" class="ki-duotone ki-arrow-right fs-3 ms-2 me-0">
+                                                    <span b-cpu6lo70wp="" class="path1"></span>
+                                                    <span b-cpu6lo70wp="" class="path2"></span>
+                                                </i>
+                                            </span>
+                                            <span b-cpu6lo70wp="" class="indicator-progress">
+                                                @sharedResource["Please wait..."]
+                                                <span b-cpu6lo70wp="" class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                    <!--end::Input group-->
+                                </div>
+                            </div>
+                            <!--end::Step 1-->
+
+                        </form>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Stepper-->
+            </div>
+            <!--end::Modal body-->
+        </div>
+        <!--end::Modal content-->
+    </div>
+    <!--end::Modal dialog-->
+</div>
+
+
+
+
+    <script>
+    function UpdateConfirmAmount(ConfirmPoints) {
+        var point = @Model.point;
+        document.getElementById("ConfirmAmountId").value = point * ConfirmPoints + " KD "
+       
+        var RequestAmount = document.getElementById("RequestPointID").value
+        var ConfirmPoints = document.getElementById("ConfirmPointsID").value
+        var spanConfirmPoint = document.getElementById("spanConfirmPointID")
+        if (ConfirmPoints > RequestAmount){
+            spanConfirmPoint.style.display="block"
+        }
+        else{
+            spanConfirmPoint.style.display="none"
+        }
+        
+    }
+    </script>

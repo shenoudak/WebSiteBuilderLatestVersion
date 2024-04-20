@@ -1,0 +1,3 @@
+
+/External/farmfresh/Template/lib/easing/easing.min.js$@/External/farmfresh/lib/waypoints/waypoints.min.js$@"https://code.jquery.com/jquery-3.4.1.min.js$@https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js$@/External/farmfresh/lib/counterup/counterup.min.js$@/External/farmfresh/lib/owlcarousel/owl.carousel.min.js
+ 

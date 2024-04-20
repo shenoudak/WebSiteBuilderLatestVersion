@@ -1,0 +1,18 @@
+<script src="js/jquery.js"></script>
+<script src="js/plugins.min.js"></script>
+<script src="js/functions.js"></script>
+<script>
+		// Current Date
+		var weekday = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"],
+			month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+			a = new Date();
+
+			jQuery('.date-today span').html( weekday[a.getDay()] + ', ' + month[a.getMonth()] + ' ' + a.getDate() );
+
+		jQuery('.dark-mode').on( 'click', function() {
+			jQuery("body").toggleClass('dark');
+			SEMICOLON.header.logo();
+			return false;
+		});
+	</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"7a296f5d5f9a0dab","token":"0627f0b8b73941069bc19139e63db853","version":"2023.2.0","si":100}' crossorigin="anonymous"></script>
